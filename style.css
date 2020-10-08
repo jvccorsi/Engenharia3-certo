@@ -2,6 +2,7 @@
 *{ border:none; outline:none; font-family: 'PT Sans', sans-serif;margin: 0px;}
 a {text-decoration:none;}
 ul{list-style: none;}
+html {scroll-behavior: smooth;}
 
 /* RESET */
 header{height: 500px;background: url(assets/wave.svg);background-size:cover;}
@@ -65,3 +66,4 @@ border-radius: 73px;}
 .js-unhighlight-label {
 	color: #999 
 }
+/* ANIMATION */
