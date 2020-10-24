@@ -1,5 +1,6 @@
 <?php
-require_once 'conexao.php'; //Não alterar o link da conexão. Lembrando que fica salvo as alterações ;)
+include("../config.php");
+require_once ROOT_PATH.'/Conexao_BD/conexao.php'; //Não alterar o link da conexão. Lembrando que fica salvo as alterações ;)
 
 class usuario {
     private $conexao;
@@ -21,14 +22,14 @@ class usuario {
             if ($cst->rowCount() == 0) { //vai contar quantos registros eu tenho no $cs. Se for igual a 0 o usuario não existe
                 session_start();
                 $_SESSION['login_incorreto_usu'] = "erro_senha";
-                header("location:index.php");
+                header("location:../index.php");
             } else { // Se usuário existir, ou seja, rowCount != 0
                 session_start(); // inicia a sessão
                 $resultado = $cst->fetch(); // vai trazer as informações do BD caso o usu existir
                 $_SESSION['usu_logado']= true;
                 $_SESSION['usu_id']= $resultado['id']; //o valor que veio do BD vai ser salvo nessa sessao.
                 $_SESSION['usu_email']= $resultado['email'];
-                header("Location: pagina_usu.php");                 
+                header("Location:../Views/pagina_usu.php");                 
             }
         } catch (PDOException $ex) {
             return 'error ' . $ex->getMessage();
