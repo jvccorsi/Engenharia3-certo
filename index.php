@@ -1,6 +1,8 @@
 <?php
 session_start();
 ob_start(); //limpar a memória para nao dar erro de redirecionamento.
+
+//define('ROOT_PATH', dirname(__FILE__));
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -26,7 +28,9 @@ ob_start(); //limpar a memória para nao dar erro de redirecionamento.
 
 <body>
     <header>
-
+<?php
+include('modais.php');//Incluir o php para abrir modais  com JS na page Index.php
+?>
         <!--SECTION NAV -->
 
         <nav class="navbar navbar-expand-lg " id="edit">
@@ -49,24 +53,6 @@ ob_start(); //limpar a memória para nao dar erro de redirecionamento.
         </nav>
 
     </header>
-    <?php
-		if(isset($_SESSION['msg'])){
-            if ($_SESSION['msg'] == "erro_senha") {
-                ?>
-    <script>
-        function abreModal() {
-            $("#myModal").modal({
-                show: true
-            });
-        }
-        setTimeout(abreModal, 10);
-    </script>
-    <?php      
-                 }
-                unset($_SESSION['msg']);
-            }
-?>
-
     <section>
         <div class="container-fluid section-quemsomos text-center"></div>
         <center>
@@ -123,7 +109,7 @@ ob_start(); //limpar a memória para nao dar erro de redirecionamento.
             <div class="col col-xl-6 col-lg-12 col-md-12">
                 <div id="container-forms">
 
-                    <form id="contact-form" class="form" action="valida.php" method="POST">
+                    <form id="contact-form" class="form" action="valida_login.php" method="POST">
                         <h1 class="titulos-login text-center"><b>Acesse o sistema:</b></h1>
                         <div class="forms">
                             <div class="form-group">
@@ -167,28 +153,6 @@ ob_start(); //limpar a memória para nao dar erro de redirecionamento.
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
     </script>
     <script src="script.js"></script>
-
-
-
-    <!-- MODAL SENHA INCORRETA-->
-    <div id="myModal" class="modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Senha incorreta</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>A senha informada para o login está incorreta!</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>
