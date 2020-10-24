@@ -37,6 +37,7 @@ class usuario {
     }
 
     public function User_logado($dado) { //USAR AQUI PARA DAR OS SELECT NAS PAGES...
+    try{
         $this->codigo_usuario = $dado; //ID DO USUÁRIO
         $cst = $this->conexao->prepare("SELECT * from $this->tabela WHERE id=:usu_id");
         $cst->bindParam(":usu_id", $this->codigo_usuario, PDO::PARAM_INT);
@@ -45,6 +46,10 @@ class usuario {
         $_SESSION['usu_nome'] = $resultado['nome']; // SALVA NA SESSION NOME_USUARIO O NOME DO USUÁRIO.
         $_SESSION['usu_email'] = $resultado['email']; // SALVA NA SESSION NOME_USUARIO O NOME DO USUÁRIO.
     }
+    catch (PDOException $ex) {
+        return 'error ' . $ex->getMessage();
+    }
+}
 
 
 }
