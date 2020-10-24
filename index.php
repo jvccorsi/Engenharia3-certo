@@ -1,20 +1,15 @@
 <?php
 session_start();
 ob_start(); //limpar a memória para nao dar erro de redirecionamento.
-
-//define('ROOT_PATH', dirname(__FILE__));
+include("config.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!--CSS-->
-    <link rel="stylesheet" href="style.css">
-
-
+    <link rel="stylesheet" href="Css/style.css">
     <!--BS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -29,7 +24,7 @@ ob_start(); //limpar a memória para nao dar erro de redirecionamento.
 <body>
     <header>
 <?php
-include('modais.php');//Incluir o php para abrir modais  com JS na page Index.php
+include('Views/Modais/modais.php');//Incluir o php para abrir modais  com JS na page Index.php
 ?>
         <!--SECTION NAV -->
 
@@ -109,7 +104,7 @@ include('modais.php');//Incluir o php para abrir modais  com JS na page Index.ph
             <div class="col col-xl-6 col-lg-12 col-md-12">
                 <div id="container-forms">
 
-                    <form id="contact-form" class="form" action="valida_login.php" method="POST">
+                    <form id="contact-form" class="form" action="Controllers/valida_login.php" method="POST">
                         <h1 class="titulos-login text-center"><b>Acesse o sistema:</b></h1>
                         <div class="forms">
                             <div class="form-group">
@@ -152,7 +147,6 @@ include('modais.php');//Incluir o php para abrir modais  com JS na page Index.ph
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
     </script>
-    <script src="script.js"></script>
+    <script src="JS/script.js"></script>
 </body>
-
 </html>
