@@ -5,8 +5,8 @@ ul{list-style: none;}
 html {scroll-behavior: smooth;}
 
 /* RESET */
-header{height: 500px;background: url(../assets/wave.svg);background-size:cover;}
-main{height: 300px;background: url(../assets/wave_end.svg);background-size:cover;}
+header{height: 500px;background: url(assets/wave.svg);background-size:cover;}
+main{height: 300px;background: url(assets/wave_end.svg);background-size:cover;}
 section{background-color: white;}
 footer{background-color: #0099ff;color: white;font-size: 20px;letter-spacing: 0.5px;}
 
@@ -34,7 +34,7 @@ border-radius: 73px;}
 .btn-info{width: 250px;}
 
 
-#container-info-login{background-color: red;margin-top: 8em;margin-left: 5em;}
+#container-info-login{margin-top: 8em;margin-left: 5em;}
 .titulos-login{font-size: 30px;padding: 20px;}
 .titulos-login-esqueci{font-size: 18px;padding: 5px;float: right;}
 
