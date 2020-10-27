@@ -5,14 +5,14 @@ include("config.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--CSS-->
     <link rel="stylesheet" href="Css/style.css">
     <!--BS-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <!--FONT-->
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -23,17 +23,15 @@ include("config.php");
 
 <body>
     <header>
-<?php
-include('Views/Modais/modais.php');//Incluir o php para abrir modais  com JS na page Index.php
-?>
+        <?php
+        include('Views/Modais/modais.php'); //Incluir o php para abrir modais  com JS na page Index.php
+        ?>
         <!--SECTION NAV -->
 
         <nav class="navbar navbar-expand-lg " id="edit">
             <div class="container">
-                <a class="navbar-brand h1 mb-0" href="#"><img src="assets/logo/logo_white.png"
-                        style="width: 230px;"></a>
-                <button class="navbar-toggler navbar-light bg-light" type="button" data-toggle="collapse"
-                    data-target="#navbarSite">
+                <a class="navbar-brand h1 mb-0" href="#"><img src="assets/logo/logo_white.png" style="width: 230px;"></a>
+                <button class="navbar-toggler navbar-light bg-light" type="button" data-toggle="collapse" data-target="#navbarSite">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSite">
@@ -84,6 +82,7 @@ include('Views/Modais/modais.php');//Incluir o php para abrir modais  com JS na 
 
     <main>
     </main>
+<article>
     <div class="container-fluid section-footer" id="login">
         <div class="row">
             <div class="col col-xl-6 col-lg-12 col-md-12">
@@ -91,10 +90,8 @@ include('Views/Modais/modais.php');//Incluir o php para abrir modais  com JS na 
                     <h1 class="titulos-info-login text-center"><b>Faça login e obtenha as vantagens do serviço que
                             fornecemos!<br><br>NÃO POSUÍ CADASTRO?</b></h1><br>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-start-order" id="btn-form" value="send"
-                            style="width: 250px;"><b>CADASTRAR-SE </b>
-                            <div class="spinner-grow text-dark" role="status"
-                                style="margin-bottom:5px;margin-left:5px;width: 16px; height: 16px;">
+                        <button type="submit" class="btn btn-start-order" id="btn-form" value="send" style="width: 250px;"><b>CADASTRAR-SE </b>
+                            <div class="spinner-grow text-dark" role="status" style="margin-bottom:5px;margin-left:5px;width: 16px; height: 16px;">
                             </div>
                         </button>
                     </div>
@@ -109,21 +106,17 @@ include('Views/Modais/modais.php');//Incluir o php para abrir modais  com JS na 
                         <div class="forms">
                             <div class="form-group">
                                 <label class="form-label" for="name"><b>Email:</b></label>
-                                <input type="email" class="form-control" id="email" name="email"
-                                    placeholder="Digite seu email aqui" tabindex="1" required>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu email aqui" tabindex="1" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="email"><b>Senha:</b></label>
-                                <input type="password" class="form-control" id="senha" name="senha"
-                                    placeholder="Digite sua senha aqui:" tabindex="2" required>
+                                <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha aqui:" tabindex="2" required>
                             </div>
-                            <h1 class="titulos-login-esqueci text-center"><a href="#" style="color: black;"><b>Esqueci a
+                            <h1 class="titulos-login-esqueci text-center"><a href="#" data-toggle="modal" data-target="#modal_esqueci_senha" style="color: black;"><b>Esqueci a
                                         senha</b></a></h1>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-start-order" id="btn-form" name="btnlogin"
-                                    value="send"><b>ENVIAR </b>
-                                    <div class="spinner-grow text-dark" role="status"
-                                        style="margin-bottom:5px;margin-left:5px;width: 16px; height: 16px;">
+                                <button type="submit" class="btn btn-start-order" id="btn-form" name="btnlogin" value="send"><b>ENVIAR </b>
+                                    <div class="spinner-grow text-dark" role="status" style="margin-bottom:5px;margin-left:5px;width: 16px; height: 16px;">
                                     </div>
                                 </button>
                             </div>
@@ -134,19 +127,18 @@ include('Views/Modais/modais.php');//Incluir o php para abrir modais  com JS na 
             </div>
         </div>
     </div>
+    </article>
     <footer class="text-center">
         <b>© ROLE DE REP - Todos os direitos reservados.</b>
     </footer>
     <!--BS-->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
     </script>
     <script src="JS/script.js"></script>
 </body>
+
 </html>
