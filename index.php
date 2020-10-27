@@ -100,7 +100,6 @@ include("config.php");
             </div>
             <div class="col col-xl-6 col-lg-12 col-md-12">
                 <div id="container-forms">
-
                     <form id="contact-form" class="form" action="Controllers/valida_login.php" method="POST">
                         <h1 class="titulos-login text-center"><b>Acesse o sistema:</b></h1>
                         <div class="forms">

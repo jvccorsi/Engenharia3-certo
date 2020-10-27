@@ -101,18 +101,26 @@
         </div>
     </div>
 
-       <!-- MODAL ESQUECI MINHA SENHA -->
-       <div class="modal fade" id="modal_esqueci_senha" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-         <div class="modal-dialog modal-dialog-centered" role="document">
+    <!-- MODAL ESQUECI MINHA SENHA -->
+    <div class="modal fade" id="modal_esqueci_senha" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-danger text-white">
-                    <h5 class="modal-title">É necessário realizar o login para acessar essa página!!</h5>
+                <div class="modal-header bg-info text-white">
+                    <h3 class="modal-title mx-auto font-weight-bold" id="exampleModalLabel">Esqueci Minha Senha</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                <div class="modal-body">
+                    <form id="form_recu_senha" class="form" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="email_recuperar_senha" class="font-weight-bold">Digite seu email:</label>
+                            <input type="email" class="form-control " id="email_recuperar_senha" placeholder="name@example.com">
+                        </div>
+                        <center>
+                            <button type="submit " class="btn btn-outline-success ">Enviar</button>
+                        </center>
+                    </form>
                 </div>
             </div>
         </div>
