@@ -13,8 +13,8 @@ footer{background-color: #0099ff;color: white;font-size: 20px;letter-spacing: 0.
 .textos{font-size: 22px;}
 .titulos{font-size: 45px;}
 
-#container-quemsomos{background-color: red;margin-bottom:120px;padding: 50px;}
-#container-servicos{background-color: yellow;padding: 50px;}
+#container-quemsomos{margin-bottom:120px;padding: 50px;}
+#container-servicos{padding: 50px;}
 
 /* NAV */
 .menu{font-size:25px;color: white; letter-spacing: 1.5px;font-weight: 600;}
@@ -26,7 +26,7 @@ border-radius: 73px;}
 
 /* SECTION */
 .hr{background-color: #7D5FFF;width: 120px;height: 3px;}
-#texto-section-quemsomos{margin-top: 35px;;width: 60%;background-color: #7D5FFF;}
+#texto-section-quemsomos{margin-top: 35px;;width: 60%;}
 
 /*MAIN*/
 .section-footer{background-color: #0099ff;height: 600px;}
