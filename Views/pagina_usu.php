@@ -3,7 +3,6 @@ include('../Controllers/verify_login.php'); //php PARA VERFICIAR SE O USUÁRIO E
 //PRA PEGAR OS CAMPOS DO BD, OLHAR A FUNCAO User_logado NA CLASSE USUARIO.
 //echo"Olá, seja bem vindo<b> ".$_SESSION['usu_nome']."</b> ao sistema !! <br> O seu email é:".$_SESSION['usu_email']."";
 //echo"<br>";
-echo "<a href='../Controllers/sair.php'> Clique aqui para Sair </a>"; //NÃO TIRAR ISSO DA PAGINA!!
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +58,7 @@ echo "<a href='../Controllers/sair.php'> Clique aqui para Sair </a>"; //NÃO TIR
                     <ul class="navbar-nav" style="margin-left:90%;">
                             <a href="#login" class="btn btn-info menu a" role="button" id="botao"><b>PERFIL</b></a>
                         <div class="contato-nav">
-                            <a href="#login" class="btn btn-info menu a" role="button" id="botao"><b>SAIR</b></a>
+                            <a href="../Controllers/sair.php" class="btn btn-info menu a" role="button" id="botao"><b>SAIR</b></a>
                         </div>
                     </ul>
                 </div>
