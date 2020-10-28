@@ -54,12 +54,7 @@ include("config.php");
                 <hr class="hr">
 
                 <div id="texto-section-quemsomos">
-                    <h5 class="textos">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices facilisis
-                        malesuada. Aenean id mattis sem, in dignissim nulla. Curabitur id auctor velit. In tempor at
-                        purus id consectetur. Sed tristique bibendum orci at condimentum. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Fusce ultrices facilisis malesuada. Aenean id mattis sem, in
-                        dignissim nulla. Curabitur id auctor velit. In tempor at purus id consectetur. Sed tristique
-                        bibendum orci at condimentum.</h5>
+                    <h5 class="textos">O ROLEDEREP representa um grupo de alunos que cursam a diciplina Engenharia de Software III. O ROLEDEREP fornece a você universitário, a possibilidade de tornar a sua "baguncinha" no role de república muito organizada! Nesse sentido, com grande prazer a trabalho desenvolvemos esse sistema a vocês e para vocês!.</h5>
                 </div>
             </div>
 

@@ -1,0 +1,13 @@
+/*----- RESET ----- */
+*{ border:none; outline:none; font-family: 'PT Sans', sans-serif;margin: 0px;}
+a {text-decoration:none;}
+ul{list-style: none;}
+html {scroll-behavior: smooth;}
+
+/* NAV */
+.menu{font-size:25px;color: white; letter-spacing: 1.5px;font-weight: 600;}
+.menu:hover{font-size:25px;color:white; letter-spacing: 1.5px;font-weight: 600;}
+#edit{background-color: #45F2F2;margin-top: -10px;}
+#botao{font-size:22px;color: white;letter-spacing: 1.5px;font-weight: 600;padding:7px; border: 1px solid #7D5FFF;width: 160px;background: #7D5FFF;
+border-radius: 73px;}
+.contato-nav{margin-left: 50px;}
