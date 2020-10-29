@@ -1,10 +1,7 @@
 <?php
 session_start();
 ob_start(); //limpar a memória para nao dar erro de redirecionamento.
-<<<<<<< HEAD
 include("config.php");
-=======
->>>>>>> parent of c7bd2a6... features: Login Orientado a Obj
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -26,13 +23,9 @@ include("config.php");
 
 <body>
     <header>
-<<<<<<< HEAD
         <?php
         include('Views/Modais/modais.php'); //Incluir o php para abrir modais  com JS na page Index.php
         ?>
-=======
-
->>>>>>> parent of c7bd2a6... features: Login Orientado a Obj
         <!--SECTION NAV -->
 
         <nav class="navbar navbar-expand-lg " id="edit">
@@ -53,24 +46,6 @@ include("config.php");
         </nav>
 
     </header>
-    <?php
-		if(isset($_SESSION['msg'])){
-            if ($_SESSION['msg'] == "erro_senha") {
-                ?>
-    <script>
-        function abreModal() {
-            $("#myModal").modal({
-                show: true
-            });
-        }
-        setTimeout(abreModal, 10);
-    </script>
-    <?php      
-                 }
-                unset($_SESSION['msg']);
-            }
-?>
-
     <section>
         <div class="container-fluid section-quemsomos text-center"></div>
         <center>
@@ -120,12 +95,7 @@ include("config.php");
             </div>
             <div class="col col-xl-6 col-lg-12 col-md-12">
                 <div id="container-forms">
-<<<<<<< HEAD
                     <form id="contact-form" class="form" action="Controllers/valida_login.php" method="POST">
-=======
-
-                    <form id="contact-form" class="form" action="valida.php" method="POST">
->>>>>>> parent of c7bd2a6... features: Login Orientado a Obj
                         <h1 class="titulos-login text-center"><b>Acesse o sistema:</b></h1>
                         <div class="forms">
                             <div class="form-group">
@@ -162,33 +132,7 @@ include("config.php");
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
     </script>
-<<<<<<< HEAD
     <script src="JS/script.js"></script>
-=======
-    <script src="script.js"></script>
-
-
-
-    <!-- MODAL SENHA INCORRETA-->
-    <div id="myModal" class="modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Senha incorreta</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>A senha informada para o login está incorreta!</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                </div>
-            </div>
-        </div>
-    </div>
->>>>>>> parent of c7bd2a6... features: Login Orientado a Obj
 </body>
 
 </html>
