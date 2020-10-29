@@ -4,8 +4,8 @@ a {text-decoration:none;}
 ul{list-style: none;}
 
 /* RESET */
-header{height: 500px;background: url(assets/wave.svg);background-size:cover;}
-main{height: 300px;background: url(assets/wave_end.svg);background-size:cover;}
+header{height: 500px;background: url(../assets/wave.svg);background-size:cover;}
+main{height: 300px;background: url(../assets/wave_end.svg);background-size:cover;}
 section{background-color: white;}
 footer{background-color: #0099ff;color: white;font-size: 20px;letter-spacing: 0.5px;}
 
