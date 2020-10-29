@@ -2,9 +2,14 @@
 session_start();
 ob_start(); //limpar a memória para nao dar erro de redirecionamento.
 <<<<<<< HEAD
+<<<<<<< HEAD
 include("config.php");
 =======
 >>>>>>> parent of c7bd2a6... features: Login Orientado a Obj
+=======
+
+//define('ROOT_PATH', dirname(__FILE__));
+>>>>>>> parent of e43bd3e... Features: Separei o projeto por pastas e criei o config.php
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -12,8 +17,15 @@ include("config.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!--CSS-->
+<<<<<<< HEAD
     <link rel="stylesheet" href="Style/style.css">
+=======
+    <link rel="stylesheet" href="style.css">
+
+
+>>>>>>> parent of e43bd3e... Features: Separei o projeto por pastas e criei o config.php
     <!--BS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
@@ -27,12 +39,18 @@ include("config.php");
 <body>
     <header>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <?php
         include('Views/Modais/modais.php'); //Incluir o php para abrir modais  com JS na page Index.php
         ?>
 =======
 
 >>>>>>> parent of c7bd2a6... features: Login Orientado a Obj
+=======
+<?php
+include('modais.php');//Incluir o php para abrir modais  com JS na page Index.php
+?>
+>>>>>>> parent of e43bd3e... Features: Separei o projeto por pastas e criei o config.php
         <!--SECTION NAV -->
 
         <nav class="navbar navbar-expand-lg " id="edit">
@@ -121,11 +139,16 @@ include("config.php");
             <div class="col col-xl-6 col-lg-12 col-md-12">
                 <div id="container-forms">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <form id="contact-form" class="form" action="Controllers/valida_login.php" method="POST">
 =======
 
                     <form id="contact-form" class="form" action="valida.php" method="POST">
 >>>>>>> parent of c7bd2a6... features: Login Orientado a Obj
+=======
+
+                    <form id="contact-form" class="form" action="valida_login.php" method="POST">
+>>>>>>> parent of e43bd3e... Features: Separei o projeto por pastas e criei o config.php
                         <h1 class="titulos-login text-center"><b>Acesse o sistema:</b></h1>
                         <div class="forms">
                             <div class="form-group">
@@ -163,6 +186,7 @@ include("config.php");
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
     </script>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <script src="JS/script.js"></script>
 =======
     <script src="script.js"></script>
@@ -189,6 +213,9 @@ include("config.php");
         </div>
     </div>
 >>>>>>> parent of c7bd2a6... features: Login Orientado a Obj
+=======
+    <script src="script.js"></script>
+>>>>>>> parent of e43bd3e... Features: Separei o projeto por pastas e criei o config.php
 </body>
 
 </html>

@@ -1,7 +1,6 @@
 <?php
-include("../config.php");
     session_start();
-    require_once ROOT_PATH.'/Classes/usuario.php';
+    require_once 'usuario.php';
     $objUser = new usuario();
     if(isset($_POST['btnlogin'])){ // se o cara clicar no botão logar
         $objUser->logarUser($_POST); //VAI ENVIAR VIA POST OS DADOS DOS FORM PARA A FUNCAO LOGAR USU na forma de um array
