@@ -1,8 +1,3 @@
-<?php
-session_start();
-ob_start(); //limpar a memória para nao dar erro de redirecionamento.
-include("config.php");
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -23,10 +18,7 @@ include("config.php");
 
 <body>
     <header>
-        <?php
-        include('Views/Modais/modais.php'); //Incluir o php para abrir modais  com JS na page Index.php
-        ?>
-        <!--SECTION NAV -->
+    <!--SECTION NAV -->
 
         <nav class="navbar navbar-expand-lg " id="edit">
             <div class="container">
@@ -38,12 +30,15 @@ include("config.php");
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link active menu" href="">CADASTRO</a></li>
                         <div class="contato-nav">
-                            <a href="#login" class="btn btn-info menu a" role="button" id="botao"><b>LOGIN</b></a>
+                            <a href="usuario_index.html" class="btn btn-info menu a" role="button" id="botao"><b>LOGIN</b></a>
                         </div>
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> 
+        
+        <!--BTN FALE CONOSCO--> 
+        <button id="contact-btn" href="#modal-contato" data-toggle="modal" data-target="#modal-contato"><img src="https://img.icons8.com/color/48/000000/chat.png"/></button>
 
     </header>
     <section>
@@ -63,12 +58,23 @@ include("config.php");
                 <hr class="hr">
 
                 <div id="texto-section-quemsomos">
-                    <h5 class="textos">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices facilisis
-                        malesuada. Aenean id mattis sem, in dignissim nulla. Curabitur id auctor velit. In tempor at
-                        purus id consectetur. Sed tristique bibendum orci at condimentum. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Fusce ultrices facilisis malesuada. Aenean id mattis sem, in
-                        dignissim nulla. Curabitur id auctor velit. In tempor at purus id consectetur. Sed tristique
-                        bibendum orci at condimentum.</h5>
+                    <div class="row">
+                        <div class="col">   
+                            <img src="assets/custos.png" class="img-servicos">
+                            <h5 class="textos"><b>GERENCIAMENTO DE CUSTOS</b></h5>
+                        </div>
+                        <div class="col">   
+                            <img src="assets/evento.png" class="img-servicos">
+                            <h5 class="textos"><b>GERENCIAMENTO DO SEU EVENTO</b></h5>
+                        </div>
+                        <div class="col">   
+                            <img src="assets/relatório_2.png" class="img-servicos">
+                            <h5 class="textos"><b>VISUALIZAÇÃO DE RELATÓRIOS</b></h5>
+                        </div>
+                    </div>
+                    
+
+                   
                 </div>
             </div>
         </center>
@@ -85,7 +91,7 @@ include("config.php");
                     <h1 class="titulos-info-login text-center"><b>Faça login e obtenha as vantagens do serviço que
                             fornecemos!<br><br>NÃO POSUÍ CADASTRO?</b></h1><br>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-start-order" id="btn-form" value="send" style="width: 250px;"><b>CADASTRAR-SE </b>
+                        <button type="submit" class="btn btn-start-order" id="btn-form" value="send"  href="#modal-cadastro" data-toggle="modal" data-target="#modal-cadastro" style="width: 250px;"><b>CADASTRAR-SE </b>
                             <div class="spinner-grow text-dark" role="status" style="margin-bottom:5px;margin-left:5px;width: 16px; height: 16px;">
                             </div>
                         </button>
@@ -106,7 +112,7 @@ include("config.php");
                                 <label class="form-label" for="email"><b>Senha:</b></label>
                                 <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha aqui:" tabindex="2" required>
                             </div>
-                            <h1 class="titulos-login-esqueci text-center"><a href="#" data-toggle="modal" data-target="#modal_esqueci_senha" style="color: black;"><b>Esqueci a
+                            <h1 class="titulos-login-esqueci text-center"><a href="#modal-rec-senha" data-toggle="modal" data-target="#modal-rec-senha" style="color: black;"><b>Esqueci a
                                         senha</b></a></h1>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-start-order" id="btn-form" name="btnlogin" value="send"><b>ENVIAR </b>
@@ -125,6 +131,117 @@ include("config.php");
     <footer class="text-center">
         <b>© ROLE DE REP - Todos os direitos reservados.</b>
     </footer>
+
+    <!-- Modal Cadastrar Usuário -->
+    <div class="modal fade" id="modal-cadastro" role="dialog">
+        <div class="modal-dialog" >
+            <div class="modal-content" id="fundo-modal">
+                <div class="modal-body">
+                    <form id="contact-form" class="form" action="#" method="POST">
+                        <h1 class="titulo text-center"><b>Efetuar cadastro:</b></h1>
+                        <div class="forms">
+                            <div class="form-group">
+                                <label class="form-label" for="name" style="color:white;"><b>Nome:</b></label>
+                                <input type="text" class="form-control" id="name" name="name"
+                                    placeholder="Digite seu nome aqui" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="email" style="color:white;"><b>Data de nascimento:</b></label>
+                                <input  type="text" class="form-control" id="dtnasc" name="dtnasc"
+                                    placeholder="Digite sua data de nascimento aqui" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="name" style="color:white;"><b>CPF:</b></label>
+                                <input  type="text" class="form-control" id="cpf" name="cpf"
+                                    placeholder="Digite seu CPF aqui" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="name" style="color:white;"><b>Telefone:</b></label>
+                                <input type="text" class="form-control" id="telefone" name="telefone"
+                                    placeholder="(00)0000-0000" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="name" style="color:white;"><b>Email:</b></label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="Digite o seu email aqui" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="name" style="color:white;"><b>Username:</b></label>
+                                <input  type="text" class="form-control" id="username" name="username"
+                                    placeholder="Digite seu username aqui" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="email" style="color:white;"><b>Senha:</b></label>
+                                <input type="password" class="form-control" id="senha" name="senha"
+                                    placeholder="Digite sua senha aqui" required>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-success" id="salvar-btn" value="send" style="margin-bottom: 5px;"><b>SALVAR</b></button><br>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Contato Usuário -->
+    <div class="modal fade" id="modal-contato" role="dialog">
+        <div class="modal-dialog" >
+            <div class="modal-content" id="fundo-modal">
+                <div class="modal-body">
+                    <form id="contact-form" class="form" action="#" method="POST">
+                        <h1 class="titulo text-center"><b>Entrar em contato:</b></h1>
+                        <div class="forms">
+                            <div class="form-group">
+                                <label class="form-label" for="name" style="color:white;"><b>Nome:</b></label>
+                                <input type="text" class="form-control" id="name" name="name"
+                                    placeholder="Digite seu nome aqui" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="name" style="color:white;"><b>Email:</b></label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="Digite o seu email aqui" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="name" style="color:white;"><b>Conte para nós as suas necessidades:</b></label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                              </div>
+                              <div class="text-center">
+                                <button type="submit" class="btn btn-success" id="salvar-btn" value="send" style="margin-bottom: 5px;"><b>ENVIAR</b></button><br>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Recuperar Senha -->
+    <div class="modal fade" id="modal-rec-senha" role="dialog">
+        <div class="modal-dialog" >
+            <div class="modal-content" id="fundo-modal">
+                <div class="modal-body">
+                    <form id="contact-form" class="form" action="#" method="POST">
+                        <h1 class="titulo text-center"><b>Recuperar senha:</b></h1>
+                        <div class="forms">
+                            <div class="form-group">
+                                <label class="form-label" for="name" style="color:white;"><b>Email:</b></label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="Digite o seu email cadastrado" required>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-success" id="salvar-btn" value="send" style="margin-bottom: 5px;"><b>ENVIAR</b></button><br>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+               
+            </div>
+        </div>
+    </div>
     <!--BS-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>

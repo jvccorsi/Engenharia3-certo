@@ -4,7 +4,69 @@ a {text-decoration:none;}
 ul{list-style: none;}
 html {scroll-behavior: smooth;}
 header{background-color: black;}
+body {
+    background-image: url("../assets/img_fundo_1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
 /* NAV */
-.menu{font-size:25px;color: black; letter-spacing: 1.5px;font-weight: 600;}
-.menu:hover{font-size:25px;color:black; letter-spacing: 1.5px;font-weight: 600;}
+.menu{font-size:25px;color: white; letter-spacing: 1.5px;font-weight: 600;}
+.menu:hover{font-size:25px;color:white; letter-spacing: 1.5px;font-weight: 600;}
+#edit{background-color: white;margin-top: -10px;}
+#botao{font-size:22px;color: black;font-weight: 600;padding:5px; width: 150px;background: white;
+border-radius: 73px;margin-top: 10px;}
+#botao-hora{margin-top: 10px;font-size:22px;color: white;letter-spacing: 1px;font-weight: 600;padding:5px;width: 150px;background-color: #7D5FFF;border:1px solid #7D5FFF;border-radius: 73px;}
+.btn-hora{margin-left:-200px;}
+.contato-nav{margin-left: 50px;}
+#itens-menu{margin-left: 90%;}
+.position-img{margin-left: 48%;}
 
+/*BTN - FIXED*/
+#contact-btn{position:fixed;float:right;bottom:30px;right:80px;border-radius: 23px;background-color:whitesmoke;transition:0.5s;}
+#contact-btn:hover{position:fixed;float:right;bottom:30px;right:80px;border-radius: 15px;background-color:whitesmoke;transition:0.5s;}
+
+
+/*BEM VINDO*/
+.titulo-principal{
+    max-width: 500px;
+    text-align: center;
+    margin: 60px auto;
+    color: white;
+    font-weight: 600;
+    font-size:40px;
+    background-color: #7D5FFF;
+    border-radius: 33px;
+    padding:25px;
+    border:2px solid white;
+}
+.titulo-principal:after{
+ content: '|';
+ margin-left: 5px;
+ opacity: 1;
+ animation: pisca .7s infinite;
+}
+/* Animação aplicada ao content referente a classe *.titulo-principal* resultando num efeito de cursor piscando. */
+
+@keyframes pisca{
+    0%, 100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+}
+
+/*SECTION - MEUS EVENTOS*/
+section{margin-top: 100px;height:600px;}
+.tabela-eventos{width: 50%;margin-left:25%;border-radius:15px;}
+.table{border-radius:15px;}
+.title_tabela{font-size:20px;}
+.titulos{color:white;font-size:50px;}
+.hr{background-color: #7D5FFF;width: 300px;height: 3px;margin: auto;}
+.img-actions{width:40px;margin-left: 10px;}
+
+/*MODAL CADASTRO*/
+#fundo-modal{background-color:  #7D5FFF; border-radius: 77px;color:white;padding:15px;}
+#fundo-modal input{border-radius: 55px;}
+#fundo-modal button{width:100%;}
+#salvar-btn{background-color: white;color:black;border:1px solid black;border-radius: 25px;font-size: 20px;}
