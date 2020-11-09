@@ -8,6 +8,6 @@ include("../config.php");
     }
     else{
         $_SESSION['login_incorreto_usu'] = "<div class='alert alert-danger col-md-6' style='margin-left: 25%'>Pagina não encontrada!</div>";
-      header("Location: index.php");
+      header("Location: ../index.php");
     }
 ?>

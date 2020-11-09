@@ -29,7 +29,7 @@ class usuario {
                 $_SESSION['usu_logado']= true;
                 $_SESSION['usu_id']= $resultado['id']; //o valor que veio do BD vai ser salvo nessa sessao.
                 $_SESSION['usu_email']= $resultado['email'];
-                header("Location:../Views/pagina_usu.php");                 
+                header("Location:../Views/usuario_index.php");                 
             }
         } catch (PDOException $ex) {
             return 'error ' . $ex->getMessage();
@@ -50,6 +50,8 @@ class usuario {
         return 'error ' . $ex->getMessage();
     }
 }
+
+
 
 
 }
