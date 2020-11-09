@@ -25,7 +25,7 @@ include("config.php");
 <body>
     <header>
     <?php
-        include('Views/Modais/modais.php'); //Incluir o php para abrir modais  com JS na page Index.php
+       include("Views/modais.php");
         ?>
     <!--SECTION NAV -->
 
