@@ -101,7 +101,7 @@
             </div>
             <div class="col col-xl-6 col-lg-12 col-md-12">
                 <div id="container-forms">
-                    <form id="contact-form" class="form" action="Controllers/valida_login.php" method="POST">
+                <form id="contact-form" class="form" action="Controllers/valida_login.php" method="POST">
                         <h1 class="titulos-login text-center"><b>Acesse o sistema:</b></h1>
                         <div class="forms">
                             <div class="form-group">
@@ -112,7 +112,7 @@
                                 <label class="form-label" for="email"><b>Senha:</b></label>
                                 <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha aqui:" tabindex="2" required>
                             </div>
-                            <h1 class="titulos-login-esqueci text-center"><a href="#modal-rec-senha" data-toggle="modal" data-target="#modal-rec-senha" style="color: black;"><b>Esqueci a
+                            <h1 class="titulos-login-esqueci text-center"><a href="#" data-toggle="modal" data-target="#modal_esqueci_senha" style="color: black;"><b>Esqueci a
                                         senha</b></a></h1>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-start-order" id="btn-form" name="btnlogin" value="send"><b>ENVIAR </b>
