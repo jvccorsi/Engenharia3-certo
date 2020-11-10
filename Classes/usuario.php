@@ -33,8 +33,9 @@ class usuario {
     }
     public function logarUser($dado) {
         try {
-            //Cst = Consulte Stament
-            $cst = $this->conexao->prepare("SELECT id,email,senha from $this->tabela WHERE email=:usu_email AND senha=:usu_senha LIMIT 1");
+     
+            //Cst = Consulte Stament 
+            $cst = $this->conexao->prepare("SELECT id,email,senha_usu from $this->tabela WHERE email=:usu_email AND senha_usu=:usu_senha LIMIT 1");
             $cst->bindParam(":usu_email", $dado['email'], PDO::PARAM_STR);
             $cst->bindParam(":usu_senha", $dado['senha'], PDO::PARAM_STR);
             $cst->execute();
@@ -62,7 +63,7 @@ class usuario {
         $cst->bindParam(":usu_id", $this->codigo_usuario, PDO::PARAM_INT);
         $cst->execute();
         $resultado = $cst->fetch(); // SALVOU NO ARRAY FETCH- BUSCAR PELO NOME DO CAMPO
-        $_SESSION['usu_nome'] = $resultado['nome']; // SALVA NA SESSION NOME_USUARIO O NOME DO USUÁRIO.
+        $_SESSION['usu_nome'] = $resultado['nome_usu']; // SALVA NA SESSION NOME_USUARIO O NOME DO USUÁRIO.
         $_SESSION['usu_email'] = $resultado['email']; // SALVA NA SESSION NOME_USUARIO O NOME DO USUÁRIO.
     }
     catch (PDOException $ex) {
