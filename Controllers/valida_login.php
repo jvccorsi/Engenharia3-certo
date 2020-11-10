@@ -1,5 +1,5 @@
 <?php
-include("../config.php");
+include ("../config.php");
     session_start();
     require_once ROOT_PATH.'/Classes/usuario.php';
     $objUser = new usuario();

@@ -1,4 +1,5 @@
 <?php
+
 include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO ESTÁ LOGADO!!
 //PRA PEGAR OS CAMPOS DO BD, OLHAR A FUNCAO User_logado NA CLASSE USUARIO.
 //echo"Olá, seja bem vindo<b> ".$_SESSION['usu_nome']."</b> ao sistema !! <br> O seu email é:".$_SESSION['usu_email']."";
@@ -60,7 +61,8 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
 
     <!--BEM VINDO-->
     <main>
-         <h1 class="titulo-principal">Seja bem vindo ao sistema Tiago!</h1>
+         <h1 class="titulo-principal">  <?php echo"Olá, seja bem vindo ao sistema ".$_SESSION['usu_nome']."!";?></h1>
+       
     </main>
 
      <!--MUES EVENTOS-->
