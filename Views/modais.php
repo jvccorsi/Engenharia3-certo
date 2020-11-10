@@ -129,7 +129,7 @@
         <div class="modal-dialog" >
             <div class="modal-content" id="fundo-modal">
                 <div class="modal-body">
-                    <form id="contact-form" class="form" action="#" method="POST">
+                    <form id="contact-form" class="form" action="Controllers/gestao_cadastro_usu.php" method="POST">
                         <h1 class="titulo text-center"><b>Efetuar cadastro:</b></h1>
                         <div class="forms">
                             <div class="form-group">
@@ -154,7 +154,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="name" style="color:white;"><b>Email:</b></label>
-                                <input type="email" class="form-control" id="email" name="email"
+                                <input type="email" class="form-control" id="email_usu" name="email_usu"
                                     placeholder="Digite o seu email aqui" required>
                             </div>
                             <div class="form-group">

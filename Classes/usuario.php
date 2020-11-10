@@ -12,6 +12,25 @@ class usuario {
         $this->tabela = "usuarios";
     }
 
+    public function queryInsert($dados) {
+        try {
+            $cst = $this->conexao->prepare("INSERT INTO $this->tabela (nome_usu, data_nascimento,cpf,telefone, email, username, senha_usu)".
+            "VALUES (:nome_usu, :data_nascimento, :cpf,:telefone, :email, :username, :senha_usu)");
+ 
+            $cst->bindParam(":nome_usu", $dados['name'], PDO::PARAM_STR);
+            $cst->bindParam(":data_nascimento", $dados['dtnasc'], PDO::PARAM_STR);
+            $cst->bindParam(":cpf", $dados['cpf'], PDO::PARAM_STR);
+            $cst->bindParam(":telefone", $dados['telefone'], PDO::PARAM_STR);
+            $cst->bindParam(":email", $dados['email_usu'], PDO::PARAM_STR);
+            $cst->bindParam(":username", $dados['username'], PDO::PARAM_STR);
+            $cst->bindParam(":senha_usu", $dados['senha'], PDO::PARAM_STR);
+            $cst->execute();
+            return true;
+        }
+     catch (PDOException $ex) {
+        return 'error ' . $ex->getMessage();
+     }
+    }
     public function logarUser($dado) {
         try {
             //Cst = Consulte Stament
