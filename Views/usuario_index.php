@@ -1,3 +1,13 @@
+<?php
+
+include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO ESTÁ LOGADO!!
+//PRA PEGAR OS CAMPOS DO BD, OLHAR A FUNCAO User_logado NA CLASSE USUARIO.
+//echo"Olá, seja bem vindo<b> ".$_SESSION['usu_nome']."</b> ao sistema !! <br> O seu email é:".$_SESSION['usu_email']."";
+//echo"<br>";
+
+//echo "<a href='../Controllers/sair.php'> Clique aqui para Sair </a>"; //NÃO TIRAR ISSO DA PAGINA!!
+?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -6,7 +16,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--CSS-->  
-    <link rel="stylesheet" href="Style/style_usu.css">
+    <link rel="stylesheet" href="../Style/style_usu.css">
     <!--BS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
@@ -24,12 +34,11 @@
         <nav class="navbar navbar-expand-lg" id="edit">
             <div class="container">
                 <div class="btn-hora">
-                    <a class="btn btn-info menu a" role="button" id="botao-hora"><b></b></a>
-
+                    <a href="#login" class="btn btn-info menu a" role="button" id="botao-hora"><b></b></a>
                 </div>
                 <div class="position-img">
                     <a class="navbar-brand" href="#" id="img">
-                        <img src="assets/logo/logo_1.png" style="width: 150px;">
+                        <img src="../assets/logo/logo_1.png" style="width: 150px;">
                     </a>
                 </div>
                 <button class="navbar-toggler navbar-light bg-light" type="button" data-toggle="collapse" data-target="#navbarSite">
@@ -46,13 +55,14 @@
             </div>
         </nav>
          <!--BTN FALE CONOSCO--> 
-         <button id="contact-btn"  href="#modal-contato" data-toggle="modal" data-target="#modal-contato" ><img src="assets/add.png" style="width:50px;"/></button>
+         <button id="contact-btn"  href="#modal-contato" data-toggle="modal" data-target="#modal-contato" ><img src="https://img.icons8.com/color/48/000000/chat.png"/></button>
 
     </header>
 
     <!--BEM VINDO-->
     <main>
-         <h1 class="titulo-principal">Seja bem vindo ao sistema Tiago!</h1>
+         <h1 class="titulo-principal">  <?php echo"Olá, seja bem vindo ao sistema ".$_SESSION['usu_nome']."!";?></h1>
+       
     </main>
 
      <!--MUES EVENTOS-->
@@ -78,9 +88,9 @@
                     <td>22/05</td>
                     <td>
                         <center>
-                        <img src="assets/add.png" class="img-actions">
-                        <img src="assets/edit.png" class="img-actions">
-                        <img src="assets/relatorio.png" class="img-actions">
+                        <img src="../assets/add.png" class="img-actions">
+                        <img src="../assets/edit.png" class="img-actions">
+                        <img src="../assets/relatorio.png" class="img-actions">
                         </center>
                     </td>
                   </tr>
@@ -90,9 +100,9 @@
                     <td>10/02</td>
                     <td>
                         <center>
-                        <img src="assets/add.png" class="img-actions">
-                        <img src="assets/edit.png" class="img-actions">
-                        <img src="assets/relatorio.png" class="img-actions">
+                        <img src="../assets/add.png" class="img-actions">
+                        <img src="../assets/edit.png" class="img-actions">
+                        <img src="../assets/relatorio.png" class="img-actions">
                         </center>
                     </td>
                   </tr>
@@ -102,9 +112,9 @@
                     <td>22/12</td>
                     <td>
                         <center>
-                        <img src="assets/add.png" class="img-actions">
-                        <img src="assets/edit.png" class="img-actions">
-                        <img src="assets/relatorio.png" class="img-actions">
+                        <img src="../assets/add.png" class="img-actions">
+                        <img src="../assets/edit.png" class="img-actions">
+                        <img src="../assets/relatorio.png" class="img-actions">
                         </center>
                     </td>
                   </tr>
@@ -114,9 +124,9 @@
                     <td>22/12</td>
                     <td>
                         <center>
-                        <img src="assets/add.png" class="img-actions">
-                        <img src="assets/edit.png" class="img-actions">
-                        <img src="assets/relatorio.png" class="img-actions">
+                        <img src="../assets/add.png" class="img-actions">
+                        <img src="../assets/edit.png" class="img-actions">
+                        <img src="../assets/relatorio.png" class="img-actions">
                         </center>
                     </td>
                   </tr>
@@ -126,9 +136,9 @@
                     <td>22/12</td>
                     <td>
                         <center>
-                        <img src="assets/add.png" class="img-actions">
-                        <img src="assets/edit.png" class="img-actions">
-                        <img src="assets/relatorio.png" class="img-actions">
+                        <img src="../assets/add.png" class="img-actions">
+                        <img src="../assets/edit.png" class="img-actions">
+                        <img src="../assets/relatorio.png" class="img-actions">
                         </center>
                     </td>
                   </tr>
@@ -139,10 +149,10 @@
      <!-- Modal Editar Perfil -->
      <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
-            <div class="modal-content" id="fundo-modal">
+            <div class="modal-content">
                 <div class="modal-body">
                     <form id="contact-form" class="form" action="#" method="POST">
-                        <h1 class="titulos-modal"><b>Editar perfil:</b></h1>
+                        <h1 class="titulo"><b>Editar informações pessoais:</b></h1>
                         <div class="forms">
                             <div class="form-group">
                                 <label class="form-label" for="name"><b>Nome:</b></label>
@@ -181,8 +191,8 @@
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-success"  value="send"
-                                    style="margin-bottom:5px;"><b>Salvar</b></button>
-                     <button type="submit" class="btn btn-danger"  value="send"
+                                    style="margin:5px;"><b>Salvar</b></button>
+                                    <button type="submit" class="btn btn-danger"  value="send"
                                         data-dismiss="modal"><b>Cancelar </b> </button>
                             </div>
                         </div>
@@ -192,47 +202,30 @@
             </div>
         </div>
     </div>
-        <!-- Modal Cadastrar Usuário -->
+        <!-- Modal Contato Usuário -->
         <div class="modal fade" id="modal-contato" role="dialog">
             <div class="modal-dialog" >
                 <div class="modal-content" id="fundo-modal">
                     <div class="modal-body">
                         <form id="contact-form" class="form" action="#" method="POST">
-                            <h1 class="titulos-modal"><b>Cadastrar evento:</b></h1>
+                            <h1 class="titulo text-center"><b>Entrar em contato:</b></h1>
                             <div class="forms">
                                 <div class="form-group">
-                                    <label class="form-label" for="name" style="color:white;"><b>Nome do evento:</b></label>
+                                    <label class="form-label" for="name" style="color:white;"><b>Nome:</b></label>
                                     <input type="text" class="form-control" id="name" name="name"
-                                        placeholder="Digite o ome do evento aqui" required>
+                                        placeholder="Digite seu nome aqui" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label" for="name" style="color:white;"><b>Endereço do evento:</b></label>
-                                    <input type="text" class="form-control" id="email" name="email"
-                                        placeholder="Digite o endereço do evento aqui" required>
+                                    <label class="form-label" for="name" style="color:white;"><b>Email:</b></label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="Digite o seu email aqui" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label" for="name" style="color:white;"><b>Endereço do evento:</b></label>
-                                    <input type="text" class="form-control" id="endereco" name="endereco"
-                                        placeholder="Digite o endereço do seu evento aqui" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label" for="name" style="color:white;"><b>Data do evento:</b></label>
-                                    <input type="date" class="form-control" id="endereco" name="endereco" placeholder="Digite a data do seu evento aqui" required>
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="form-label" for="name" style="color:white;"><b>Quantidade de pessoas:</b></label>
-                                    <input type="number" class="form-control" id="endereco" name="endereco" placeholder="Digite a quantidade de pessoas do seu evento aqui" required>
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="form-label" for="name" style="color:white;"><b>Descrição:</b></label>
-                                    <textarea type="text" class="form-control" id="endereco" name="endereco" placeholder="">
-                                    </textarea>
+                                    <label class="form-label" for="name" style="color:white;"><b>Conte para nós as suas necessidades:</b></label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                   </div>
                                   <div class="text-center">
-                                    <button type="submit" class="btn btn-success"  value="send"
-                                        style="margin-bottom:5px;"><b>Salvar</b></button>
-                                        <button type="submit" class="btn btn-danger"  value="send"
-                                            data-dismiss="modal"><b>Cancelar </b> </button>
+                                    <button type="submit" class="btn btn-success" id="salvar-btn" value="send" style="margin-bottom: 5px;"><b>ENVIAR</b></button><br>
                                 </div>
                             </div>
                         </form>
@@ -248,7 +241,7 @@
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
     </script>
-    <script src="JS/script.js"></script>
+    <script src="../JS/script.js"></script>
     <script>
         function typeWrite(elemento){
     const textoArray = elemento.innerHTML.split('');

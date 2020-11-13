@@ -12,10 +12,30 @@ class usuario {
         $this->tabela = "usuarios";
     }
 
+    public function queryInsert($dados) {
+        try {
+            $cst = $this->conexao->prepare("INSERT INTO $this->tabela (nome_usu, data_nascimento,cpf,telefone, email, username, senha_usu)".
+            "VALUES (:nome_usu, :data_nascimento, :cpf,:telefone, :email, :username, :senha_usu)");
+ 
+            $cst->bindParam(":nome_usu", $dados['name'], PDO::PARAM_STR);
+            $cst->bindParam(":data_nascimento", $dados['dtnasc'], PDO::PARAM_STR);
+            $cst->bindParam(":cpf", $dados['cpf'], PDO::PARAM_STR);
+            $cst->bindParam(":telefone", $dados['telefone'], PDO::PARAM_STR);
+            $cst->bindParam(":email", $dados['email_usu'], PDO::PARAM_STR);
+            $cst->bindParam(":username", $dados['username'], PDO::PARAM_STR);
+            $cst->bindParam(":senha_usu", $dados['senha'], PDO::PARAM_STR);
+            $cst->execute();
+            return true;
+        }
+     catch (PDOException $ex) {
+        return 'error ' . $ex->getMessage();
+     }
+    }
     public function logarUser($dado) {
         try {
-            //Cst = Consulte Stament
-            $cst = $this->conexao->prepare("SELECT id,email,senha from $this->tabela WHERE email=:usu_email AND senha=:usu_senha LIMIT 1");
+     
+            //Cst = Consulte Stament 
+            $cst = $this->conexao->prepare("SELECT id,email,senha_usu from $this->tabela WHERE email=:usu_email AND senha_usu=:usu_senha LIMIT 1");
             $cst->bindParam(":usu_email", $dado['email'], PDO::PARAM_STR);
             $cst->bindParam(":usu_senha", $dado['senha'], PDO::PARAM_STR);
             $cst->execute();
@@ -29,7 +49,7 @@ class usuario {
                 $_SESSION['usu_logado']= true;
                 $_SESSION['usu_id']= $resultado['id']; //o valor que veio do BD vai ser salvo nessa sessao.
                 $_SESSION['usu_email']= $resultado['email'];
-                header("Location:../Views/pagina_usu.php");                 
+                header("Location:../Views/usuario_index.php");                 
             }
         } catch (PDOException $ex) {
             return 'error ' . $ex->getMessage();
@@ -43,7 +63,7 @@ class usuario {
         $cst->bindParam(":usu_id", $this->codigo_usuario, PDO::PARAM_INT);
         $cst->execute();
         $resultado = $cst->fetch(); // SALVOU NO ARRAY FETCH- BUSCAR PELO NOME DO CAMPO
-        $_SESSION['usu_nome'] = $resultado['nome']; // SALVA NA SESSION NOME_USUARIO O NOME DO USUÁRIO.
+        $_SESSION['usu_nome'] = $resultado['nome_usu']; // SALVA NA SESSION NOME_USUARIO O NOME DO USUÁRIO.
         $_SESSION['usu_email'] = $resultado['email']; // SALVA NA SESSION NOME_USUARIO O NOME DO USUÁRIO.
     }
     catch (PDOException $ex) {

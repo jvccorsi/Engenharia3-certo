@@ -1,3 +1,11 @@
+
+<?php
+session_start();
+ob_start(); //limpar a memória para nao dar erro de redirecionamento.
+include("config.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -18,6 +26,10 @@
 
 <body>
     <header>
+    <?php
+       include("Views/modais.php");
+        ?>
+
     <!--SECTION NAV -->
 
         <nav class="navbar navbar-expand-lg " id="edit">
@@ -28,9 +40,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSite">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link active menu" href="">CADASTRO</a></li>
+                        <li class="nav-item"><a class="nav-link active menu" href="#" data-toggle="modal" data-target="#modal-cadastro">CADASTRO</a></li>
                         <div class="contato-nav">
-                            <a href="usuario_index.html" class="btn btn-info menu a" role="button" id="botao"><b>LOGIN</b></a>
+                            <a href="#container-forms" class="btn btn-info menu a" role="button" id="botao"><b>LOGIN</b></a>
                         </div>
                     </ul>
                 </div>
@@ -101,7 +113,7 @@
             </div>
             <div class="col col-xl-6 col-lg-12 col-md-12">
                 <div id="container-forms">
-                    <form id="contact-form" class="form" action="Controllers/valida_login.php" method="POST">
+                <form id="contact-form" class="form" action="Controllers/valida_login.php" method="POST">
                         <h1 class="titulos-login text-center"><b>Acesse o sistema:</b></h1>
                         <div class="forms">
                             <div class="form-group">
@@ -122,7 +134,6 @@
                             </div>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
@@ -242,6 +253,7 @@
             </div>
         </div>
     </div>
+
     <!--BS-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
