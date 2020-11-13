@@ -2,6 +2,7 @@
 *{ border:none; outline:none; font-family: 'PT Sans', sans-serif;margin: 0px;}
 a {text-decoration:none;}
 ul{list-style: none;}
+html{scroll-behavior:smooth;}
 
 /* RESET */
 header{height: 500px;background: url(../assets/wave.svg);background-size:cover;}
@@ -12,7 +13,7 @@ footer{background-color: #0099ff;color: white;font-size: 20px;letter-spacing: 0.
 .textos{font-size: 22px;}
 .titulos{font-size: 45px;}
 
-#container-quemsomos{margin-bottom:120px;padding: 50px;}
+#container-quemsomos{margin-bottom:80px;padding: 50px;}
 #container-servicos{padding: 50px;}
 
 /* NAV */
@@ -23,10 +24,17 @@ footer{background-color: #0099ff;color: white;font-size: 20px;letter-spacing: 0.
 border-radius: 73px;}
 .contato-nav{margin-left: 50px;}
 
+/*BTN - FIXED*/
+#contact-btn{position:fixed;float:right;bottom:30px;right:80px;border-radius: 23px;background-color:whitesmoke;transition:0.5s;}
+#contact-btn:hover{position:fixed;float:right;bottom:30px;right:80px;border-radius: 15px;background-color:whitesmoke;transition:0.5s;}
+
 /* SECTION */
 .hr{background-color: #7D5FFF;width: 120px;height: 3px;}
-#texto-section-quemsomos{margin-top: 35px;;width: 60%;}
+#texto-section-quemsomos{margin-top: 65px;;width: 60%;}
 
+
+/* SERVICOS*/
+.img-servicos{width:120px;margin-bottom: 25px;}
 /*MAIN*/
 .section-footer{background-color: #0099ff;height: 600px;}
 .titulos-info-login{color: white;font-size: 35px;}
@@ -65,3 +73,9 @@ border-radius: 73px;}
 .js-unhighlight-label {
 	color: #999 
 }
+
+/*MODAL CADASTRO*/
+#fundo-modal{background-color:  #7D5FFF; border-radius: 77px;color:white;}
+#fundo-modal input{border-radius: 55px;}
+#fundo-modal button{width:100%;}
+#salvar-btn{background-color: white;color:black;border:1px solid black;border-radius: 25px;font-size: 20px;}

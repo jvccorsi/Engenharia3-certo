@@ -1,3 +1,8 @@
+"use strict";
+function hora(){
+    var date = new Date();
+    document.getElementById("botao-hora").innerHTML = date.getHours() + ":" + date.getMinutes();
+}
 $(document).ready(function() {
 	// Test for placeholder support
     $.support.placeholder = (function(){
