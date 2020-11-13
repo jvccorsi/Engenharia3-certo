@@ -24,7 +24,8 @@
         <nav class="navbar navbar-expand-lg" id="edit">
             <div class="container">
                 <div class="btn-hora">
-                    <a href="#login" class="btn btn-info menu a" role="button" id="botao-hora"><b></b></a>
+                    <a class="btn btn-info menu a" role="button" id="botao-hora"><b></b></a>
+
                 </div>
                 <div class="position-img">
                     <a class="navbar-brand" href="#" id="img">
@@ -45,7 +46,7 @@
             </div>
         </nav>
          <!--BTN FALE CONOSCO--> 
-         <button id="contact-btn"  href="#modal-contato" data-toggle="modal" data-target="#modal-contato" ><img src="https://img.icons8.com/color/48/000000/chat.png"/></button>
+         <button id="contact-btn"  href="#modal-contato" data-toggle="modal" data-target="#modal-contato" ><img src="assets/add.png" style="width:50px;"/></button>
 
     </header>
 
@@ -138,10 +139,10 @@
      <!-- Modal Editar Perfil -->
      <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content" id="fundo-modal">
                 <div class="modal-body">
                     <form id="contact-form" class="form" action="#" method="POST">
-                        <h1 class="titulo"><b>Editar informações pessoais:</b></h1>
+                        <h1 class="titulos-modal"><b>Editar perfil:</b></h1>
                         <div class="forms">
                             <div class="form-group">
                                 <label class="form-label" for="name"><b>Nome:</b></label>
@@ -180,8 +181,8 @@
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-success"  value="send"
-                                    style="margin:5px;"><b>Salvar</b></button>
-                                    <button type="submit" class="btn btn-danger"  value="send"
+                                    style="margin-bottom:5px;"><b>Salvar</b></button>
+                     <button type="submit" class="btn btn-danger"  value="send"
                                         data-dismiss="modal"><b>Cancelar </b> </button>
                             </div>
                         </div>
@@ -191,30 +192,47 @@
             </div>
         </div>
     </div>
-        <!-- Modal Contato Usuário -->
+        <!-- Modal Cadastrar Usuário -->
         <div class="modal fade" id="modal-contato" role="dialog">
             <div class="modal-dialog" >
                 <div class="modal-content" id="fundo-modal">
                     <div class="modal-body">
                         <form id="contact-form" class="form" action="#" method="POST">
-                            <h1 class="titulo text-center"><b>Entrar em contato:</b></h1>
+                            <h1 class="titulos-modal"><b>Cadastrar evento:</b></h1>
                             <div class="forms">
                                 <div class="form-group">
-                                    <label class="form-label" for="name" style="color:white;"><b>Nome:</b></label>
+                                    <label class="form-label" for="name" style="color:white;"><b>Nome do evento:</b></label>
                                     <input type="text" class="form-control" id="name" name="name"
-                                        placeholder="Digite seu nome aqui" required>
+                                        placeholder="Digite o ome do evento aqui" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label" for="name" style="color:white;"><b>Email:</b></label>
-                                    <input type="email" class="form-control" id="email" name="email"
-                                        placeholder="Digite o seu email aqui" required>
+                                    <label class="form-label" for="name" style="color:white;"><b>Endereço do evento:</b></label>
+                                    <input type="text" class="form-control" id="email" name="email"
+                                        placeholder="Digite o endereço do evento aqui" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label" for="name" style="color:white;"><b>Conte para nós as suas necessidades:</b></label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <label class="form-label" for="name" style="color:white;"><b>Endereço do evento:</b></label>
+                                    <input type="text" class="form-control" id="endereco" name="endereco"
+                                        placeholder="Digite o endereço do seu evento aqui" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="name" style="color:white;"><b>Data do evento:</b></label>
+                                    <input type="date" class="form-control" id="endereco" name="endereco" placeholder="Digite a data do seu evento aqui" required>
+                                  </div>
+                                  <div class="form-group">
+                                    <label class="form-label" for="name" style="color:white;"><b>Quantidade de pessoas:</b></label>
+                                    <input type="number" class="form-control" id="endereco" name="endereco" placeholder="Digite a quantidade de pessoas do seu evento aqui" required>
+                                  </div>
+                                  <div class="form-group">
+                                    <label class="form-label" for="name" style="color:white;"><b>Descrição:</b></label>
+                                    <textarea type="text" class="form-control" id="endereco" name="endereco" placeholder="">
+                                    </textarea>
                                   </div>
                                   <div class="text-center">
-                                    <button type="submit" class="btn btn-success" id="salvar-btn" value="send" style="margin-bottom: 5px;"><b>ENVIAR</b></button><br>
+                                    <button type="submit" class="btn btn-success"  value="send"
+                                        style="margin-bottom:5px;"><b>Salvar</b></button>
+                                        <button type="submit" class="btn btn-danger"  value="send"
+                                            data-dismiss="modal"><b>Cancelar </b> </button>
                                 </div>
                             </div>
                         </form>

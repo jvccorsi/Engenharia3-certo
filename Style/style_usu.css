@@ -21,6 +21,21 @@ border-radius: 73px;margin-top: 10px;}
 #itens-menu{margin-left: 90%;}
 .position-img{margin-left: 48%;}
 
+
+/*NAV MEDIA QUERIES*/
+@media screen and (max-width:1750px){
+    #itens-menu{margin-left: 70%;}
+}
+@media screen and (max-width:1570px){
+    #itens-menu{margin-left: 50%;}
+    .btn-hora{margin-left:-150px;}
+}
+@media screen and (max-width:1420px){
+    #itens-menu{margin-left: 35%;}
+    .btn-hora{margin-left:-115px;}
+}
+
+
 /*BTN - FIXED*/
 #contact-btn{position:fixed;float:right;bottom:30px;right:80px;border-radius: 23px;background-color:whitesmoke;transition:0.5s;}
 #contact-btn:hover{position:fixed;float:right;bottom:30px;right:80px;border-radius: 15px;background-color:whitesmoke;transition:0.5s;}
@@ -62,6 +77,9 @@ section{margin-top: 100px;height:600px;}
 .table{border-radius:15px;}
 .title_tabela{font-size:20px;}
 .titulos{color:white;font-size:50px;}
+
+.titulos-modal{color:white;font-size:35px;letter-spacing:0.5px;text-align: center;}
+
 .hr{background-color: #7D5FFF;width: 300px;height: 3px;margin: auto;}
 .img-actions{width:40px;margin-left: 10px;}
 
