@@ -48,6 +48,25 @@
         unset($_SESSION['msg']);
     }
     ?>
+     <?php
+    //MODAL CADASTRO USUARIO
+    if (isset($_SESSION['msg_cad_sucesso'])) {
+        if ($_SESSION['msg_cad_sucesso'] == "sucesso") {
+    ?>
+            <script>
+                function abreModal() {
+                    $("#myModalCad_usuario").modal({
+                        show: true
+                    });
+                }
+                setTimeout(abreModal, 10);
+            </script>
+    <?php
+        }
+        unset($_SESSION['msg_cad_sucesso']);
+    }
+    ?>
+
 
     <!-- MODAL SENHA INCORRETA-->
     <div id="myModal" class="modal" tabindex="-1" role="dialog">
@@ -60,7 +79,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>A senha informada para o login está incorreta!</p>
+                    <p>A senha ou email informado para o login está incorreto(a)!</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
@@ -74,6 +93,22 @@
             <div class="modal-content">
                 <div class="modal-header bg-success text-white">
                     <h5 class="modal-title">Usuário deslogado com sucesso!!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+      <!-- MODAL CADASTRO COM SUCESSO -->
+      <div id="myModalCad_usuario" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">Usuário cadastrado com sucesso!!</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

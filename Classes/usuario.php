@@ -62,7 +62,7 @@ class usuario {
         $cst = $this->conexao->prepare("SELECT * from $this->tabela WHERE id=:usu_id");
         $cst->bindParam(":usu_id", $this->codigo_usuario, PDO::PARAM_INT);
         $cst->execute();
-        $resultado = $cst->fetch(); // SALVOU NO ARRAY FETCH- BUSCAR PELO NOME DO CAMPO
+        $resultado = $cst->fetch(); // SALVA OS DADOS DO BD NA FORMA DE UM ARRAY.
         $_SESSION['usu_nome'] = $resultado['nome_usu']; // SALVA NA SESSION NOME_USUARIO O NOME DO USUÁRIO.
         $_SESSION['usu_email'] = $resultado['email']; // SALVA NA SESSION NOME_USUARIO O NOME DO USUÁRIO.
     }
@@ -70,6 +70,4 @@ class usuario {
         return 'error ' . $ex->getMessage();
     }
 }
-
-
 }
