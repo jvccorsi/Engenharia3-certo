@@ -48,7 +48,7 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
                     <ul class="navbar-nav" id="itens-menu">
                         <a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-info menu a" role="button" id="botao"><b>PERFIL</b></a>
                         <div class="contato-nav">
-                        <a href="#myModal" data-toggle="modal" data-target="#myModa2" class="btn btn-info menu a" role="button" id="botao"><b>SAIR</b></a>
+                            <a href="#myModal" data-toggle="modal" data-target="#myModa2" class="btn btn-info menu a" role="button" id="botao"><b>SAIR</b></a>
                         </div>
                     </ul>
                 </div>
@@ -61,7 +61,7 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
 
     <!--BEM VINDO-->
     <main>
-        <h1 class="titulo-principal"> <?php echo "Olá, seja bem vindo ao sistema " . $_SESSION['usu_nome'] . "!"; ?></h1>
+        <h1 class="titulo-principal"> <?php echo "Olá, seja bem vindo ao sistema: " . $_SESSION['usu_nome'] . " !"; ?></h1>
 
     </main>
 

@@ -26,4 +26,3 @@ if ($_SESSION['usu_logado']) { // se ele tiver mesmo essa sessao(que foi passada
     $_SESSION['login_incorreto_usu'] = "necessario_realizar_login";
     header("location:../index.php");
 }
-?>
