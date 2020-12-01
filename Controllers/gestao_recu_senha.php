@@ -418,7 +418,7 @@ if($chave){
 </html>
   ";
 
-    $controler =  $obj_Email->email($email, "equipe.rolederep@gmail.com", "Equipe Role de Rep", "Recuperação de", $corpo_email);
+    $controler =  $obj_Email->email($email, "equipe.rolederep@gmail.com", "Equipe Role de Rep", "Recuperação de Senha", $corpo_email);
     $_SESSION['enviar_emaiil_recu_senha'] = "sucesso_senha";
     header("location:../index.php");
 }

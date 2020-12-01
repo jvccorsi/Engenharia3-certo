@@ -136,7 +136,7 @@
             </script>
     <?php
         }
-        unset($_SESSION['msg_erro']);
+        unset($_SESSION['enviar_emaiil_recu_senha']);
     }
     ?>  
 
