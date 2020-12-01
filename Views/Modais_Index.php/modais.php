@@ -121,6 +121,28 @@
         unset($_SESSION['msg_erro']);
     }
     ?>
+      <?php
+    //MODAL EMAIL RECU SENHA ENVIADO  COM SUCESSO (RECU SENHA) 
+    if (isset($_SESSION['enviar_emaiil_recu_senha'])) {
+        if ($_SESSION['enviar_emaiil_recu_senha'] == "sucesso_senha") {
+    ?>
+            <script>
+                function abreModal() {
+                    $("#enviar_email_recu_senha").modal({
+                        show: true
+                    });
+                }
+                setTimeout(abreModal, 10);
+            </script>
+    <?php
+        }
+        unset($_SESSION['msg_erro']);
+    }
+    ?>  
+
+
+
+
     
 
     <!-- MODAL SENHA INCORRETA-->
@@ -328,6 +350,21 @@
                 <center>
                     <div class="modal-header bg-danger text-white ">
                         <h5 class="modal-title">Usuário não encontrado. Tente novamente</h5>
+                    </div>
+                </center>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL EMAIL ENVIADO  ALTERAR SENHA  (RECU SENHA ) -->
+    <div id="enviar_email_recu_senha" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <center>
+                    <div class="modal-header bg-success text-white ">
+                        <h5 class="modal-title">O link para recuperação de senha foi enviado para o email informado, verifique sua caixa eletrônica ou de spam. </h5>
                     </div>
                 </center>
                 <div class="modal-footer">

@@ -1,23 +1,9 @@
-<?php
-
-session_start();
-include ('../Classes/usuario.php');
-require_once '../assets/PHPMailer/src/Enviar_Email.php';
-
-$obj_User = new usuario();
-$obj_Email = new Enviar_Email();
-$email = $_POST['email_recuperar_senha'];
-
-$chave = $obj_User->Recuperar_Senha($email);
-
-if($chave){
-    $chave_acesso = "http://localhost/git/Views/alterar_senha.php?chave=".$chave;
-    $corpo_email ="
-    <!doctype html>
+<!doctype html>
 <html>
   <head>
     <meta name='viewport' content='width=device-width' />
     <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+    <title>Simple Transactional Email</title>
     <style>
       /* -------------------------------------
           GLOBAL RESETS
@@ -377,7 +363,7 @@ if($chave){
                                 <table role='presentation' border='0' cellpadding='0' cellspacing='0'>
                                   <tbody>
                                     <tr>
-                                      <td> <a href='".$chave_acesso."' target='_blank'>Clique aqui </a> </td>
+                                      <td> <a href='http://htmlemail.io' target='_blank'>Clique aqui </a> </td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -385,7 +371,7 @@ if($chave){
                             </tr>
                           </tbody>
                         </table>
-                            <p>Ou copie e cole no seu navegador este link: ".$chave_acesso."</p>
+                            <p>Ou copie e cole no seu navegador este link: </p>
                             <p>Atenciosamente, Equipe Rolê de Rep! </p>
                       </td>
                     </tr>
@@ -416,12 +402,3 @@ if($chave){
     </table>
   </body>
 </html>
-  ";
-
-    $controler =  $obj_Email->email($email, "equipe.rolederep@gmail.com", "Equipe Role de Rep", "Recuperação de", $corpo_email);
-    $_SESSION['enviar_emaiil_recu_senha'] = "sucesso_senha";
-    header("location:../index.php");
-}
-else{
-    echo 'ERROR: EMAIL NAO ENCONTRADO!!';
-}
