@@ -249,6 +249,19 @@
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Digite seu nome aqui" required>
                             </div>
                             <div class="form-group">
+                                <label class="form-label" for="sobrenome" style="color:white;"><b>Sobrenome:</b></label>
+                                <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Digite seu sobrenome aqui" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="genero" style="color:white;"><b>Gênero:</b></label>
+                                <select class="form-control" name="genero" id="genero">
+                                <option value="masculino">Masculino</option>
+                                <option value="feminino">Feminino</option>
+                                <option value="prefiro_nao_dizer">Prefiro não dizer</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
                                 <label class="form-label" for="email" style="color:white;"><b>Data de nascimento:</b></label>
                                 <input type="text" class="form-control" id="dtnasc" name="dtnasc" placeholder="Digite sua data de nascimento aqui" required>
                             </div>

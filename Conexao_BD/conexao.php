@@ -12,7 +12,7 @@ class Conexao {
         $this->servidor = "localhost";
         $this->usuario = "root";
         $this->senha = "";
-        $this->database = "eng_3";
+        $this->database = "windparty";
 
         try {
             $this->conexao = new PDO(

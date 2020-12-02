@@ -115,30 +115,29 @@ CREATE TABLE `receita` (
 --
 
 CREATE TABLE `usuarios` (
-  `id_usuario` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL ,
   `email` varchar(100) NOT NULL,
   `username` varchar(20) NOT NULL,
   `senha` varchar(30) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `sobrenome` varchar(50) NOT NULL,
-  `cpf` int(11) NOT NULL,
-  `data_nasc` date NOT NULL,
+  `cpf` varchar(14) NOT NULL,
+  `data_nasc` varchar(10) NOT NULL,
   `genero` varchar(20) NOT NULL,
-  `telefone` int(11) NOT NULL
+  `telefone` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
-
 INSERT INTO `usuarios` (`id_usuario`, `email`, `username`, `senha`, `nome`, `sobrenome`, `cpf`, `data_nasc`, `genero`, `telefone`) VALUES
-(1, 'jvccorsiferrera@hotmail.com', 'joao', '23', 'joão', 'ferreira', 2147483647, '0000-00-00', 'masculino', 2147483647),
-(2, '0', 'corsi', 'jvccorsi145', 'joao', 'ferreira', 2147483647, '0000-00-00', 'masculino', 2147483647),
-(3, '0', 'corsi', '12345', 'joão victor corsi', 'ferreira', 2147483647, '0000-00-00', 'masculino', 2147483647),
+(1, 'jvccorsiferrera@hotmail.com', 'joao', '23', 'joão', 'ferreira', 2147483647, '0000-00-00', 'masculino', '2147483647'),
+(2, '0', 'corsi', 'jvccorsi145', 'joao', 'ferreira', 2147483647, '0000-00-00', 'masculino', '2147483647'),
+(3, '0', 'corsi', '12345', 'joão victor corsi', 'ferreira', 2147483647, '0000-00-00', 'masculino', '2147483647'),
 (4, 'asdad@asda.com', 'a', 'a', 'aa', 'ferreira', 0, '0000-00-00', 'masculino', 0),
-(5, 'jvccorsiferrerazzz22@hotmail.com', 'jvccorsi', 'jvccorsi145', 'João', 'ferreira', 2147483647, '0000-00-00', 'masculino', 2147483647),
-(6, 'jvccorsasdasiferrera@hotmail.com', 'asadsads', 'asdasda', 'plinio', 'fereira', 2147483647, '0000-00-00', 'masculino', 2147483647),
-(7, 'plinio_robert@hotmail.com', '1aaa', 'asdasd', 'plinio_robert', 'fereira', 1, '0000-00-00', 'masculino', 2147483647);
+(5, 'jvccorsiferrerazzz22@hotmail.com', 'jvccorsi', 'jvccorsi145', 'João', 'ferreira', 2147483647, '0000-00-00', 'masculino', '2147483647'),
+(6, 'jvccorsasdasiferrera@hotmail.com', 'asadsads', 'asdasda', 'plinio', 'fereira', 2147483647, '0000-00-00', 'masculino', '2147483647'),
+(7, 'plinio_robert@hotmail.com', '1aaa', 'asdasd', 'plinio_robert', 'fereira', 1, '0000-00-00', 'masculino',' 2147483647');
 
 --
 -- Índices para tabelas despejadas
@@ -218,7 +217,7 @@ ALTER TABLE `receita`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
