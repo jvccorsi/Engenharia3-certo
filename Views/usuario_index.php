@@ -55,7 +55,7 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
             </div>
         </nav>
         <!--BTN FALE CONOSCO-->
-        <button id="contact-btn" href="#modal-contato" data-toggle="modal" data-target="#modal-contato"><img src="https://img.icons8.com/color/48/000000/chat.png" /></button>
+        <button id="contact-btn" href="#modal-contato" data-toggle="modal" data-target="#modal-addEvent"> <img src="../assets/add.png" class="img-actions"></button>
 
     </header>
 
