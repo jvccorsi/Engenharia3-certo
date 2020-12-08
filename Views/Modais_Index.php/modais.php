@@ -301,7 +301,7 @@
         <div class="modal-dialog ">
             <div class="modal-content" id="fundo-modal">
                 <div class="modal-body">
-                    <form id="contact-form" class="form" action="#" method="POST">
+                    <form id="contact-form" class="form" action="Controllers/gestao_fale_conosco.php" method="POST">
                         <h1 class="titulo text-center"><b>Entrar em contato:</b></h1>
                         <div class="forms">
                             <div class="form-group">
@@ -310,11 +310,24 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="name" style="color:white;"><b>Email:</b></label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Digite o seu email aqui" required>
+                                <input type="email" class="form-control" id="email" name="email_usu" placeholder="Digite o seu email aqui" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="name" style="color:white;"><b>Conte para nós as suas necessidades:</b></label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <label class="form-label" for="tel_contato" style="color:white;"><b>Telefone:</b></label>
+                                <input type="text" class="form-control" id="tel" name="tel_contato" placeholder="Digite seu telefone aqui" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="tipo_msg" style="color:white;"><b>Tipo de mensagem:</b></label>
+                                <select class="form-control" name="tipo_msg" id="tipo_msg" >
+                                <option value=" ">Selecione aqui o tipo da mensagem:</option>
+                                <option value="Reclamacao">Reclamação</option>
+                                <option value="Duvidas">Dúvidas</option>
+                                <option value="Sugestoes">Sugestões</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" style="color:white;"><b>Conte para nós as suas necessidades:</b></label>
+                                <textarea class="form-control" name="descricao_usu" rows="3"></textarea>
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-success" id="salvar-btn" value="send" style="margin-bottom: 5px;"><b>ENVIAR</b></button><br>

@@ -87,9 +87,9 @@ CREATE TABLE `mensagem` (
   `id_mensagem` int(11) NOT NULL,
   `nome` varchar(30) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `tipo_mensagem` int(11) NOT NULL,
-  `telefone` int(11) NOT NULL,
-  `descricao` varchar(400) NOT NULL
+  `tipo_mensagem` varchar(20) NOT NULL,
+  `telefone` varchar(24) NOT NULL,
+  `descricao` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
