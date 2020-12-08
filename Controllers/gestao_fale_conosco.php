@@ -1,10 +1,14 @@
 <?php
 
 session_start();
-
+include ('../Classes/fale_conosco.php');
 require_once '../assets/PHPMailer/src/Enviar_Email.php';
 
-  $obj_Email = new Enviar_Email();
+$obj_Email = new Enviar_Email();
+$obj_Fale_Conosco = new fale_conosco();
+
+$obj_Fale_Conosco->queryInsert($_POST);
+
   $nome_usu = $_POST['name'];
   $email_usu= $_POST['email_usu'];
   $tel_contato_usu = $_POST['tel_contato'];
@@ -404,5 +408,5 @@ require_once '../assets/PHPMailer/src/Enviar_Email.php';
   ";
 
     $controler =  $obj_Email->email("equipe.rolederep@gmail.com", $email_usu, $nome_usu, "Fale conosco", $corpo_email);
-    $_SESSION['enviar_emaiil_recu_senha'] = "sucesso_senha";
+    $_SESSION['reclamacao_enviada_sucesso'] = "reclamacao_enviada_sucesso";
     header("location:../index.php");

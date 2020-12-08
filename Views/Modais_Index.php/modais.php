@@ -139,6 +139,24 @@
         unset($_SESSION['enviar_emaiil_recu_senha']);
     }
     ?>  
+          <?php
+    //MODAL FALE CONOSCO SUCESSO 
+    if (isset($_SESSION['reclamacao_enviada_sucesso'])) {
+        if ($_SESSION['reclamacao_enviada_sucesso'] == "reclamacao_enviada_sucesso") {
+    ?>
+            <script>
+                function abreModal() {
+                    $("#reclamacao_enviada_sucesso").modal({
+                        show: true
+                    });
+                }
+                setTimeout(abreModal, 10);
+            </script>
+    <?php
+        }
+        unset($_SESSION['reclamacao_enviada_sucesso']);
+    }
+    ?>  
 
 
 
@@ -327,7 +345,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label" style="color:white;"><b>Conte para nós as suas necessidades:</b></label>
-                                <textarea class="form-control" name="descricao_usu" rows="3"></textarea>
+                                <textarea class="form-control" name="descricao_usu" rows="3" maxlength="400" ></textarea>
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-success" id="salvar-btn" value="send" style="margin-bottom: 5px;"><b>ENVIAR</b></button><br>
@@ -391,6 +409,22 @@
                 <center>
                     <div class="modal-header bg-success text-white ">
                         <h5 class="modal-title">O link para recuperação de senha foi enviado para o email informado, verifique sua caixa eletrônica ou de spam. </h5>
+                    </div>
+                </center>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- MODAL FALE CONOSCO ENVIADO COM SUCESSO  -->
+        <div id="reclamacao_enviada_sucesso" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <center>
+                    <div class="modal-header bg-success text-white ">
+                        <h5 class="modal-title">Sua reclamação foi enviada com sucesso para a equipe responsável, obrigado pelo contato!! </h5>
                     </div>
                 </center>
                 <div class="modal-footer">

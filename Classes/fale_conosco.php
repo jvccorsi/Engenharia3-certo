@@ -14,7 +14,6 @@ class fale_conosco
         $this->tabela = "mensagem";
     }
 
-
     public function queryInsert($dados)
     {
         try {
@@ -22,14 +21,11 @@ class fale_conosco
                 "VALUES (:nome, :email, :tipo_mensagem,:telefone,:descricao)");
 
             $cst->bindParam(":nome", $dados['name'], PDO::PARAM_STR);//ok
-            $cst->bindParam(":genero", $dados['genero'], PDO::PARAM_STR);
-            $cst->bindParam(":sobrenome", $dados['sobrenome'], PDO::PARAM_STR);//ok
-            $cst->bindParam(":data_nasc", $dados['dtnasc'], PDO::PARAM_STR);//ok
-            $cst->bindParam(":cpf", $dados['cpf'], PDO::PARAM_STR);//ok
-            $cst->bindParam(":telefone", $dados['telefone'], PDO::PARAM_STR);//ok
-            $cst->bindParam(":email", $dados['email_usu'], PDO::PARAM_STR);//ok
-            $cst->bindParam(":username", $dados['username'], PDO::PARAM_STR);//ok
-            $cst->bindParam(":senha", $dados['senha'], PDO::PARAM_STR);//ok
+            $cst->bindParam(":email", $dados['email_usu'], PDO::PARAM_STR);
+            $cst->bindParam(":tipo_mensagem", $dados['tipo_msg'], PDO::PARAM_STR);//ok
+            $cst->bindParam(":telefone", $dados['tel_contato'], PDO::PARAM_STR);//ok
+            $cst->bindParam(":descricao", $dados['descricao_usu'], PDO::PARAM_STR);//ok
+
             $cst->execute();
             return true;
         } catch (PDOException $ex) {
