@@ -53,7 +53,7 @@ class usuario
                 $resultado = $cst->fetch(); // vai trazer as informações do BD caso o usu existir
                 $_SESSION['usu_logado'] = true;
                 $_SESSION['usu_id'] = $resultado['id_usuario']; //o valor que veio do BD vai ser salvo nessa sessao.
-                header("Location:../Views/usuario_index.php");
+                header("Location:../Views/dashboard.php");
             }
         } catch (PDOException $ex) {
             return 'error ' . $ex->getMessage();
