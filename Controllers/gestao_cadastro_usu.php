@@ -9,7 +9,6 @@
         header("location:../index.php");
 
     } else {
-        echo 'asdasdsad-naoentrou no if2';
         $_SESSION['msg'] = "<script> alert('Erro ao realizar o cadastro!'); </script>";
         header("location:../../../index.php?mod=usuarios&sub=login");
     }

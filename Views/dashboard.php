@@ -35,7 +35,7 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
 
     <!--BEM VINDO-->
     <main>
-        <h1 class="titulo-principal"> <?php echo "Olá, seja bem vindo ao sistema: " . $_SESSION['usu_nome'] . " !"; ?></h1>
+        <h1 class="titulo-principal"> <?php echo "Olá, seja bem vindo ao sistema: " . $_SESSION['usu_username'] . " !"; ?></h1>
 
     </main>
 
@@ -129,7 +129,7 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
     </script>
     <script src="../JS/script.js"></script>
-    <script>
+    <script type="text/javascript">
         function typeWrite(elemento) {
             const textoArray = elemento.innerHTML.split('');
             elemento.innerHTML = ' ';
@@ -148,6 +148,34 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
             var date = new Date();
             document.getElementById("botao-hora").innerHTML = date.getHours() + ":" + date.getMinutes();
         }
+
+            $('#myModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var usu_id = button.data('whatever_id')  
+            var usu_nome= button.data('whatever_nome')
+            var usu_sobrenome = button.data('whatever_usu_sobrenome')
+            var usu_email = button.data('whatever_email')
+            var usu_username = button.data('whatever_username')
+            var usu_senha = button.data('whatever_usu_senha')
+            var usu_cpf = button.data('whatever_cpf')
+            var usu_data_nasc = button.data('whatever_data_nasc')
+            var usu_telefone = button.data('whatever_usu_telefone')
+            var usu_genero = button.data('whatever_usu_genero')
+
+            var modal = $(this)
+
+             modal.find('#name').val(usu_nome)
+             modal.find('#Sobrenome').val(usu_sobrenome)
+             modal.find('#dtnasc').val(usu_data_nasc)
+             modal.find('#cpf').val(usu_cpf)
+             modal.find('#genero').val(usu_genero)
+             modal.find('#telefone').val(usu_telefone)
+             modal.find('#email').val(usu_email)
+             modal.find('#username').val(usu_username)
+             modal.find('#senha_usu').val(usu_senha)
+             modal.find('#id_usuario').val(usu_id)
+           
+    })
     </script>
 
 </body>

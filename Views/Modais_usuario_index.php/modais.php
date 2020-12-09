@@ -1,10 +1,29 @@
+<?php
+
+    //MODAL SUCESSO EDITAR PERFIL
+    if (isset($_SESSION['editar_dados_sucesso'])) {
+        if ($_SESSION['editar_dados_sucesso'] == "sucesso") {
+    ?>
+            <script>
+                function abreModal() {
+                    $("#editar_perfil_sucesso").modal({
+                        show: true
+                    });
+                }
+                setTimeout(abreModal, 10);
+            </script>
+    <?php
+        }
+        unset($_SESSION['editar_dados_sucesso']);
+    }
+    ?> 
  <!-- Modal Editar Perfil -->
  <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    <form id="contact-form" class="form" action="#" method="POST">
-                        <h1 class="titulo"><b>Editar informações pessoais:</b></h1>
+                    <form id="contact-form" class="form" action="../Controllers/editar_info_pessoais.php" method="POST">
+                        <h1 class="titulo" id="titulo"><b>Editar informações pessoais:</b></h1>
                         <div class="forms">
                             <div class="form-group">
                                 <label class="form-label" for="name"><b>Nome:</b></label>
@@ -12,9 +31,22 @@
                                     placeholder="Digite seu nome aqui" required>
                             </div>
                             <div class="form-group">
+                                <label class="form-label" for="Sobrenome"><b>Sobrenome:</b></label>
+                                <input type="text" class="form-control" id="Sobrenome" name="Sobrenome"
+                                    placeholder="Digite seu Sobrenome aqui" required>
+                            </div>
+                            <div class="form-group">
                                 <label class="form-label" for="email"><b>Data de nascimento:</b></label>
                                 <input  type="text" class="form-control" id="dtnasc" name="dtnasc"
                                     placeholder="Não é possível alterar este campo" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="genero" ><b>Gênero:</b></label>
+                                <select class="form-control" name="genero" id="genero">
+                                <option value="masculino">Masculino</option>
+                                <option value="feminino">Feminino</option>
+                                <option value="prefiro_nao_dizer">Prefiro não dizer</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="name"><b>CPF:</b></label>
@@ -22,7 +54,7 @@
                                     placeholder="Não é possível alterar este campo" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="name"><b>Telefone:</b></label>
+                                <label class="form-label" for="telefone"><b>Telefone:</b></label>
                                 <input type="text" class="form-control" id="telefone" name="telefone"
                                     placeholder="(00)0000-0000" required>
                             </div>
@@ -37,9 +69,9 @@
                                     placeholder="Não é possível alterar este campo" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="email"><b>Senha:</b></label>
-                                <input type="password" class="form-control" id="senha" name="senha"
-                                    placeholder="Digite sua senha aqui" required>
+                                <label class="form-label" for="senha_usu"><b>Senha:</b></label>
+                                <input  type="text" class="form-control" id="senha_usu" name="senha_usu"
+                                    placeholder="Não é possível alterar este campo" required>
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-success"  value="send"
@@ -47,6 +79,7 @@
                                     <button type="submit" class="btn btn-danger"  value="send"
                                         data-dismiss="modal"><b>Cancelar </b> </button>
                             </div>
+                            <input type="hidden" id="id_usuario" name="id_usu">
                         </div>
                     </form>
                 </div>
@@ -148,6 +181,19 @@
         <div class="modal-footer">
         <a href="../Controllers/sair.php"> <button type="button" class="btn btn-danger" >Confirmar</button> </a>
             <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+        </div>
+        </div>
+    </div>
+    </div>
+    <!-- MODAL EDITAR PERFIL SUCESSO   -->
+<div class="modal fade" id="editar_perfil_sucesso" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="exampleModalLongTitle">Seus dados foram editados com sucesso!!</h5>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal">Voltar</button>
         </div>
         </div>
     </div>

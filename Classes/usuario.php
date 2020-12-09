@@ -68,8 +68,15 @@ class usuario
             $cst->bindParam(":usu_id", $this->codigo_usuario, PDO::PARAM_INT);
             $cst->execute();
             $resultado = $cst->fetch(); // SALVA OS DADOS DO BD NA FORMA DE UM ARRAY.
-            $_SESSION['usu_nome'] = $resultado['nome']; // SALVA NA SESSION nomeARIO O NOME DO USUÁRIO.
-            $_SESSION['usu_email'] = $resultado['email']; // SALVA NA SESSION nomeARIO O NOME DO USUÁRIO.
+            $_SESSION['usu_nome'] = $resultado['nome'];   
+            $_SESSION['usu_sobrenome'] = $resultado['sobrenome'];  
+            $_SESSION['usu_email'] = $resultado['email'];   
+            $_SESSION['usu_username'] = $resultado['username'];   
+            $_SESSION['usu_senha'] = $resultado['senha'];   
+            $_SESSION['usu_cpf'] = $resultado['cpf'];   
+            $_SESSION['usu_data_nasc'] = $resultado['data_nasc'];   
+            $_SESSION['usu_genero'] = $resultado['genero']; 
+            $_SESSION['usu_telefone'] = $resultado['telefone']; 
         } catch (PDOException $ex) {
             return 'error ' . $ex->getMessage();
         }
@@ -116,5 +123,29 @@ class usuario
         $cst->bindParam(":NOVA_SENHA", $nova_senha, PDO::PARAM_STR);
         $cst->bindParam(":id_usu", $id, PDO::PARAM_INT);
         $cst->execute();
+    }
+    public function editar_dados_pessoais($dados)
+    { //Alterar a nova senha do usuário        
+     try{   
+        $cst = $this->conexao->prepare("UPDATE $this->tabela SET email=:email_usu,nome =:nome_usu ,sobrenome=:usu_sobrenome,cpf =:usu_cpf, data_nasc=:usu_dtnasc, genero=:usu_genero, telefone =:usu_telefone, senha =:usu_senha, username=:usu_username  WHERE id_usuario=:id_usu");
+        $cst->bindParam(":email_usu", $dados['email'], PDO::PARAM_STR);
+        $cst->bindParam(":nome_usu", $dados['name'], PDO::PARAM_STR);
+        $cst->bindParam(":usu_sobrenome", $dados['Sobrenome'], PDO::PARAM_STR);
+        $cst->bindParam(":usu_cpf", $dados['cpf'], PDO::PARAM_STR);
+        $cst->bindParam(":usu_dtnasc", $dados['dtnasc'], PDO::PARAM_STR);
+        $cst->bindParam(":usu_genero", $dados['genero'], PDO::PARAM_STR);
+        $cst->bindParam(":usu_telefone", $dados['telefone'], PDO::PARAM_STR);
+        $cst->bindParam(":usu_username", $dados['username'], PDO::PARAM_STR);
+        $cst->bindParam(":usu_senha", $dados['senha_usu'], PDO::PARAM_STR);
+
+        $cst->bindParam(":id_usu", $dados['id_usu'], PDO::PARAM_INT);
+
+        
+        $cst->execute();
+        return true;
+     }
+     catch (PDOException $ex) {
+        return 'error ' . $ex->getMessage();
+     }
     }
 }
