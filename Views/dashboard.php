@@ -16,7 +16,7 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--CSS-->
-    <link rel="stylesheet" href="../Style/style_usu.css">
+    <link rel="stylesheet" href="../Style/dashboard.css">
     <!--BS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
@@ -32,7 +32,6 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
         include("Modais_usuario_index.php/modais.php");
         include("components/dashboard_header.php"); 
     ?>
-
 
     <!--BEM VINDO-->
     <main>
