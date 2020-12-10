@@ -9,6 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS-->
         <link rel="stylesheet" href="../Style/dashboard.css">
+        <link rel="stylesheet" href="../Style/cadastros.css">
         <!--BS-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <!--FONT-->
@@ -25,19 +26,37 @@
                 var date = new Date();
                 document.getElementById("botao-hora").innerHTML = date.getHours() + ":" + date.getMinutes();
             }
+            function backPage() {
+                window.location.href = 'dashboard.php';
+            }
         </script>
+        <button id="back-button" onClick="backPage()">
+            <img src="../assets/left-arrow.svg" alt="Seta esquerda">
+        </button>
         <main>
+            <div class="titulo-rank text-center">
+                <h2 class="titulos"><b>EFETUAR CADASTROS</b></h2>
+                <hr class="hr">
+            </div>
             <div class="container">   
-                <h1>EFETUAR CADASTRO</h1>
                 <div class="row">
-                    <div class="col">
-                        <p>Evento</p>
+                    <div class="col-md-4 text-center d-flex justify-content-center">
+                        <div class="content-wrapper">
+                            <img src="../assets/calendar.svg" class="Calendário">
+                            <p>Evento</p>
+                        </div>
                     </div>
-                    <div class="col">
-                        <p>Custos</p>
+                    <div class="col-md-4 text-center d-flex justify-content-center">
+                        <div class="content-wrapper">
+                            <img src="../assets/budget.svg" class="Custos">
+                            <p>Custos</p>
+                        </div>
                     </div>
-                    <div class="col">
-                        <p>Receita</p>
+                    <div class="col-md-4 text-center d-flex justify-content-center">
+                        <div class="content-wrapper">
+                            <img src="../assets/receipt.svg" class="Receita">
+                            <p>Receita</p>
+                        </div>
                     </div>
                 </div>
             </div>
