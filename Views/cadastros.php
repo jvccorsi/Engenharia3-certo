@@ -9,6 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS-->
         <link rel="stylesheet" href="../Style/dashboard.css">
+        <link rel="stylesheet" href="../Style/components/dashboard-header.css">
         <link rel="stylesheet" href="../Style/cadastros.css">
         <!--BS-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">

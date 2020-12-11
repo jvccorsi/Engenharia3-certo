@@ -1,0 +1,39 @@
+/* NAV */
+#edit { 
+  background-color: white;
+}
+
+#botao {
+  font-size:22px;
+  color: black;
+  font-weight: 600;
+  padding:5px; 
+  width: 150px;
+  background: white;
+  border-radius: 73px;
+  margin-top: 10px;
+}
+
+.time-container #botao-hora {
+  margin-top: 10px;
+  font-size:22px;
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 600;
+  padding:5px;
+  width: 150px;
+  background-color: #7D5FFF;
+  border:1px solid #7D5FFF;
+  border-radius: 73px;
+}
+
+.navbar-collapse #itens-menu li + li {
+  margin-left: 25px;
+}
+
+.navbar-collapse {
+  flex-grow: 0 !important;
+}
+
+
+

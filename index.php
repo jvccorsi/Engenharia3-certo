@@ -31,7 +31,6 @@ include("config.php");
         ?>
 
     <!--SECTION NAV -->
-
         <nav class="navbar navbar-expand-lg " id="edit">
             <div class="container">
                 <a class="navbar-brand h1 mb-0" href="#"><img src="assets/logo/logo_white.png" style="width: 230px;"></a>
