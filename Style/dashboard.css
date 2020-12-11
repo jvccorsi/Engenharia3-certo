@@ -11,9 +11,25 @@ body {
     background-attachment: fixed;
   }
 
-/*BTN - FIXED*/
-#contact-btn{position:fixed;float:right;bottom:30px;right:80px;border-radius: 23px;background-color:whitesmoke;transition:0.5s;}
-#contact-btn:hover{position:fixed;float:right;bottom:30px;right:80px;border-radius: 15px;background-color:whitesmoke;transition:0.5s;}
+/* BOTÃO ADICIONAR EVENTO*/
+#add-event{
+    position:fixed;
+    bottom:30px;
+    right:80px;
+    padding: 15px;
+    border-radius: 50%;
+    background-color:whitesmoke;
+    transition:0.2s;
+}
+
+#add-event:hover {
+    border-radius: 15px;
+}
+
+#add-event img {
+    height: 25px;
+    width: 25px;
+}
 
 /*BEM VINDO*/
 .titulo-principal{
@@ -76,10 +92,11 @@ section {
 }
 
 .tabela-eventos tr #actions-column button { 
-    display: flex;
     padding: 8px;
-    border-radius: 50%;
+    display: flex;
 
+    border-radius: 50%;
+    outline: 0;
     transition: 0.2s;
 }
 

@@ -34,13 +34,14 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
         include("components/dashboard_header.php"); 
     ?>
     <!-- BTN CADASTRAR EVENTO -->
-    <button id="contact-btn" href="#modal-contato" data-toggle="modal" data-target="#modal-addEvent"> <img src="../assets/add.png" class="img-actions"></button>
+    <button id="add-event" data-toggle="modal" data-target="#modal-addEvent"> 
+        <img src="../assets/plus.svg" class="img-actions">
+    </button>
    
     <!--BEM VINDO-->
-    <main>
-        <h1 class="titulo-principal"> <?php echo "Olá, seja bem vindo ao sistema: " . $_SESSION['usu_username'] . " !"; ?></h1>
-
-    </main>
+    <!-- <main>
+        <h1 class="titulo-principal"> <?php echo "Olá, seja bem vindo ao sistema, " . $_SESSION['usu_username'] . " !"; ?></h1>
+    </main> -->
 
     <!--MEUS EVENTOS-->
     <section>
@@ -65,7 +66,7 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
                         <td>22/05</td>
                         <td id="actions-column">
                             <button type="button" title="Adicionar Custos" data-toggle="modal" data-target="#modal-adicionar-custos" >
-                                <img src="../assets/plus.svg" alt="adicionar" width="50" heigth="50">
+                                <img src="../assets/money.svg" alt="adicionar" width="50" heigth="50">
                             </button>
                             <button type="button" title="Editar evento" data-toggle="modal" data-target="#modal-adicionar-custos" >
                                 <img src="../assets/pencil.svg" class="img-actions">
@@ -81,7 +82,7 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
                         <td>10/02</td>
                         <td id="actions-column">
                             <button type="button" title="Adicionar Custos" data-toggle="modal" data-target="#modal-adicionar-custos" >
-                                <img src="../assets/plus.svg" alt="adicionar" width="50" heigth="50">
+                                <img src="../assets/money.svg" alt="adicionar" width="50" heigth="50">
                             </button>
                             <button type="button" title="Editar evento" data-toggle="modal" data-target="#modal-adicionar-custos" >
                                 <img src="../assets/pencil.svg" class="img-actions">
@@ -97,12 +98,9 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
     </section>
 
     <!--BS-->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="../JS/script.js"></script>
     <script type="text/javascript">
         function typeWrite(elemento) {
