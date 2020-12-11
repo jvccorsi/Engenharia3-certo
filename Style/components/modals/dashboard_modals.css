@@ -1,0 +1,3 @@
+input[name="gasto_final"]:disabled {
+  background: #fff;
+}

@@ -17,6 +17,7 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--CSS-->
     <link rel="stylesheet" href="../Style/dashboard.css">
+    <link rel="stylesheet" href="../Style/components/modals/dashboard_modals.css">
     <link rel="stylesheet" href="../Style/components/dashboard-header.css">
     <!--BS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -65,15 +66,31 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
                         <td>Tusca</td>
                         <td>22/05</td>
                         <td id="actions-column">
-                            <button type="button" title="Adicionar Custos" data-toggle="modal" data-target="#modal-adicionar-custos" >
-                                <img src="../assets/money.svg" alt="adicionar" width="50" heigth="50">
-                            </button>
-                            <button type="button" title="Editar evento" data-toggle="modal" data-target="#modal-adicionar-custos" >
-                                <img src="../assets/pencil.svg" class="img-actions">
-                            </button>
-                            <button type="button" title="Visualizar relatório" data-toggle="modal" data-target="#modal-adicionar-custos" >
-                                <img src="../assets/report.svg" class="img-actions">
-                            </button>
+                            <div class="btn-group">
+                                <button type="button" id="dropdownCostsButton" title="Adicionar Custos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="../assets/money.svg" alt="adicionar">
+                                </button>
+                                <div class="dropdown-menu" id="dropdownCostsButton" aria-labelledby="dropdownCostsButton">
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#modal-adicionar-custos-variaveis" href="#">Variável</a>
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#modal-adicionar-custos-fixos" href="#">Fixo</a>
+                                </div>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" title="Visualizar relatório" data-toggle="modal" data-target="#modal-adicionar-custos" >
+                                    <img src="../assets/report.svg" class="img-actions">
+                                </button>
+                            </div>
+
+                            <div class="btn-group">
+                                <button type="button" id="dropdownEditButton" title="Editar evento" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="../assets/gear.svg" class="img-actions">
+                                </button>
+                                <div class="dropdown-menu" id="dropdownEditButton" aria-labelledby="dropdownEditButton">
+                                    <a class="dropdown-item" href="#">Editar</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Excluir</a>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -81,15 +98,31 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
                         <td>Abdubixos</td>
                         <td>10/02</td>
                         <td id="actions-column">
-                            <button type="button" title="Adicionar Custos" data-toggle="modal" data-target="#modal-adicionar-custos" >
-                                <img src="../assets/money.svg" alt="adicionar" width="50" heigth="50">
-                            </button>
-                            <button type="button" title="Editar evento" data-toggle="modal" data-target="#modal-adicionar-custos" >
-                                <img src="../assets/pencil.svg" class="img-actions">
-                            </button>
-                            <button type="button" title="Visualizar relatório" data-toggle="modal" data-target="#modal-adicionar-custos" >
-                                <img src="../assets/report.svg" class="img-actions">
-                            </button>
+                            <div class="btn-group">
+                                <button type="button" id="dropdownCostsButton" title="Adicionar Custos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="../assets/money.svg" alt="adicionar">
+                                </button>
+                                <div class="dropdown-menu" id="dropdownCostsButton" aria-labelledby="dropdownCostsButton">
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#modal-adicionar-custos-variaveis" href="#">Variável</a>
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#modal-adicionar-custos-fixos" href="#">Fixo</a>
+                                </div>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" title="Visualizar relatório" data-toggle="modal" data-target="#modal-adicionar-custos" >
+                                    <img src="../assets/report.svg" class="img-actions">
+                                </button>
+                            </div>
+
+                            <div class="btn-group">
+                                <button type="button" id="dropdownEditButton" title="Editar evento" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="../assets/gear.svg" class="img-actions">
+                                </button>
+                                <div class="dropdown-menu" id="dropdownEditButton" aria-labelledby="dropdownEditButton">
+                                    <a class="dropdown-item" href="#">Editar</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Excluir</a>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
