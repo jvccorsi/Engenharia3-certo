@@ -8,7 +8,7 @@
         </div>
 
         <div class=\"navbar-brand\">
-          <a href=\"#\" id=\"img\">
+          <a href=\"dashboard.php\" id=\"img\">
             <img src=\"../assets/logo/logo_1.png\" style=\"width: 150px;\">
           </a>
         </div>
