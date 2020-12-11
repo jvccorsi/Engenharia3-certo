@@ -1,5 +1,6 @@
 /* NAV */
 #edit { 
+  height: 90px;
   background-color: white;
 }
 
@@ -25,6 +26,12 @@
   background-color: #7D5FFF;
   border:1px solid #7D5FFF;
   border-radius: 73px;
+}
+
+.navbar-brand {
+  position: absolute;
+  top: calc(50% - 40px);
+  left: calc(50% - 75px);
 }
 
 .navbar-collapse #itens-menu li + li {
