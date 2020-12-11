@@ -43,18 +43,21 @@
                 <div class="row">
                     <div class="col-md-4 text-center d-flex justify-content-center">
                         <div class="content-wrapper">
+                            <a href="#"></a>
                             <img src="../assets/calendar.svg" class="Calendário">
                             <p>Evento</p>
                         </div>
                     </div>
                     <div class="col-md-4 text-center d-flex justify-content-center">
                         <div class="content-wrapper">
+                            <a href="#"></a>
                             <img src="../assets/budget.svg" class="Custos">
                             <p>Custos</p>
                         </div>
                     </div>
                     <div class="col-md-4 text-center d-flex justify-content-center">
                         <div class="content-wrapper">
+                            <a href="#"><span></span></a>
                             <img src="../assets/receipt.svg" class="Receita">
                             <p>Receita</p>
                         </div>
