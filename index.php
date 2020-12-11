@@ -27,7 +27,7 @@ include("config.php");
 <body>
     <header>
     <?php
-       include("Views/Modais_Index.php/modais.php");
+       include("Views/components/modals/index_modals.php");
         ?>
 
     <!--SECTION NAV -->

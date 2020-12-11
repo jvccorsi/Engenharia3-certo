@@ -30,7 +30,7 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
 
 <body onload="hora()">
     <?php 
-        include("Modais_usuario_index.php/modais.php");
+        include("components/modals/dashboard_modals.php");
         include("components/dashboard_header.php"); 
     ?>
     <!-- BTN CADASTRAR EVENTO -->
