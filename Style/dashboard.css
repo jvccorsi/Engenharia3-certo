@@ -46,16 +46,55 @@ body {
 }
 
 /*SECTION - MEUS EVENTOS*/
-section{margin-top: 100px;height:600px;}
-.tabela-eventos{width: 50%;margin-left:25%;border-radius:15px;}
-.table{border-radius:15px;}
-.title_tabela{font-size:20px;}
-.titulos{color:white;font-size:50px;}
+section {
+    margin-top: 100px;
+    height:600px;
+}
+
+.events-title {
+    color:white;
+    font-size:50px;
+}
+
+.tabela-eventos {
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 15px;
+}
+
+.tabela-eventos .table {
+    border-radius: 15px;
+}
+
+.tabela-eventos tr th { 
+    font-size: 20px;
+}
+
+.tabela-eventos tr #actions-column { 
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tabela-eventos tr #actions-column button { 
+    display: flex;
+    padding: 8px;
+    border-radius: 50%;
+
+    transition: 0.2s;
+}
+
+.tabela-eventos tr #actions-column button:hover { 
+    border-radius: 15px;
+}
+
+.tabela-eventos tr #actions-column button img { 
+    height: 25px;
+    width: 25px;
+}
 
 .titulos-modal{color:white;font-size:35px;letter-spacing:0.5px;text-align: center;}
 
 .hr{background-color: #7D5FFF;width: 300px;height: 3px;margin: auto;}
-.img-actions{width:40px;margin-left: 0px;}
 
 /*MODAL CADASTRO*/
 #fundo-modal{background-color:  #7D5FFF; border-radius: 77px;color:white;padding:15px;}

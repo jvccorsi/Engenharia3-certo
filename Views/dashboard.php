@@ -33,7 +33,7 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
         include("Modais_usuario_index.php/modais.php");
         include("components/dashboard_header.php"); 
     ?>
-    <!--BTN FALE CONOSCO-->
+    <!-- BTN CADASTRAR EVENTO -->
     <button id="contact-btn" href="#modal-contato" data-toggle="modal" data-target="#modal-addEvent"> <img src="../assets/add.png" class="img-actions"></button>
    
     <!--BEM VINDO-->
@@ -45,17 +45,17 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
     <!--MEUS EVENTOS-->
     <section>
         <div class="titulo-rank text-center">
-            <h2 class="titulos"><b>MEUS EVENTOS</b></h2>
+            <h2 class="events-title"><b>MEUS EVENTOS</b></h2>
             <hr class="hr">
         </div>
         <div class="tabela-eventos">
             <table class="table table-striped table-dark mt-5">
                 <thead>
                     <tr>
-                        <th scope="col" class="title_tabela">#</th>
-                        <th scope="col" class="title_tabela">NOME</th>
-                        <th scope="col" class="title_tabela">DATA EVENTO</th>
-                        <th scope="col" style="text-align: center;" class="title_tabela">AÇÕES</th>
+                        <th scope="col">#</th>
+                        <th scope="col">NOME</th>
+                        <th scope="col">DATA EVENTO</th>
+                        <th scope="col" style="text-align: center;">AÇÕES</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -63,66 +63,38 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
                         <th scope="row">1</th>
                         <td>Tusca</td>
                         <td>22/05</td>
-                        <td>
-                            <center>
-                                <img src="../assets/add.png" class="img-actions">
-                                <img src="../assets/edit.png" class="img-actions">
-                                <img src="../assets/relatorio.png" class="img-actions">
-                            </center>
+                        <td id="actions-column">
+                            <button type="button" title="Adicionar Custos" data-toggle="modal" data-target="#modal-adicionar-custos" >
+                                <img src="../assets/plus.svg" alt="adicionar" width="50" heigth="50">
+                            </button>
+                            <button type="button" title="Editar evento" data-toggle="modal" data-target="#modal-adicionar-custos" >
+                                <img src="../assets/pencil.svg" class="img-actions">
+                            </button>
+                            <button type="button" title="Visualizar relatório" data-toggle="modal" data-target="#modal-adicionar-custos" >
+                                <img src="../assets/report.svg" class="img-actions">
+                            </button>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">2</th>
                         <td>Abdubixos</td>
                         <td>10/02</td>
-                        <td>
-                            <center>
-                                <img src="../assets/add.png" class="img-actions">
-                                <img src="../assets/edit.png" class="img-actions">
-                                <img src="../assets/relatorio.png" class="img-actions">
-                            </center>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Administravando</td>
-                        <td>22/12</td>
-                        <td>
-                            <center>
-                                <img src="../assets/add.png" class="img-actions">
-                                <img src="../assets/edit.png" class="img-actions">
-                                <img src="../assets/relatorio.png" class="img-actions">
-                            </center>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Administravando</td>
-                        <td>22/12</td>
-                        <td>
-                            <center>
-                                <img src="../assets/add.png" class="img-actions">
-                                <img src="../assets/edit.png" class="img-actions">
-                                <img src="../assets/relatorio.png" class="img-actions">
-                            </center>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Administravando</td>
-                        <td>22/12</td>
-                        <td>
-                            <center>
-                                <img src="../assets/add.png" class="img-actions">
-                                <img src="../assets/edit.png" class="img-actions">
-                                <img src="../assets/relatorio.png" class="img-actions">
-                            </center>
+                        <td id="actions-column">
+                            <button type="button" title="Adicionar Custos" data-toggle="modal" data-target="#modal-adicionar-custos" >
+                                <img src="../assets/plus.svg" alt="adicionar" width="50" heigth="50">
+                            </button>
+                            <button type="button" title="Editar evento" data-toggle="modal" data-target="#modal-adicionar-custos" >
+                                <img src="../assets/pencil.svg" class="img-actions">
+                            </button>
+                            <button type="button" title="Visualizar relatório" data-toggle="modal" data-target="#modal-adicionar-custos" >
+                                <img src="../assets/report.svg" class="img-actions">
+                            </button>
                         </td>
                     </tr>
                 </tbody>
+            </table>
         </div>
     </section>
-
 
     <!--BS-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
