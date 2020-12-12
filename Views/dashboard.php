@@ -1,6 +1,6 @@
 <?php
-//NÃO TIRAR ISSO DA PAGINA!!
-include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO ESTÁ LOGADO!!
+//php PARA VERFICIAR SE O USUÁRIO ESTÁ LOGADO!!
+include("../Controllers/verify_login.php"); 
 //PRA PEGAR OS CAMPOS DO BD, OLHAR A FUNCAO User_logado NA CLASSE USUARIO.
 //echo"Olá, seja bem vindo<b> ".$_SESSION['usu_nome']."</b> ao sistema !! <br> O seu email é:".$_SESSION['usu_email']."";
 //echo"<br>";
@@ -22,11 +22,14 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
     <!--BS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="../JS/script.js"></script>
     <!--FONT-->
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
 
     <title>Rolê de Rep</title>
-
 </head>
 
 <body onload="hora()">
@@ -38,11 +41,6 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
     <button id="add-event" data-toggle="modal" data-target="#modal-addEvent"> 
         <img src="../assets/plus.svg" class="img-actions">
     </button>
-   
-    <!--BEM VINDO-->
-    <!-- <main>
-        <h1 class="titulo-principal"> <?php echo "Olá, seja bem vindo ao sistema, " . $_SESSION['usu_username'] . " !"; ?></h1>
-    </main> -->
 
     <!--MEUS EVENTOS-->
     <section>
@@ -76,17 +74,16 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
                                 </div>
                             </div>
                             <div class="btn-group">
-                                <button type="button" title="Visualizar relatório" data-toggle="modal" data-target="#modal-adicionar-custos" >
+                                <a href="reports.php" title="Visualizar relatório" data-toggle="modal" data-target="#modal-adicionar-custos" >
                                     <img src="../assets/report.svg" class="img-actions">
-                                </button>
+                                </a>
                             </div>
-
                             <div class="btn-group">
                                 <button type="button" id="dropdownEditButton" title="Editar evento" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <img src="../assets/gear.svg" class="img-actions">
                                 </button>
                                 <div class="dropdown-menu" id="dropdownEditButton" aria-labelledby="dropdownEditButton">
-                                    <a class="dropdown-item" href="#">Editar</a>
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#modal-editar-evento" href="#">Editar</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">Excluir</a>
                                 </div>
@@ -107,11 +104,10 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
                                     <a class="dropdown-item" data-toggle="modal" data-target="#modal-adicionar-custos-fixos" href="#">Fixo</a>
                                 </div>
                             </div>
-                            <div class="btn-group">
-                                <button type="button" title="Visualizar relatório" data-toggle="modal" data-target="#modal-adicionar-custos" >
-                                    <img src="../assets/report.svg" class="img-actions">
-                                </button>
-                            </div>
+
+                            <a href="evento.php" title="Visualizar relatório" data-toggle="modal" data-target="#modal-adicionar-custos" >
+                                <img src="../assets/report.svg" class="img-actions">
+                            </a>
 
                             <div class="btn-group">
                                 <button type="button" id="dropdownEditButton" title="Editar evento" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -129,61 +125,5 @@ include("../Controllers/verify_login.php"); //php PARA VERFICIAR SE O USUÁRIO E
             </table>
         </div>
     </section>
-
-    <!--BS-->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="../JS/script.js"></script>
-    <script type="text/javascript">
-        function typeWrite(elemento) {
-            const textoArray = elemento.innerHTML.split('');
-            elemento.innerHTML = ' ';
-            textoArray.forEach(function(letra, i) {
-
-                setTimeout(function() {
-                    elemento.innerHTML += letra;
-                }, 75 * i)
-
-            });
-        }
-        const titulo = document.querySelector('.titulo-principal');
-        typeWrite(titulo);
-
-        function hora() {
-            var date = new Date();
-            document.getElementById("botao-hora").innerHTML = date.getHours() + ":" + date.getMinutes();
-        }
-
-            $('#myModal').on('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget) // Button that triggered the modal
-            var usu_id = button.data('whatever_id')  
-            var usu_nome= button.data('whatever_nome')
-            var usu_sobrenome = button.data('whatever_usu_sobrenome')
-            var usu_email = button.data('whatever_email')
-            var usu_username = button.data('whatever_username')
-            var usu_senha = button.data('whatever_usu_senha')
-            var usu_cpf = button.data('whatever_cpf')
-            var usu_data_nasc = button.data('whatever_data_nasc')
-            var usu_telefone = button.data('whatever_usu_telefone')
-            var usu_genero = button.data('whatever_usu_genero')
-
-            var modal = $(this)
-
-             modal.find('#name').val(usu_nome)
-             modal.find('#Sobrenome').val(usu_sobrenome)
-             modal.find('#dtnasc').val(usu_data_nasc)
-             modal.find('#cpf').val(usu_cpf)
-             modal.find('#genero').val(usu_genero)
-             modal.find('#telefone').val(usu_telefone)
-             modal.find('#email').val(usu_email)
-             modal.find('#username').val(usu_username)
-             modal.find('#senha_usu').val(usu_senha)
-             modal.find('#id_usuario').val(usu_id)
-           
-    })
-    </script>
-
 </body>
-
 </html>

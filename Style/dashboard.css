@@ -4,12 +4,6 @@ a {text-decoration:none;}
 ul{list-style: none;}
 html {scroll-behavior: smooth;}
 header{background-color: black;}
-body {
-    background-image: url("../assets/img_fundo_1.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
 
 /* BOTÃO ADICIONAR EVENTO*/
 #add-event{
@@ -36,7 +30,7 @@ body {
     max-width: 500px;
     text-align: center;
     margin: 60px auto;
-    color: white;
+    color: #fff;
     font-weight: 600;
     font-size:40px;
     background-color: #7D5FFF;
@@ -63,18 +57,15 @@ body {
 
 /*SECTION - MEUS EVENTOS*/
 section {
-    margin-top: 100px;
-    height:600px;
+    margin: 35px 50px 0;
 }
 
 .events-title {
-    color:white;
+    color: #000;
     font-size:50px;
 }
 
 .tabela-eventos {
-    width: 50%;
-    margin-left: 25%;
     border-radius: 15px;
 }
 
@@ -91,6 +82,7 @@ section {
     justify-content: space-evenly;
 }
 
+.tabela-eventos tr #actions-column a,
 .tabela-eventos tr #actions-column button { 
     padding: 8px;
     display: flex;
@@ -98,12 +90,15 @@ section {
     border-radius: 50%;
     outline: 0;
     transition: 0.2s;
+    background-color: #fff;
 }
 
+.tabela-eventos tr #actions-column a:hover,
 .tabela-eventos tr #actions-column button:hover { 
     border-radius: 15px;
 }
 
+.tabela-eventos tr #actions-column a img,
 .tabela-eventos tr #actions-column button img { 
     height: 25px;
     width: 25px;
