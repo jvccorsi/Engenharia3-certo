@@ -32,25 +32,37 @@ include("../Controllers/verify_login.php");
 </head>
 
 <body onload="hora()">
-    <?php 
-        include("components/modals/dashboard_modals.php");
-        include("components/dashboard_header.php"); 
-    ?>
-
-    <section>
-      <h1>Custos variaveis</h1>
-      <div class="tabela-custos-variaveis">
+  <?php 
+      include("components/modals/dashboard_modals.php");
+      include("components/dashboard_header.php"); 
+  ?>
+  <main>
+    <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+      <li class="nav-item active">
+        <a class="nav-link" href="#custos-variaveis" data-toggle="tab">Custos variaveis</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#custos-fixos" data-toggle="tab">Custos fixos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#receita" data-toggle="tab">Receita</a>
+      </li>
+    </ul>
+    <div id="my-tab-content" class="tab-content">
+      <section class="tab-pane active" id="custos-variaveis">
+        <h1>Custos variaveis</h1>
+        <div class="tabela-custos-variaveis">
           <table class="table table-dark">
               <thead>
-                  <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">PRODUTO</th>
-                      <th scope="col">MEDIDA</th>
-                      <th scope="col">PREÇO</th>
-                      <th scope="col">QUANTIDADE ESPERADA</th>
-                      <th scope="col">GASTO FINAL</th>
-                      <th scope="col">OBSERVAÇÕES</th>
-                  </tr>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">PRODUTO</th>
+                  <th scope="col">MEDIDA</th>
+                  <th scope="col">PREÇO</th>
+                  <th scope="col">QUANTIDADE ESPERADA</th>
+                  <th scope="col">GASTO FINAL</th>
+                  <th scope="col">OBSERVAÇÕES</th>
+                </tr>
               </thead>
               <tbody>
                 <tr>             
@@ -82,11 +94,11 @@ include("../Controllers/verify_login.php");
                 </tr>
               </tbody>
           </table>
-      </div>
-    </section>
-    <section>
-      <h1>Custos fixos</h1>
-      <div class="tabela-custos-fixos">
+        </div>
+      </section>
+      <section class="tab-pane" id="custos-fixos">
+        <h1>Custos fixos</h1>
+        <div class="tabela-custos-fixos">
           <table class="table table-dark">
               <thead>
                   <tr>
@@ -125,7 +137,12 @@ include("../Controllers/verify_login.php");
                 </tr>
               </tbody>
           </table>
-      </div>
-    </section>
+        </div>
+      </section>
+      <section class="tab-pane" id="receita">
+        <h1>Receita</h1>
+      </section>
+    </div>
+  </main>
 </body>
 </html>

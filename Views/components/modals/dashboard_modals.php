@@ -100,28 +100,28 @@
                                 placeholder="Digite o nome do evento aqui" required>
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="email"><b>Endereço</b></label>
-                            <input  type="text" class="form-control" id="dtnasc" name="dtnasc"
+                            <label class="form-label" for="adress"><b>Endereço</b></label>
+                            <input  type="text" class="form-control" id="adress" name="adress"
                                 placeholder="Digite o endereço do evento aqui" required>
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="name"><b>Data</b></label>
-                            <input  type="date" class="form-control" id="cpf" name="cpf"
+                            <label class="form-label" for="date"><b>Data</b></label>
+                            <input  type="date" class="form-control" id="date" name="date"
                                 placeholder="Não é possível alterar este campo" required>
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="name"><b>Preço</b></label>
-                            <input type="text" class="form-control" id="telefone" name="telefone"
+                            <label class="form-label" for="price"><b>Preço</b></label>
+                            <input type="text" class="form-control" id="price" name="price"
                                 placeholder="(00)0000-0000" required>
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="name"><b>Quantidade de Pessoas</b></label>
-                            <input type="text" class="form-control" id="email" name="email"
+                            <label class="form-label" for="qntPeople"><b>Quantidade de Pessoas</b></label>
+                            <input type="text" class="form-control" id="qntPeople" name="qntPeople"
                                 placeholder="Digite o seu email aqui" required>
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="name"><b>Descrição</b></label>
-                            <textarea  type="text" class="form-control" id="username" name="username"
+                            <label class="form-label" for="description"><b>Descrição</b></label>
+                            <textarea  type="text" class="form-control" id="description" name="description"
                                 ></textarea>
                         </div>
                         <div class="d-flex justify-content-around">

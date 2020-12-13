@@ -43,7 +43,7 @@ include("../Controllers/verify_login.php");
     </button>
 
     <!--MEUS EVENTOS-->
-    <section>
+    <main>
         <div class="titulo-rank text-center">
             <h2 class="events-title"><b>MEUS EVENTOS</b></h2>
             <hr class="hr">
@@ -124,6 +124,6 @@ include("../Controllers/verify_login.php");
                 </tbody>
             </table>
         </div>
-    </section>
+    </main>
 </body>
 </html>

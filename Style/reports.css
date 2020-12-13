@@ -1,3 +1,4 @@
-section {
-  margin: 35px 50px 0;
+section h1 {
+  margin-top: 25px;
+  font-weight: 800;
 }

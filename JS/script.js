@@ -41,10 +41,30 @@ $(document).ready(() => {
             }
         });
     }
-});
 
-$(document).ready(() => {
+    // Evento para o modal de edição de eventos
     $('a.edit-link').on('click', () => {
         $('.modal .titulo').html("<b>Editar evento</b>");
-    });
+        
+        // var usu_id = button.data('whatever_id')  
+        // var usu_nome= button.data('whatever_nome')
+        // var usu_sobrenome = button.data('whatever_usu_sobrenome')
+        // var usu_email = button.data('whatever_email')
+        // var usu_username = button.data('whatever_username')
+        // var usu_senha = button.data('whatever_usu_senha')
+        // var usu_cpf = button.data('whatever_cpf')
+        // var usu_data_nasc = button.data('whatever_data_nasc')
+        // var usu_telefone = button.data('whatever_usu_telefone')
+        // var usu_genero = button.data('whatever_usu_genero')
+
+        // Insere os dados do evento no formulário 
+        const modal = $('#modal-manter-evento');
+        modal.find('#name').val('teste');
+        modal.find('#adress').val('teste')
+        modal.find('#date').val('teste')
+        modal.find('#price').val('teste')
+        modal.find('#qntPeople').val('teste')
+        modal.find('#description').val('teste')
+    });   
 });
+
