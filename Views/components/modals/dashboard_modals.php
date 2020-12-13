@@ -86,13 +86,13 @@
     </div>
 </div>
 
-<!-- Modal Cadastrar Evento -->
-<div class="modal fade" id="modal-addEvent" role="dialog">
+<!-- Modal manter Evento -->
+<div class="modal fade" id="modal-manter-evento" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
                 <form id="contact-form" class="form" action="#" method="POST">
-                    <h1 class="titulo"><b>Cadastrar Evento</b></h1>
+                    <h1 class="titulo"></h1>
                     <div class="forms">
                         <div class="form-group">
                             <label class="form-label" for="name"><b>Nome do evento</b></label>
@@ -200,57 +200,6 @@
             <div class="modal-body">
                 <form id="contact-form" class="form" action="#" method="POST">
                     <h1 class="titulo text-center"><b>Adicionar custos fixos</b></h1>
-                    <div class="forms">
-                        <div class="form-group">
-                            <label class="form-label" for="name"><b>Item</b></label>
-                            <input type="text" class="form-control" id="name" name="name"
-                                placeholder="Digite o nome do item" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="tipo"><b>Tipo</b></label>
-                            <select class="form-control" id="Tipo" name="Tipo" required>>
-                                <option>Atrações</option>
-                                <option>Local/estrutura</option>
-                                <option>Seguranças</option>
-                                <option>Outros</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="preco"><b>Preço</b></label>
-                            <input type="text" class="form-control" id="preco" name="preco"
-                                placeholder="R$" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="gasto_final"><b>Gasto final</b></label>
-                            <input type="text" class="form-control" id="gasto_final" name="gasto_final" disabled required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="obs"><b>Observações</b></label>
-                            <textarea class="form-control" id="obs" name="obs" rows="3"></textarea>
-                        </div>
-                        <div class="d-flex justify-content-around">
-                            <button type="submit" class="btn-lg btn-primary"  value="send">
-                                <b>Adicionar</b>
-                            </button>
-                            <button type="submit" class="btn-lg btn-danger"  value="send" data-dismiss="modal">
-                                <b>Cancelar</b> 
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Modal editar evento -->
-<div class="modal fade" id="modal-editar-evento" role="dialog">
-    <div class="modal-dialog" >
-        <div class="modal-content">
-            <div class="modal-body">
-                <form id="contact-form" class="form" action="#" method="POST">
-                    <h1 class="titulo text-center"><b>Editar evento</b></h1>
                     <div class="forms">
                         <div class="form-group">
                             <label class="form-label" for="name"><b>Item</b></label>

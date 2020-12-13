@@ -38,7 +38,7 @@ include("../Controllers/verify_login.php");
         include("components/dashboard_header.php"); 
     ?>
     <!-- BTN CADASTRAR EVENTO -->
-    <button id="add-event" data-toggle="modal" data-target="#modal-addEvent"> 
+    <button id="add-event" data-toggle="modal" data-target="#modal-manter-evento"> 
         <img src="../assets/plus.svg" class="img-actions">
     </button>
 
@@ -83,7 +83,7 @@ include("../Controllers/verify_login.php");
                                     <img src="../assets/gear.svg" class="img-actions">
                                 </button>
                                 <div class="dropdown-menu" id="dropdownEditButton" aria-labelledby="dropdownEditButton">
-                                    <a class="dropdown-item" data-toggle="modal" data-target="#modal-editar-evento" href="#">Editar</a>
+                                    <a class="dropdown-item edit-link" data-toggle="modal" data-target="#modal-manter-evento" href="#">Editar</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">Excluir</a>
                                 </div>

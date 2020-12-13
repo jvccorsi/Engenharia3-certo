@@ -42,3 +42,9 @@ $(document).ready(() => {
         });
     }
 });
+
+$(document).ready(() => {
+    $('a.edit-link').on('click', () => {
+        $('.modal .titulo').html("<b>Editar evento</b>");
+    });
+});
