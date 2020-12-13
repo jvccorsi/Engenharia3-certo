@@ -38,8 +38,8 @@ include("../Controllers/verify_login.php");
   ?>
   <main>
     <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-      <li class="nav-item active">
-        <a class="nav-link" href="#custos-variaveis" data-toggle="tab">Custos variaveis</a>
+      <li class="nav-item">
+        <a class="nav-link active" href="#custos-variaveis" data-toggle="tab">Custos variaveis</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#custos-fixos" data-toggle="tab">Custos fixos</a>

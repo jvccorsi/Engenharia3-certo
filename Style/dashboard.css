@@ -1,18 +1,19 @@
 /*----- RESET ----- */
-*{ border:none; outline:none; font-family: 'PT Sans', sans-serif;margin: 0px;}
+*{ border:none; font-family: 'PT Sans', sans-serif;margin: 0px;}
 a {text-decoration:none;}
 ul{list-style: none;}
 html {scroll-behavior: smooth;}
 header{background-color: black;}
 
 /* BOTÃO ADICIONAR EVENTO*/
-#add-event{
+#add-event {
     position:fixed;
     bottom:30px;
     right:80px;
-    padding: 15px;
+    padding: 18px;
+    outline: 0;
     border-radius: 50%;
-    background-color:whitesmoke;
+    background-color: #7D5FFF;
     transition:0.2s;
 }
 
