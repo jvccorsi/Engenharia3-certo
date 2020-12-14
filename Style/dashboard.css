@@ -8,7 +8,6 @@ body {
 a {text-decoration:none;}
 ul{list-style: none;}
 html {scroll-behavior: smooth;}
-header{background-color: black;}
 
 /* BOTÃO ADICIONAR EVENTO*/
 #add-event {
@@ -67,7 +66,7 @@ main {
 }
 
 .events-title {
-    color: #000;
+    color: #fff;
     font-size:50px;
 }
 
