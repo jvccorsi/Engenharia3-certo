@@ -79,7 +79,7 @@ include("config.php");
                             <h5 class="textos"><b>GERENCIAMENTO DO SEU EVENTO</b></h5>
                         </div>
                         <div class="col">   
-                            <img src="assets/relatório_2.png" class="img-servicos">
+                            <img src="assets/relatorio_2.png" class="img-servicos">
                             <h5 class="textos"><b>VISUALIZAÇÃO DE RELATÓRIOS</b></h5>
                         </div>
                     </div>
