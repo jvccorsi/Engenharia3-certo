@@ -8,7 +8,11 @@ main #reports-tabs li a {
 main #reports-tabs li a.active {
   background-color: #454d55;
   color: #fff;
+
+  /* Reset da borda padrão */
   border: 0;
+  /* Nova borda somente embaixo */
+  border-bottom: 1px solid #454d55;
 }
 
 
