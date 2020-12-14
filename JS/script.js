@@ -68,7 +68,7 @@ $(document).ready(() => {
     });   
     // Evento para o modal de cadastro de eventos
     $('button#add-event').on('click', () => {
-        $('.modal .titulo').html("<b>Cadastrar evento</b>");
+        $('#modal-manter-evento .titulo').html("<b>Cadastrar evento</b>");
 
         // Limpa o formulário
         const modal = $('#modal-manter-evento');
