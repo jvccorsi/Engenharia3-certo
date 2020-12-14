@@ -1,11 +1,11 @@
 
-
-main #reports-tabs li a {
+/* Main */
+#reports-tabs li a {
   background-color: #fff;
   color: #000;
 }
 
-main #reports-tabs li a.active {
+#reports-tabs li a.active {
   background-color: #454d55;
   color: #fff;
 
@@ -15,9 +15,40 @@ main #reports-tabs li a.active {
   border-bottom: 1px solid #454d55;
 }
 
-
-main .tab-content section h1 {
+/* Section */
+.tab-content section h1 {
   margin-top: 25px;
   font-weight: 800;
   color: #fff;
 }
+
+.tab-content #income-container {
+  padding: 25px;
+  background-color: #454d55;
+}
+
+.tab-content #income-container .card {
+  padding: 15px 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.tab-content #income-container .card h4 {
+  color: #6c757d;
+  font-weight: 800;
+}
+
+.tab-content #income-container .card h4.green-title {
+  color: #0acf97;
+}
+
+.tab-content #income-container .card h4.red-title {
+  color: #fa5c7c;
+}
+
+.tab-content #income-container #mini-box-column div {
+  padding-bottom: 15px;
+}
+
+
+
+

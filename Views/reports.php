@@ -141,6 +141,57 @@ include("../Controllers/verify_login.php");
       </section>
       <section class="tab-pane" id="receita">
         <h1>Receita</h1>
+        <div id="income-container" class="container-fluid">
+          <div class="row">
+            <div id="mini-box-column" class="col-md-5">
+              <div id="revenue-row" class="row">
+                <div class="col-md-6">
+                  <div class="card d-flex align-items-center">
+                    <h5>Entrada esperada</h5>  
+                    <h4 class="green-title">$1410,00</h4>  
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card d-flex align-items-center">
+                    <h5>Saída esperada</h5>  
+                    <h4 class="red-title">$1300,00</h4>  
+                  </div>
+                </div>
+              </div>
+              <div id="ticket-row" class="row"> 
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="row">
+                      <div class="col-sm-6 d-flex align-items-center flex-column">
+                        <h5>Ingressos disponíveis</h5>  
+                        <h4>40</h4>  
+                      </div>
+                      <div class="col-sm-6 d-flex align-items-center flex-column">
+                        <h5>Ingressos vendidos</h5>  
+                        <h4>47</h4>  
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <ul class="list-group">
+                          <li class="list-group-item">1º lote (R$ 30,00) = esgotado</li>
+                          <li class="list-group-item">2º lote (R$ 40,00) = 40</li>
+                          <li class="list-group-item">2º lote (R$ 60,00) = fechado</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            <div class="col-md-7">
+              <div class="card d-flex align-items-center">
+                <h5>Perpectiva gráfica</h5>  
+                <img src="../assets/graphic_example.png">
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   </main>
