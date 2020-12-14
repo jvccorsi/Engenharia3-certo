@@ -1,4 +1,18 @@
-section h1 {
+
+
+main #reports-tabs li a {
+  background-color: #fff;
+  color: #000;
+}
+
+main #reports-tabs li a.active {
+  background-color: #454d55;
+  color: #fff;
+  border: 0;
+}
+
+
+main .tab-content section h1 {
   margin-top: 25px;
   font-weight: 800;
   color: #fff;

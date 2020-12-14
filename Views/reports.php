@@ -37,7 +37,7 @@ include("../Controllers/verify_login.php");
       include("components/dashboard_header.php"); 
   ?>
   <main>
-    <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+    <ul id="reports-tabs" class="nav nav-tabs" data-tabs="tabs">
       <li class="nav-item">
         <a class="nav-link active" href="#custos-variaveis" data-toggle="tab">Custos variaveis</a>
       </li>
@@ -48,7 +48,7 @@ include("../Controllers/verify_login.php");
         <a class="nav-link" href="#receita" data-toggle="tab">Receita</a>
       </li>
     </ul>
-    <div id="my-tab-content" class="tab-content">
+    <div id="tab-content" class="tab-content">
       <section class="tab-pane active" id="custos-variaveis">
         <h1>Custos variaveis</h1>
         <div class="tabela-custos-variaveis">
