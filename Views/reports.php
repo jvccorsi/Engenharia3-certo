@@ -75,7 +75,7 @@ include("../Controllers/verify_login.php");
                   <td>Gelada</td>
                 </tr>
                 <tr>             
-                  <th scope="row">1</th>
+                  <th scope="row">2</th>
                   <td>Energético</td>
                   <td>Litros</td>
                   <td>R$ 10,00</td>
@@ -120,8 +120,8 @@ include("../Controllers/verify_login.php");
                   <td>Bacana</td>
                 </tr>
                 <tr>             
-                  <th scope="row">1</th>
-                  <td>DJ</td>
+                  <th scope="row">2</th>
+                  <td>Salão</td>
                   <td>Local</td>
                   <td>R$ 300,00</td>
                   <td>R$ 300,00</td>
@@ -176,7 +176,7 @@ include("../Controllers/verify_login.php");
                         <ul class="list-group">
                           <li class="list-group-item">1º lote (R$ 30,00) = esgotado</li>
                           <li class="list-group-item">2º lote (R$ 40,00) = 40</li>
-                          <li class="list-group-item">2º lote (R$ 60,00) = fechado</li>
+                          <li class="list-group-item">3º lote (R$ 60,00) = fechado</li>
                         </ul>
                       </div>
                     </div>
