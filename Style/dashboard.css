@@ -1,5 +1,10 @@
 /*----- RESET ----- */
 *{ border:none; font-family: 'PT Sans', sans-serif;margin: 0px;}
+body {
+    background-image: url("../assets/party_background.jpg");
+    background-repeat: no-repeat, repeat;
+    background-size: 100%;
+}
 a {text-decoration:none;}
 ul{list-style: none;}
 html {scroll-behavior: smooth;}
@@ -13,7 +18,7 @@ header{background-color: black;}
     padding: 18px;
     outline: 0;
     border-radius: 50%;
-    background-color: #7D5FFF;
+    background-color: #fff;
     transition:0.2s;
 }
 

@@ -74,7 +74,7 @@ include("../Controllers/verify_login.php");
                                 </div>
                             </div>
                             <div class="btn-group">
-                                <a href="reports.php" title="Visualizar relatório" data-toggle="modal" data-target="#modal-adicionar-custos" >
+                                <a href="reports.php" title="Visualizar relatório" >
                                     <img src="../assets/report.svg" class="img-actions">
                                 </a>
                             </div>

@@ -1,7 +1,7 @@
 /* NAV */
 #edit { 
   height: 90px;
-  background-color: #45F2F2;
+  background-color: #fff;
 }
 
 #botao {
@@ -18,12 +18,12 @@
 .time-container #botao-hora {
   margin-top: 10px;
   font-size:22px;
-  color: #000;
+  color: #fff;
   letter-spacing: 1px;
   font-weight: 600;
   padding:5px;
   width: 150px;
-  background-color: #fff;
+  background-color: #7D5FFF;
   border:1px solid #7D5FFF;
   border-radius: 73px;
 }
