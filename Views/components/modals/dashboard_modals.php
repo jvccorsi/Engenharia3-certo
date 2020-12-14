@@ -251,7 +251,7 @@
             <h5 class="modal-title" id="exampleModalLongTitle">Deseja realmente apagar o evento?</h5>
         </div>
         <div class="modal-footer">
-        <a href="../Controllers/sair.php"> <button type="button" class="btn btn-danger" >Confirmar</button> </a>
+            <button type="button" class="btn btn-danger" >Confirmar</button>
             <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
         </div>
         </div>
