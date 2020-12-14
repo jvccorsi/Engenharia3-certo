@@ -243,6 +243,21 @@
     </div>
 </div>
 
+<!-- Modal excluir evento -->
+<div class="modal fade" id="modal-excluir-evento" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+            <h5 class="modal-title" id="exampleModalLongTitle">Deseja realmente apagar o evento?</h5>
+        </div>
+        <div class="modal-footer">
+        <a href="../Controllers/sair.php"> <button type="button" class="btn btn-danger" >Confirmar</button> </a>
+            <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+        </div>
+        </div>
+    </div>
+</div>
+
 <!-- Modal Contato Usuário -->
 <div class="modal fade" id="modal-contato" role="dialog">
     <div class="modal-dialog" >
