@@ -66,7 +66,12 @@
 
     function hora() {
       var date = new Date();
-      document.getElementById('botao-hora').innerHTML = date.getHours() + ':' + date.getMinutes();
+      // Adicionar um zero antes da hora e minuto
+      const hora = '0' + String(date.getHours());
+      const minuto = '0' + String(date.getMinutes());
+
+      // Pegar somente os dois ultimos elementos de hora e minuto
+      document.getElementById('botao-hora').innerHTML =  hora.slice(-2) + ':' + minuto.slice(-2);
     }
   </script>
 "
