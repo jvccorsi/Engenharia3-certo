@@ -37,7 +37,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="email"><b>Data de nascimento</b></label>
-                            <input  type="text" class="form-control" id="dtnasc" name="dtnasc" required disabled>
+                            <input  type="text" class="form-control" id="dtnasc" name="dtnasc" required >
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="genero" ><b>Gênero</b></label>
@@ -49,7 +49,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="name"><b>CPF</b></label>
-                            <input  type="text" class="form-control" id="cpf" name="cpf" required disabled>
+                            <input  type="text" class="form-control" id="cpf" name="cpf" required >
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="telefone"><b>Telefone</b></label>
@@ -63,11 +63,11 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="name"><b>Username</b></label>
-                            <input  type="text" class="form-control" id="username" name="username" required disabled>
+                            <input  type="text" class="form-control" id="username" name="username" required >
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="senha_usu"><b>Senha</b></label>
-                            <input  type="text" class="form-control" id="senha_usu" name="senha_usu" required disabled>
+                            <input  type="text" class="form-control" id="senha_usu" name="senha_usu" required >
                         </div>
                         <div class="d-flex justify-content-around">
                             <button type="submit" class="btn-lg btn-primary"  value="send">
