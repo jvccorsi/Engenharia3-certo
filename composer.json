@@ -1,0 +1,16 @@
+{
+    "name": "vendor/windparty",
+    "description": "composer for windparty tests",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Roque",
+            "email": "roquemgcosta@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    }
+}
