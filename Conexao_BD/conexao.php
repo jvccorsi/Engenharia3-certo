@@ -10,8 +10,8 @@ class Conexao {
 
     public function __construct() {
         $this->servidor = "localhost";
-        $this->usuario = "admin";
-        $this->senha = "g51c1vyv";
+        $this->usuario = "root";
+        $this->senha = "";
         $this->database = "windparty";
 
         try {
