@@ -11,7 +11,7 @@ $email = $_POST['email_recuperar_senha'];
 $chave = $obj_User->Recuperar_Senha($email);
 
 if($chave){
-    $chave_acesso = "http://localhost/git/Views/alterar_senha.php?chave=".$chave;
+    $chave_acesso = "http://localhost/engenharia3-certo/Views/alterar_senha.php?chave=".$chave;
     $corpo_email ="
     <!doctype html>
 <html>

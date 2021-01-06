@@ -140,27 +140,22 @@
                         <div class="form-group">
                             <label class="form-label" for="street"><b>Rua</b></label>
                             <input  type="text" class="form-control" id="street" name="street"
-                                placeholder="Digite o endereço do evento aqui" required>
+                                placeholder="Digite a rua do evento aqui" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="Bairro"><b>Bairro</b></label>
                             <input  type="text" class="form-control" id="Bairro" name="Bairro"
-                                placeholder="Digite o endereço do evento aqui" required>
+                                placeholder="Digite o bairro do evento aqui" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="n_local"><b>Número do local</b></label>
                             <input  type="text" class="form-control" id="n_local" name="n_local"
-                                placeholder="Digite o endereço do evento aqui" required>
+                                placeholder="Digite o numero do local do evento aqui" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="date"><b>Data</b></label>
                             <input  type="date" class="form-control" id="date" name="date"
                                 placeholder="Não é possível alterar este campo" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="price"><b>Preço</b></label>
-                            <input type="text" class="form-control" id="price" name="price"
-                                placeholder="(00)0000-0000" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="qntPeople"><b>Quantidade de Pessoas</b></label>
@@ -169,7 +164,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="description"><b>Descrição</b></label>
-                            <textarea  type="text" class="form-control" id="description" name="description"
+                            <textarea  type="text" class="form-control" id="description" name="description" maxlength='400'
                                 ></textarea>
                         </div>
                         <div class="d-flex justify-content-around">
