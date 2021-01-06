@@ -9,7 +9,7 @@ $objUSU = new usuario();
         }
         else{
 
-            echo 'error';
+             header("location:../Views/dashboard.php");
         }
 
 
