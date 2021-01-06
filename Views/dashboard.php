@@ -77,6 +77,8 @@ include("../Controllers/verify_login.php");
                                     <a class="dropdown-item" data-toggle="modal" data-target="#modal-adicionar-custos-variaveis" href="#">Variável</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" data-toggle="modal" data-target="#modal-adicionar-custos-fixos" href="#">Fixo</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#modal-adicionar-receita" href="#">Receita</a>
                                 </div>
                             </div>
                             <div class="btn-group">
