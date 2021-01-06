@@ -28,8 +28,7 @@ CREATE TABLE custos_fixos(
  preco float NOT NULL,
  quantidade int(11) NOT NULL,
  gasto_final float NOT NULL,
- obs varchar(50) NOT NULL,
- id_evento_with_custos varchar(20) NOT NULL
+ obs varchar(50) NOT NULL
 );
 
 
