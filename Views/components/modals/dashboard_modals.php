@@ -74,7 +74,24 @@
     }
 ?> 
 
-
+<?php
+    //SUCESSO CAD CUSTO VARIAVEL
+    if (isset($_SESSION['sucesso_cad_receita'])) {
+        if ($_SESSION['sucesso_cad_receita']) {
+        ?>
+            <script>
+                function abreModal() {
+                    $("#sucesso_cad_receita").modal({
+                        show: true
+                    });
+                }
+                setTimeout(abreModal, 10);
+            </script>
+        <?php
+        }
+        unset($_SESSION['sucesso_cad_receita']);
+    }
+?> 
 
 
 <!-- Modal Editar Perfil -->
@@ -333,6 +350,50 @@
     </div>
 </div>
 
+<!-- Modal RECEITA  -->
+<div class="modal fade" id="modal-adicionar-receita" role="dialog">
+    <div class="modal-dialog" >
+        <div class="modal-content">
+            <div class="modal-body">
+                <form id="contact-form" class="form" action="../Controllers/cadastro_receita.php" method="POST" >
+                    <h1 class="titulo text-center"><b>Adicionar Receita</b></h1>
+                    <div class="forms">
+                        <div class="form-group">
+                            <label class="form-label" for="name"><b>Item</b></label>
+                            <input type="text" class="form-control" id="item_name" name="item_name"
+                                placeholder="Digite o nome do item aqui. Ex: Primeiro Lote" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="preco"><b>Preco</b></label>
+                            <input type="text" class="form-control" id="preco" name="preco"
+                                placeholder="Digite o preco do item" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="qtd_esperada"><b>Quantidade esperada</b></label>
+                            <input type="text" class="form-control" id="qtd_esperada" name="qtd_esperada"
+                                placeholder="Digite a quantidade esperada para a venda" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="obs"><b>Observacoes</b></label>
+                            <input type="text" class="form-control" id="obs" name="obs"
+                                placeholder="Caso haja observacoes." required>
+                        </div>
+                        <div class="d-flex justify-content-around">
+                            <button type="submit" class="btn-lg btn-primary"  value="send">
+                                <b>Adicionar</b>
+                            </button>
+                            <button type="submit" class="btn-lg btn-danger"  value="send" data-dismiss="modal">
+                                <b>Cancelar</b> 
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- Modal excluir evento -->
 <div class="modal fade" id="modal-excluir-evento" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -453,3 +514,18 @@
         </div>
     </div>
 </div>
+
+<!-- MODAL CADASTRO RECEITA SUCESSO DO SISTEMA  -->
+<div class="modal fade" id="sucesso_cad_receita" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="exampleModalLongTitle">Receita cadastrada com sucesso!</h5>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal">Voltar</button>
+        </div>
+        </div>
+    </div>
+</div>
+
