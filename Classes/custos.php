@@ -36,9 +36,9 @@ class custos
     public function queryInsert_CustosVariaveis($dados)
     {
         try {
-            $gasto_final = $dados['preco'] * $dados['qtd'];
-            $cst = $this->conexao->prepare("INSERT INTO  $this->tabela_custos_fixos (id_custosfixos, item, tipo_custos, preco, quantidade, gasto_final, obs)
-            VALUES (NULL, '".$dados['item_name']."', '".$dados['Tipo']."', '".$dados['preco']."', '".$dados['qtd']."', '".$gasto_final."',  '".$dados['obs']."');");
+            $gasto_esperado = $dados['preco'] * $dados['qtd_esperada'];
+            $cst = $this->conexao->prepare("INSERT INTO  $this->tabela_custos_variaveis (id_custos_variaveis, nome, tipo_produto, unidade, preco, qtd_esperada, gasto_esperado, obsvar)
+            VALUES (NULL, '".$dados['produto']."', '".$dados['type_prod']."', '".$dados['unidade']."', '".$dados['preco']."', '".$dados['qtd_esperada']."', '".$gasto_esperado."', '".$dados['obs']."');");
            if( $cst->execute()){
             return true;
            }

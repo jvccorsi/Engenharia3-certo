@@ -36,14 +36,13 @@ CREATE TABLE custos_variaveis(
  id_custos_variaveis int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
  nome varchar(30) NOT NULL,
  tipo_produto varchar(50) NOT NULL,
- unidade int(11) NOT NULL,
+ unidade varchar(20) NOT NULL,
  preco float NOT NULL,
  qtd_esperada int(11) NOT NULL,
  gasto_esperado float NOT NULL,
  qtd_total int(11) NOT NULL,
  gasto_final float NOT NULL,
- obsvar char(50) NOT NULL,
- id_custosfixos varchar(20) NOT NULL
+ obsvar char(50) NOT NULL
 );
 
 

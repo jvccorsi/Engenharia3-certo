@@ -55,6 +55,28 @@
     }
 ?> 
 
+<?php
+    //SUCESSO CAD CUSTO VARIAVEL
+    if (isset($_SESSION['sucesso_cad_variavel'])) {
+        if ($_SESSION['sucesso_cad_variavel']) {
+        ?>
+            <script>
+                function abreModal() {
+                    $("#sucesso_cad_variavel").modal({
+                        show: true
+                    });
+                }
+                setTimeout(abreModal, 10);
+            </script>
+        <?php
+        }
+        unset($_SESSION['sucesso_cad_variavel']);
+    }
+?> 
+
+
+
+
 <!-- Modal Editar Perfil -->
 <div class="modal fade" id="edit-profile-modal" role="dialog">
     <div class="modal-dialog">
@@ -208,7 +230,7 @@
     <div class="modal-dialog" >
         <div class="modal-content">
             <div class="modal-body">
-                <form id="contact-form" class="form" action="#" method="POST">
+                <form id="contact-form" class="form" action="../Controllers/cadastrar_custos_variaveis.php" method="POST">
                     <h1 class="titulo text-center"><b>Adicionar custos variáveis</b></h1>
                     <div class="forms">
                         <div class="form-group">
@@ -217,10 +239,15 @@
                                 placeholder="Digite o nome do produto" required>
                         </div>
                         <div class="form-group">
+                            <label class="form-label" for="type_prod"><b>Tipo do produto:</b></label>
+                            <input type="text" class="form-control" id="type_prod" name="type_prod"
+                                placeholder="Digite o nome tipo do produto" required>
+                        </div>
+                        <div class="form-group">
                             <label for="unidade"><b>Unidade de medida</b></label>
                             <select class="form-control" id="unidade" name="unidade" required>>
-                                <option>Litro (l)</option>
-                                <option>Mililitro (ml)</option>
+                                <option value="Litro">Litro (l)</option>
+                                <option value="Ml">Mililitro (ml)</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -234,7 +261,7 @@
                                 placeholder="Digite a quantidade esperada" required>
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="gasto_final"><b>Gasto final</b></label>
+                            <label class="form-label" for="gasto_final"><b>Gasto Esperado</b></label>
                             <input type="text" class="form-control" id="gasto_final" name="gasto_final" disabled required>
                         </div>
                         <div class="form-group">
@@ -396,7 +423,7 @@
     </div>
 </div>
 
-<!-- MODAL CADASTRO SUCESSO DO SISTEMA  -->
+<!-- MODAL CADASTRO CUSTO FIXO SUCESSO DO SISTEMA  -->
 <div class="modal fade" id="sucesso_cad_custos" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -410,3 +437,19 @@
     </div>
 </div>
 
+
+
+
+<!-- MODAL CADASTRO CUSTO VARIAVEL SUCESSO DO SISTEMA  -->
+<div class="modal fade" id="sucesso_cad_variavel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="exampleModalLongTitle">Custos Variaveis cadastrados com sucesso!</h5>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal">Voltar</button>
+        </div>
+        </div>
+    </div>
+</div>
