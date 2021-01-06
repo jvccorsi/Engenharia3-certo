@@ -15,6 +15,24 @@
         }
         unset($_SESSION['editar_dados_sucesso']);
     }
+
+    //SUCESSO CAD EVENTO
+    if (isset($_SESSION['sucesso_cad_evento'])) {
+        if ($_SESSION['sucesso_cad_evento']) {
+        ?>
+            <script>
+                function abreModal() {
+                    $("#cad_sucesso").modal({
+                        show: true
+                    });
+                }
+                setTimeout(abreModal, 10);
+            </script>
+        <?php
+        }
+        unset($_SESSION['sucesso_cad_evento']);
+    }
+
 ?> 
 
 <!-- Modal Editar Perfil -->
@@ -91,7 +109,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <form id="contact-form" class="form" action="#" method="POST">
+                <form id="contact-form" class="form" action="../Controllers/cadastrar_eventos.php" method="POST">
                     <h1 class="titulo"></h1>
                     <div class="forms">
                         <div class="form-group">
@@ -100,8 +118,38 @@
                                 placeholder="Digite o nome do evento aqui" required>
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="adress"><b>Endereço</b></label>
-                            <input  type="text" class="form-control" id="adress" name="adress"
+                            <label class="form-label" for="pais"><b>Pais</b></label>
+                            <input  type="text" class="form-control" id="pais" name="pais"
+                                placeholder="Digite o pais aqui" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="cep"><b>CEP</b></label>
+                            <input  type="text" class="form-control" id="cep" name="cep"
+                                placeholder="Digite o CEP aqui" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="state"><b>Estado</b></label>
+                            <input  type="text" class="form-control" id="state" name="state"
+                                placeholder="Digite o estado do evento aqui" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="city"><b>Cidade</b></label>
+                            <input  type="text" class="form-control" id="city" name="city"
+                                placeholder="Digite a cidade do evento aqui" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="street"><b>Rua</b></label>
+                            <input  type="text" class="form-control" id="street" name="street"
+                                placeholder="Digite o endereço do evento aqui" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="Bairro"><b>Bairro</b></label>
+                            <input  type="text" class="form-control" id="Bairro" name="Bairro"
+                                placeholder="Digite o endereço do evento aqui" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="n_local"><b>Número do local</b></label>
+                            <input  type="text" class="form-control" id="n_local" name="n_local"
                                 placeholder="Digite o endereço do evento aqui" required>
                         </div>
                         <div class="form-group">
@@ -318,3 +366,20 @@
         </div>
     </div>
 </div>
+
+<!-- MODAL CADASTRO SUCESSO DO SISTEMA  -->
+<div class="modal fade" id="cad_sucesso" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="exampleModalLongTitle">O evento foi cadastrado com sucesso com sucesso!!</h5>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal">Voltar</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
