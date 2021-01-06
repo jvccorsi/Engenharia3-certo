@@ -1,4 +1,5 @@
 <?php
+
     //MODAL SUCESSO EDITAR PERFIL
     if (isset($_SESSION['editar_dados_sucesso'])) {
         if ($_SESSION['editar_dados_sucesso'] == "sucesso") {
@@ -15,7 +16,9 @@
         }
         unset($_SESSION['editar_dados_sucesso']);
     }
-
+    ?>
+    
+<?php
     //SUCESSO CAD EVENTO
     if (isset($_SESSION['sucesso_cad_evento'])) {
         if ($_SESSION['sucesso_cad_evento']) {
@@ -32,7 +35,24 @@
         }
         unset($_SESSION['sucesso_cad_evento']);
     }
-
+?> 
+<?php
+    //SUCESSO CAD CUSTO FIXO
+    if (isset($_SESSION['sucesso_cad_custos'])) {
+        if ($_SESSION['sucesso_cad_custos']) {
+        ?>
+            <script>
+                function abreModal() {
+                    $("#sucesso_cad_custos").modal({
+                        show: true
+                    });
+                }
+                setTimeout(abreModal, 10);
+            </script>
+        <?php
+        }
+        unset($_SESSION['sucesso_cad_custos']);
+    }
 ?> 
 
 <!-- Modal Editar Perfil -->
@@ -235,27 +255,26 @@
         </div>
     </div>
 </div>
-
 <!-- Modal adicionar custos fixos -->
 <div class="modal fade" id="modal-adicionar-custos-fixos" role="dialog">
     <div class="modal-dialog" >
         <div class="modal-content">
             <div class="modal-body">
-                <form id="contact-form" class="form" action="#" method="POST">
+                <form id="contact-form" class="form" action="../Controllers/cadastro_custosfixo.php" method="POST" >
                     <h1 class="titulo text-center"><b>Adicionar custos fixos</b></h1>
                     <div class="forms">
                         <div class="form-group">
                             <label class="form-label" for="name"><b>Item</b></label>
-                            <input type="text" class="form-control" id="name" name="name"
+                            <input type="text" class="form-control" id="item_name" name="item_name"
                                 placeholder="Digite o nome do item" required>
                         </div>
                         <div class="form-group">
                             <label for="tipo"><b>Tipo</b></label>
                             <select class="form-control" id="Tipo" name="Tipo" required>>
-                                <option>Atrações</option>
-                                <option>Local/estrutura</option>
-                                <option>Seguranças</option>
-                                <option>Outros</option>
+                                <option value ='Atracoes'>Atrações</option>
+                                <option value ='Estrutura'>Local/estrutura</option>
+                                <option value ='Sergurancas'>Seguranças</option>
+                                <option value ='Outros'>Outros</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -264,8 +283,9 @@
                                 placeholder="R$" required>
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="gasto_final"><b>Gasto final</b></label>
-                            <input type="text" class="form-control" id="gasto_final" name="gasto_final" disabled required>
+                            <label class="form-label" for="qtd"><b>Quantidade</b></label>
+                            <input type="text" class="form-control" id="qtd" name="qtd"
+                                placeholder="R$" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="obs"><b>Observações</b></label>
@@ -376,5 +396,17 @@
     </div>
 </div>
 
-
+<!-- MODAL CADASTRO SUCESSO DO SISTEMA  -->
+<div class="modal fade" id="sucesso_cad_custos" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="exampleModalLongTitle">Custos fixos cadastrados com sucesso!</h5>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal">Voltar</button>
+        </div>
+        </div>
+    </div>
+</div>
 

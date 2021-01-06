@@ -1,11 +1,11 @@
 <?php
 session_start();
-include ('../Classes/eventos.php');
-$obeventos= new eventos();
+include ('../Classes/custos.php');
+$objCustos= new custos();
 
-        if($obeventos->queryInsert($_POST)){
+        if($objCustos->queryInsert_CustosFixos($_POST)){
 
-            $_SESSION['sucesso_cad_evento'] = true;
+            $_SESSION['sucesso_cad_custos'] = true;
             header("location:../Views/dashboard.php");
         }
         else{
