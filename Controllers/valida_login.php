@@ -11,8 +11,8 @@
         if($user) {
             $_SESSION['usu_logado'] = true;
             $_SESSION['usu_id'] = $user['id_usuario'];
-            
-            header("location: ../Views/dashboard.php");
+
+            header("location: ../Views/pages/dashboard.php");
         } else { 
             $_SESSION['login_incorreto_usu'] = "erro_senha";
 

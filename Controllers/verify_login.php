@@ -15,7 +15,7 @@ if ($_SESSION['usu_logado']) { // se ele tiver mesmo essa sessao(que foi passada
         // Verifica se ja expirou o tempo da sessao
         if ($duracao > $timeout) {
             // Destroi a sessao e cria uma nova
-             header("location:../index.php");
+             header("location: ../index.php");
             session_destroy();
             session_start();
         }
@@ -24,5 +24,5 @@ if ($_SESSION['usu_logado']) { // se ele tiver mesmo essa sessao(que foi passada
     $_SESSION['timeout'] = time();
 } else {
     $_SESSION['login_incorreto_usu'] = "necessario_realizar_login";
-    header("location:../index.php");
+    header("location: ../index.php");
 }

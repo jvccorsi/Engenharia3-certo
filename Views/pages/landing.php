@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("../config.php");
+    include("../../config.php");
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--CSS-->
-    <link rel="stylesheet" href="../Style/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <!--BS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
@@ -24,13 +24,13 @@
 <body>
     <header>
         <?php
-        include("./components/modals/index_modals.php");
+            include("../components/modals/index_modals.php");
         ?>
 
         <!--SECTION NAV -->
         <nav class="navbar navbar-expand-lg " id="edit">
             <div class="container">
-                <a class="navbar-brand h1 mb-0" href="#"><img src="assets/logo/logo_white.png" style="width: 230px;"></a>
+                <a class="navbar-brand h1 mb-0" href="#"><img src="../assets/logo/logo_white.png" style="width: 230px;"></a>
                 <button class="navbar-toggler navbar-light bg-light" type="button" data-toggle="collapse" data-target="#navbarSite">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -66,15 +66,15 @@
                 <div id="texto-section-quemsomos">
                     <div class="row">
                         <div class="col">   
-                            <img src="assets/custos.png" class="img-servicos">
+                            <img src="../assets/custos.png" class="img-servicos">
                             <h5 class="textos"><b>GERENCIAMENTO DE CUSTOS</b></h5>
                         </div>
                         <div class="col">   
-                            <img src="assets/evento.png" class="img-servicos">
+                            <img src="../assets/evento.png" class="img-servicos">
                             <h5 class="textos"><b>GERENCIAMENTO DO SEU EVENTO</b></h5>
                         </div>
                         <div class="col">   
-                            <img src="assets/relatorio_2.png" class="img-servicos">
+                            <img src="../assets/relatorio_2.png" class="img-servicos">
                             <h5 class="textos"><b>VISUALIZAÇÃO DE RELATÓRIOS</b></h5>
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                 </div>
                 <div class="col col-xl-6 col-lg-12 col-md-12">
                     <div id="container-forms">
-                    <form id="contact-form" class="form" action="Controllers/valida_login.php" method="POST">
+                    <form id="contact-form" class="form" action="../../Controllers/valida_login.php" method="POST">
                             <h1 class="titulos-login text-center"><b>Acesse o sistema:</b></h1>
                             <div class="forms">
                                 <div class="form-group">
@@ -143,7 +143,7 @@
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
     </script>
-    <script src="JS/script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
