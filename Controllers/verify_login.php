@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ('../Classes/usuario.php');
+include ('../../Classes/usuario.php');
 $objUser= new usuario();
 
 //VALIDAR O USUÁRIO
@@ -11,7 +11,6 @@ if ($_SESSION['usu_logado']) { // se ele tiver mesmo essa sessao(que foi passada
     if (isset($_SESSION['timeout'])) {
         // Calcula o tempo que ja se passou desde a cricao da sessao
         $duracao = time() - (int) $_SESSION['timeout'];
-
         // Verifica se ja expirou o tempo da sessao
         if ($duracao > $timeout) {
             // Destroi a sessao e cria uma nova

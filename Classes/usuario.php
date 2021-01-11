@@ -1,5 +1,5 @@
 <?php
-include("../config.php");
+include("../../config.php");
 require_once ROOT_PATH . '/Conexao_BD/conexao.php';
 
 class usuario

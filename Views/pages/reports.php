@@ -1,12 +1,7 @@
 <?php
-//php PARA VERFICIAR SE O USUÁRIO ESTÁ LOGADO!!
-include("../Controllers/verify_login.php"); 
-//PRA PEGAR OS CAMPOS DO BD, OLHAR A FUNCAO User_logado NA CLASSE USUARIO.
-//echo"Olá, seja bem vindo<b> ".$_SESSION['usu_nome']."</b> ao sistema !! <br> O seu email é:".$_SESSION['usu_email']."";
-//echo"<br>";
-
-//echo "<a href='../Controllers/sair.php'> Clique aqui para Sair </a>"; 
+  include("../../Controllers/verify_login.php"); 
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -14,10 +9,10 @@ include("../Controllers/verify_login.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--CSS-->
-    <link rel="stylesheet" href="../Style/dashboard.css">
-    <link rel="stylesheet" href="../Style/reports.css">
-    <link rel="stylesheet" href="../Style/components/modals/dashboard_modals.css">
-    <link rel="stylesheet" href="../Style/components/dashboard-header.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
+    <link rel="stylesheet" href="../styles/reports.css">
+    <link rel="stylesheet" href="../styles/components/modals/dashboard_modals.css">
+    <link rel="stylesheet" href="../styles/components/dashboard-header.css">
     <!--BS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
@@ -33,8 +28,8 @@ include("../Controllers/verify_login.php");
 
 <body onload="hora()">
   <?php 
-      include("components/modals/dashboard_modals.php");
-      include("components/dashboard_header.php"); 
+      include("../components/modals/dashboard_modals.php");
+      include("../components/dashboard_header.php"); 
   ?>
   <main>
     <ul id="reports-tabs" class="nav nav-tabs" data-tabs="tabs">
