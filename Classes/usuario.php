@@ -38,23 +38,14 @@ class usuario
     public function logarUser($dado)
     {
         try {
-
             //Cst = Consulte Stament 
             $cst = $this->conexao->prepare("SELECT id_usuario,email,senha from $this->tabela WHERE email=:usu_email AND senha=:usu_senha LIMIT 1");
             $cst->bindParam(":usu_email", $dado['email'], PDO::PARAM_STR);
             $cst->bindParam(":usu_senha", $dado['senha'], PDO::PARAM_STR);
             $cst->execute();
-            if ($cst->rowCount() == 0) { //vai contar quantos registros eu tenho no $cs. Se for igual a 0 o usuario não existe
-                session_start();
-                $_SESSION['login_incorreto_usu'] = "erro_senha";
-                header("location:../index.php");
-            } else { // Se usuário existir, ou seja, rowCount != 0
-                session_start(); // inicia a sessão
-                $resultado = $cst->fetch(); // vai trazer as informações do BD caso o usu existir
-                $_SESSION['usu_logado'] = true;
-                $_SESSION['usu_id'] = $resultado['id_usuario']; //o valor que veio do BD vai ser salvo nessa sessao.
-                header("Location:../Views/dashboard.php");
-            }
+            
+            return $cst->rowCount() ? $cst->fetch() : false; 
+
         } catch (PDOException $ex) {
             return 'error ' . $ex->getMessage();
         }

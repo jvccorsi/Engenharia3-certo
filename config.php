@@ -1,5 +1,5 @@
 <?php
 
-    define('ROOT_PATH', dirname(__FILE__));
+    if(!defined('ROOT_PATH')) define('ROOT_PATH', dirname(__FILE__));
 
 ?>

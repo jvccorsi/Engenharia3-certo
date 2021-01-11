@@ -1,13 +1,23 @@
 <?php
     include ("../config.php");
-    session_start();
     require_once ROOT_PATH.'/Classes/usuario.php';
+
     $objUser = new usuario();
+
     if(isset($_POST['btnlogin'])){ // se o cara clicar no botão logar
-        $objUser->logarUser($_POST); //VAI ENVIAR VIA POST OS DADOS DOS FORM PARA A FUNCAO LOGAR USU na forma de um array
-    }
-    else{
-        $_SESSION['login_incorreto_usu'] = "<div class='alert alert-danger col-md-6' style='margin-left: 25%'>Pagina não encontrada!</div>";
-        header("Location: ../index.php");
+        session_start();
+
+        $user = $objUser->logarUser($_POST);
+        if($user) {
+            $_SESSION['usu_logado'] = true;
+            $_SESSION['usu_id'] = $user['id_usuario'];
+            
+            header("location: ../Views/dashboard.php");
+        } else { 
+            $_SESSION['login_incorreto_usu'] = "erro_senha";
+
+            http_response_code(401);
+            header("location: ../index.php");
+        }
     }
 ?>
