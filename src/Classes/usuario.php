@@ -2,8 +2,7 @@
 include("../../config.php");
 require_once ROOT_PATH . '/Conexao_BD/conexao.php';
 
-class Usuario
-{
+class Usuario {
     private $conexao;
     private $tabela;
 
