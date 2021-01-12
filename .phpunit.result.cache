@@ -1,1 +1,1 @@
-C:37:"PHPUnit\Runner\DefaultTestResultCache":146:{a:2:{s:7:"defects";a:1:{s:37:"SampleTest::test_true_asserts_to_true";i:3;}s:5:"times";a:1:{s:37:"SampleTest::test_true_asserts_to_true";d:0.005;}}}
+C:37:"PHPUnit\Runner\DefaultTestResultCache":229:{a:2:{s:7:"defects";a:2:{s:37:"SampleTest::test_true_asserts_to_true";i:3;s:28:"UserTest::testIfUserCanLogin";i:3;}s:5:"times";a:2:{s:37:"SampleTest::test_true_asserts_to_true";d:0.005;s:28:"UserTest::testIfUserCanLogin";d:0.01;}}}

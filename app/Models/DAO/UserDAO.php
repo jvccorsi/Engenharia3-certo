@@ -1,6 +1,6 @@
 <?php
 
-require_once '../../database/connection/connection.php';
+require_once dirname(dirname(__FILE__)) . '..\..\database\connection\connection.php';
 require_once 'DAO.php';
 
 final class UserDAO extends DAO {
@@ -14,11 +14,11 @@ final class UserDAO extends DAO {
         $this->table = "usuarios";
     }
 
-    public function select($user_id) {
+    public function select($id) {
 
         $cst = $this->connection->prepare("SELECT * from $this->table WHERE id_usuario=:user_id");
        
-        $cst->bindParam(":user_id", $user_id, PDO::PARAM_STR);
+        $cst->bindParam(":user_id", $id, PDO::PARAM_STR);
         
         try {
             $cst->execute();
@@ -45,7 +45,7 @@ final class UserDAO extends DAO {
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
         }
-        
+
         return $cst->rowCount() ? $cst->fetch() : false; 
     }
 
