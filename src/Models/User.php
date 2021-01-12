@@ -9,20 +9,7 @@ final class User {
     private $phone;
     private $email;
     private $username;
-    private $password;
-
-    public function __construct($name, $genre, $last_name, $birth_date, $cpf, $phone, $email, 
-        $username, $password) {
-        $this->setUsernameFromJogador($name);
-        $this->setGenre($genre);
-        $this->setLast_name($last_name);
-        $this->setBirth_date($birth_date);
-        $this->setCpf($cpf);
-        $this->setPhone($phone);
-        $this->setEmail($email);
-        $this->setUsername($username);
-        $this->setPassword($password);
-    }
+	private $password;
 
     public function getName(){
 		return $this->name;

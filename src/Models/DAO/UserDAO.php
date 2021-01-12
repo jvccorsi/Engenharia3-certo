@@ -1,46 +1,67 @@
 <?php
 
+require_once '../../database/connection/connection.php';
 require_once 'DAO.php';
 
-final class JogoDAO extends DAO {
+final class UserDAO extends DAO {
 
-    public static function select($conn, $jogo) {
+    private $connection;
+    private $table;
+
+    function __construct() {
+        $conn = new Conexao();
+        $this->connection = $conn->getConnection();
+        $this->table = "usuarios";
+    }
+
+    public function select($user) {
+
+        $cst = $this->connection->prepare("SELECT id_usuario, email, senha FROM 
+            $this->table WHERE email=:user_email AND senha=:user_password LIMIT 1");
+
+        $email = $user->getEmail();
+        $password = $user->getPassword();
+
+        $cst->bindParam(":user_email", $email, PDO::PARAM_STR);
+        $cst->bindParam(":user_password", $password, PDO::PARAM_STR);
+        
+        try {
+            $cst->execute();
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+        
+        return $cst->rowCount() ? $cst->fetch() : false; 
+    }
+
+    public function insert($user) {
+
+        $name = $user->getName();
+        $genre = $user->getGenre();
+        $last_name = $user->getLast_name();
+        $birth_date = $user->getBirth_date();
+        $cpf = $user->getCpf();
+        $phone = $user->getPhone();
+        $email = $user->getEmail();
+        $username = $user->getUsername();
+        $password = $user->getPassword();
+
+        $cst = $this->conn->prepare("INSERT INTO $this->table (email,username,senha, nome, sobrenome, cpf, data_nasc, genero, telefone)" .
+        "VALUES (:email, :username, :senha,:nome,:sobrenome, :cpf, :data_nasc, :genero, :telefone)");
+
+        try {
+
+            $cst->execute();
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+    }
+
+    public function update($user) {
         return "Não implementado ainda";
     }
 
-
-    public static function selectGamesByPlayer($conn, $username) {
-
-        try {
-
-        } catch (Exception $e) {
-            throw new Exception($e->getMessage());
-        }
-    }
-
-    public static function selectGamesOrderByScore($conn) {
-
-        try {
-
-        } catch (Exception $e) {
-            throw new Exception($e->getMessage());
-        }
-    }
-
-    public static function insert($conn, $jogo) {
-
-        try {
-
-        } catch (Exception $e) {
-            throw new Exception($e->getMessage());
-        }
-    }
-
-    public static function update($conn, $jogo) {
-        return "Não implementado ainda";
-    }
-
-    public static function delete($conn, $jogo) {
+    public function delete($user) {
         return "Não implementado ainda";
     }
 }

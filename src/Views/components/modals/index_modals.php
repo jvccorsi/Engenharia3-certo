@@ -259,20 +259,20 @@
         <div class="modal-dialog">
             <div class="modal-content" id="fundo-modal">
                 <div class="modal-body">
-                    <form id="contact-form" class="form" action="../../Controllers/gestao_cadastro_usu.php" method="POST">
+                    <form id="register-user-form" class="form" action="../../Controllers/users/register.php" method="POST">
                         <h1 class="titulo text-center"><b>Efetuar cadastro:</b></h1>
                         <div class="forms">
                             <div class="form-group">
                                 <label class="form-label" for="name" style="color:white;"><b>Nome:</b></label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Digite seu nome aqui" required>
+                                <input type="text" class="form-control" name="name" placeholder="Digite seu nome aqui" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="sobrenome" style="color:white;"><b>Sobrenome:</b></label>
-                                <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Digite seu sobrenome aqui" required>
+                                <label class="form-label" for="last-name" style="color:white;"><b>Sobrenome:</b></label>
+                                <input type="text" class="form-control" id="sobrenome" name="last-name" placeholder="Digite seu sobrenome aqui" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="genero" style="color:white;"><b>Gênero:</b></label>
-                                <select class="form-control" name="genero" id="genero">
+                                <label class="form-label" for="genre" style="color:white;"><b>Gênero:</b></label>
+                                <select class="form-control" name="genre" id="genero">
                                 <option value="masculino">Masculino</option>
                                 <option value="feminino">Feminino</option>
                                 <option value="prefiro_nao_dizer">Prefiro não dizer</option>
@@ -280,31 +280,31 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="form-label" for="email" style="color:white;"><b>Data de nascimento:</b></label>
-                                <input type="text" class="form-control" id="dtnasc" name="dtnasc" placeholder="Digite sua data de nascimento aqui" required>
+                                <label class="form-label" for="birth-date" style="color:white;"><b>Data de nascimento:</b></label>
+                                <input type="text" class="form-control" id="dtnasc" name="birth-date" placeholder="Digite sua data de nascimento aqui" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="name" style="color:white;"><b>CPF:</b></label>
                                 <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite seu CPF aqui" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="name" style="color:white;"><b>Telefone:</b></label>
-                                <input type="text" class="form-control" id="telefone" name="telefone" placeholder="(00)0000-0000" required>
+                                <label class="form-label" for="phone" style="color:white;"><b>Telefone:</b></label>
+                                <input type="text" class="form-control" id="telefone" name="phone" placeholder="(00)0000-0000" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="name" style="color:white;"><b>Email:</b></label>
-                                <input type="email" class="form-control" id="email_usu" name="email_usu" placeholder="Digite o seu email aqui" required>
+                                <label class="form-label" for="email" style="color:white;"><b>Email:</b></label>
+                                <input type="email" class="form-control" id="email_usu" name="email" placeholder="Digite o seu email aqui" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="name" style="color:white;"><b>Username:</b></label>
+                                <label class="form-label" for="username" style="color:white;"><b>Username:</b></label>
                                 <input type="text" class="form-control" id="username" name="username" placeholder="Digite seu username aqui" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="email" style="color:white;"><b>Senha:</b></label>
-                                <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha aqui" required>
+                                <label class="form-label" for="password" style="color:white;"><b>Senha:</b></label>
+                                <input type="password" class="form-control" id="senha" name="password" placeholder="Digite sua senha aqui" required>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-success" id="salvar-btn" value="send" style="margin-bottom: 5px;"><b>SALVAR</b></button><br>
+                                <button type="submit" class="btn btn-success" value="send" style="margin-bottom: 5px;"><b>SALVAR</b></button><br>
                             </div>
                         </div>
                     </form>
@@ -324,7 +324,7 @@
                         <div class="forms">
                             <div class="form-group">
                                 <label class="form-label" for="name" style="color:white;"><b>Nome:</b></label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Digite seu nome aqui" required>
+                                <input type="text" class="form-control" name="name" placeholder="Digite seu nome aqui" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="name" style="color:white;"><b>Email:</b></label>
@@ -348,7 +348,7 @@
                                 <textarea class="form-control" name="descricao_usu" rows="3" maxlength="400" ></textarea>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-success" id="salvar-btn" value="send" style="margin-bottom: 5px;"><b>ENVIAR</b></button><br>
+                                <button type="submit" class="btn btn-success" value="send" style="margin-bottom: 5px;"><b>ENVIAR</b></button><br>
                             </div>
                         </div>
                     </form>

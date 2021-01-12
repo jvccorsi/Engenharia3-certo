@@ -24,7 +24,7 @@ class Conexao {
         }
     }
 
-    public function getConexao() {
+    public function getConnection() {
         return $this->conexao;
     }
 

@@ -1,18 +1,3 @@
-<?php
-    session_start();
-    require_once("../../Controllers/valida_login.php");
-
-    if(isset($_POST['login'])){ // Request login
-        $response = login();
-
-        if(http_response_code() == 200) {
-            header("location: dashboard.php");
-        } else {
-            // header("location: ../../index.php");    
-        }
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -114,21 +99,21 @@
                 </div>
                 <div class="col col-xl-6 col-lg-12 col-md-12">
                     <div id="container-forms">
-                    <form id="contact-form" class="form" method="POST">
+                    <form class="form" action="../../Controllers/users/login.php" method="POST">
                             <h1 class="titulos-login text-center"><b>Acesse o sistema:</b></h1>
                             <div class="forms">
                                 <div class="form-group">
                                     <label class="form-label" for="name"><b>Email:</b></label>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu email aqui" tabindex="1" required>
+                                    <input type="email" class="form-control" name="email" placeholder="Digite seu email aqui" tabindex="1" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label" for="email"><b>Senha:</b></label>
-                                    <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha aqui:" tabindex="2" required>
+                                    <input type="password" class="form-control" name="password" placeholder="Digite sua senha aqui:" tabindex="2" required>
                                 </div>
                                 <h1 class="titulos-login-esqueci text-center"><a href="#modal-rec-senha" data-toggle="modal" data-target="#modal_esqueci_senha" style="color: black;"><b>Esqueci a
                                             senha</b></a></h1>
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-start-order" id="btn-form" name="login" value="send"><b>ENVIAR </b>
+                                    <button type="submit" class="btn btn-start-order" id="btn-form" name="login" value="send"><b>ENTRAR </b>
                                         <div class="spinner-grow text-dark" role="status" style="margin-bottom:5px;margin-left:5px;width: 16px; height: 16px;">
                                         </div>
                                     </button>
