@@ -1,6 +1,6 @@
 <?php
-include("../../config.php");
-require_once ROOT_PATH . '/Conexao_BD/conexao.php';
+include("../../../config.php");
+require_once ROOT_PATH . '/src/database/connection/connection.php';
 
 class Usuario {
     private $conexao;
@@ -9,7 +9,7 @@ class Usuario {
     function __construct()
     {
         $conn = new Conexao();
-        $this->conexao = $conn->getConexao();
+        $this->conexao = $conn->getConnection();
         $this->tabela = "usuarios";
     }
 

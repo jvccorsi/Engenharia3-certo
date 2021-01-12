@@ -59,15 +59,13 @@ final class UserDAO extends DAO {
         $cst->bindParam(":username", $username, PDO::PARAM_STR);
         $cst->bindParam(":senha", $password, PDO::PARAM_STR);
 
-        echo($cst->fetch());
-
         try {
-            $cst->execute();
+            $result = $cst->execute();
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
         }
 
-        return $cst->rowCount() ? true : false; 
+        return $result; 
     }
 
     public function update($user) {
