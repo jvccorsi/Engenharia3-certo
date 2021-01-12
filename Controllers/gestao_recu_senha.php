@@ -2,7 +2,7 @@
 
 session_start();
 include ('../Classes/usuario.php');
-require_once '../assets/PHPMailer/src/Enviar_Email.php';
+require_once '../Views/assets/PHPMailer/src/Enviar_Email.php';
 
 $obj_User = new usuario();
 $obj_Email = new Enviar_Email();
