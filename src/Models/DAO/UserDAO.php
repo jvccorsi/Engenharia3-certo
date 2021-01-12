@@ -14,7 +14,22 @@ final class UserDAO extends DAO {
         $this->table = "usuarios";
     }
 
-    public function select($user) {
+    public function select($user_id) {
+
+        $cst = $this->connection->prepare("SELECT * from $this->table WHERE id_usuario=:user_id");
+       
+        $cst->bindParam(":user_id", $user_id, PDO::PARAM_STR);
+        
+        try {
+            $cst->execute();
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+
+        return $cst->rowCount() ? $cst->fetch() : false; 
+    }
+
+    public function selectByCredentials($user) {
 
         $cst = $this->connection->prepare("SELECT id_usuario, email, senha FROM 
             $this->table WHERE email=:user_email AND senha=:user_password LIMIT 1");
@@ -30,7 +45,7 @@ final class UserDAO extends DAO {
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
         }
-
+        
         return $cst->rowCount() ? $cst->fetch() : false; 
     }
 

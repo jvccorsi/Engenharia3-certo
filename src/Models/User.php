@@ -1,6 +1,7 @@
 <?php
 
 final class User {
+	private $id;
     private $name;
     private $genre;
     private $last_name;
@@ -10,6 +11,14 @@ final class User {
     private $email;
     private $username;
 	private $password;
+
+	public function getId(){
+		return $this->name;
+	}
+
+	public function setId($name){
+		$this->name = $name;
+	}
 
     public function getName(){
 		return $this->name;

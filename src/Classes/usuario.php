@@ -9,7 +9,7 @@ class Usuario {
     function __construct()
     {
         $conn = new Conexao();
-        $this->conexao = $conn->getConnection();
+        $this->conexao = $conn->getConexao();
         $this->tabela = "usuarios";
     }
 
