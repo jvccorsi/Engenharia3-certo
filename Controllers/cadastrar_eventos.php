@@ -10,7 +10,7 @@ $obeventos= new eventos();
         }
         else{
             $_SESSION['msg'] = "<script> alert('Erro ao realizar o cadastro!'); </script>";
-            header("location:../Views/dashboard.php");
+            header("location:../Views/pages/dashboard.php");
         }
 
 ?>
