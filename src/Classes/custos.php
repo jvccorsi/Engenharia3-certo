@@ -2,8 +2,7 @@
 include("../config.php");
 require_once ROOT_PATH . '/Conexao_BD/conexao.php'; //Não alterar o link da conexão. Lembrando que fica salvo as alterações ;)
 
-class custos
-{
+class Custos {
     private $conexao;
     private $tabela_custos_fixos;
     private $tabela_custos_variaveis;
