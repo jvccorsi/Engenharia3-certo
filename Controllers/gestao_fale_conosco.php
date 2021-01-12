@@ -2,7 +2,7 @@
 
 session_start();
 include ('../Classes/fale_conosco.php');
-require_once '../assets/PHPMailer/src/Enviar_Email.php';
+require_once '../Views/assets/PHPMailer/src/Enviar_Email.php';
 
 $obj_Email = new Enviar_Email();
 $obj_Fale_Conosco = new fale_conosco();

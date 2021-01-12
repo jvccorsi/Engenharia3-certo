@@ -241,7 +241,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="form_recu_senha" class="form" action="Controllers/gestao_recu_senha.php" method="POST">
+                    <form id="form_recu_senha" class="form" action="../../Controllers/gestao_recu_senha.php" method="POST">
                         <div class="form-group">
                             <label for="email_recuperar_senha" class="font-weight-bold text-white">Digite seu email:</label>
                             <input type="email" class="form-control " id="email_recuperar_senha" name='email_recuperar_senha' placeholder="name@example.com">
@@ -259,7 +259,7 @@
         <div class="modal-dialog">
             <div class="modal-content" id="fundo-modal">
                 <div class="modal-body">
-                    <form id="contact-form" class="form" action="Controllers/gestao_cadastro_usu.php" method="POST">
+                    <form id="contact-form" class="form" action="../../Controllers/gestao_cadastro_usu.php" method="POST">
                         <h1 class="titulo text-center"><b>Efetuar cadastro:</b></h1>
                         <div class="forms">
                             <div class="form-group">
@@ -319,7 +319,7 @@
         <div class="modal-dialog ">
             <div class="modal-content" id="fundo-modal">
                 <div class="modal-body">
-                    <form id="contact-form" class="form" action="Controllers/gestao_fale_conosco.php" method="POST">
+                    <form id="contact-form" class="form" action="../../Controllers/gestao_fale_conosco.php" method="POST">
                         <h1 class="titulo text-center"><b>Entrar em contato:</b></h1>
                         <div class="forms">
                             <div class="form-group">
