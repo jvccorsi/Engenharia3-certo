@@ -30,11 +30,14 @@ final class UserDAO extends DAO {
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
         }
-        
+
         return $cst->rowCount() ? $cst->fetch() : false; 
     }
 
     public function insert($user) {
+
+        $cst = $this->connection->prepare("INSERT INTO $this->table (email,username,senha, nome, sobrenome, cpf, data_nasc, genero, telefone)" .
+        "VALUES (:email, :username, :senha, :nome, :sobrenome, :cpf, :data_nasc, :genero, :telefone)");
 
         $name = $user->getName();
         $genre = $user->getGenre();
@@ -46,15 +49,25 @@ final class UserDAO extends DAO {
         $username = $user->getUsername();
         $password = $user->getPassword();
 
-        $cst = $this->conn->prepare("INSERT INTO $this->table (email,username,senha, nome, sobrenome, cpf, data_nasc, genero, telefone)" .
-        "VALUES (:email, :username, :senha,:nome,:sobrenome, :cpf, :data_nasc, :genero, :telefone)");
+        $cst->bindParam(":nome", $name, PDO::PARAM_STR);
+        $cst->bindParam(":genero", $genre, PDO::PARAM_STR);
+        $cst->bindParam(":sobrenome", $last_name, PDO::PARAM_STR);
+        $cst->bindParam(":data_nasc", $birth_date, PDO::PARAM_STR);
+        $cst->bindParam(":cpf", $cpf, PDO::PARAM_STR);
+        $cst->bindParam(":telefone", $phone, PDO::PARAM_STR);
+        $cst->bindParam(":email", $email, PDO::PARAM_STR);
+        $cst->bindParam(":username", $username, PDO::PARAM_STR);
+        $cst->bindParam(":senha", $password, PDO::PARAM_STR);
+
+        echo($cst->fetch());
 
         try {
-
             $cst->execute();
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
         }
+
+        return $cst->rowCount() ? true : false; 
     }
 
     public function update($user) {

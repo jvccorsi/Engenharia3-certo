@@ -1,7 +1,6 @@
 <?php
-
-require_once '..\..\models\Jogador.php';
-require_once '..\..\models\DAO\JogadorDAO.php';
+require_once '..\..\models\User.php';
+require_once '..\..\models\DAO\UserDAO.php';
 
 if (isset($_POST['username'])) { 
 
@@ -19,12 +18,14 @@ if (isset($_POST['username'])) {
     $user->setUsername($_POST['username']);
     $user->setPassword($_POST['password']);
 
-    UserDAO::insert($user);
+    $userDAO = new UserDAO();
+    
+    if($userDAO->insert($user)) {
+        echo('User created');
+    } else { 
+        $_SESSION['msg'] = "<script> alert('Erro ao realizar o cadastro!'); </script>";
+    }
 
-    header("location:../index.php");
-} else {
-    $_SESSION['msg'] = "<script> alert('Erro ao realizar o cadastro!'); </script>";
-    header("location:../Views/pages/dashboard.php");
+    header("location: ../../../index.php");
 }
-
 ?>
