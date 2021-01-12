@@ -6,8 +6,6 @@
         $objUser = new usuario();
         $user = $objUser->logarUser($_POST);
 
-        session_start();
-
         if($user) {
             $_SESSION['usu_logado'] = true;
             $_SESSION['usu_id'] = $user['id_usuario'];

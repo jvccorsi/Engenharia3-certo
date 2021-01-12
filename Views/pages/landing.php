@@ -8,7 +8,7 @@
         if(http_response_code() == 200) {
             header("location: dashboard.php");
         } else {
-            header("location: ../../index.php");
+            // header("location: ../../index.php");    
         }
     }
 ?>
