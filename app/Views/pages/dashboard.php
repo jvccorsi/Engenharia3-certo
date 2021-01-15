@@ -43,7 +43,7 @@
             <hr class="hr">
         </div>
         <div class="tabela-eventos">
-            <table onload="" id="events-table" class="table table-striped table-dark mt-5">
+            <table id="events-table" class="table table-striped table-dark mt-5">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -53,72 +53,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Tusca</td>
-                        <td>22/05</td>
-                        <td id="actions-column">
-                            <div class="btn-group">
-                                <a href="reports.php" title="Visualizar relatório" >
-                                    <img src="../assets/report.svg" class="img-actions">
-                                </a>
-                            </div>
-                            <div class="btn-group">
-                                <button type="button" id="dropdownCostsButton" title="Adicionar Custos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="../assets/money.svg" alt="adicionar">
-                                </button>
-                                <div class="dropdown-menu" id="dropdownCostsButton" aria-labelledby="dropdownCostsButton">
-                                    <a class="dropdown-item" data-toggle="modal" data-target="#modal-adicionar-custos-variaveis" href="#">Variável</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" data-toggle="modal" data-target="#modal-adicionar-custos-fixos" href="#">Fixo</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" data-toggle="modal" data-target="#modal-adicionar-receita" href="#">Receita</a>
-                                </div>
-                            </div>
-                            <div class="btn-group">
-                                <button type="button" id="dropdownEditButton" title="Editar evento" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="../assets/gear.svg" class="img-actions">
-                                </button>
-                                <div class="dropdown-menu" id="dropdownEditButton" aria-labelledby="dropdownEditButton">
-                                    <a class="dropdown-item edit-link" data-toggle="modal" data-target="#modal-manter-evento" href="#">Editar</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-excluir-evento">Excluir</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Abdubixos</td>
-                        <td>10/02</td>
-                        <td id="actions-column">
-                            <div class="btn-group">
-                                <a href="reports.php" title="Visualizar relatório" >
-                                    <img src="../assets/report.svg" class="img-actions">
-                                </a>
-                            </div>
-                            <div class="btn-group">
-                                <button type="button" id="dropdownCostsButton" title="Adicionar Custos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="../assets/money.svg" alt="adicionar">
-                                </button>
-                                <div class="dropdown-menu" id="dropdownCostsButton" aria-labelledby="dropdownCostsButton">
-                                    <a class="dropdown-item" data-toggle="modal" data-target="#modal-adicionar-custos-variaveis" href="#">Variável</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" data-toggle="modal" data-target="#modal-adicionar-custos-fixos" href="#">Fixo</a>
-                                </div>
-                            </div>
-                            <div class="btn-group">
-                                <button type="button" id="dropdownEditButton" title="Editar evento" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="../assets/gear.svg" class="img-actions">
-                                </button>
-                                <div class="dropdown-menu" id="dropdownEditButton" aria-labelledby="dropdownEditButton">
-                                    <a class="dropdown-item edit-link" data-toggle="modal" data-target="#modal-manter-evento" href="#">Editar</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-excluir-evento">Excluir</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
                 </tbody>
             </table>
         </div>

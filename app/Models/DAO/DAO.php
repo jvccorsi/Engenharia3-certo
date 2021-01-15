@@ -2,6 +2,9 @@
 
 abstract class DAO {
 
+    private $connection;
+    private $table;
+
     abstract public function select($obj);
 
     abstract public function insert($obj);

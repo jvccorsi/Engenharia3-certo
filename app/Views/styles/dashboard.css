@@ -82,13 +82,13 @@ main {
     font-size: 20px;
 }
 
-.tabela-eventos tr #actions-column { 
+.tabela-eventos tr .actions-column { 
     display: flex;
     justify-content: space-evenly;
 }
 
-.tabela-eventos tr #actions-column a,
-.tabela-eventos tr #actions-column button { 
+.tabela-eventos tr .actions-column a,
+.tabela-eventos tr .actions-column button { 
     padding: 8px;
     display: flex;
 
@@ -98,13 +98,13 @@ main {
     background-color: #fff;
 }
 
-.tabela-eventos tr #actions-column a:hover,
-.tabela-eventos tr #actions-column button:hover { 
+.tabela-eventos tr .actions-column a:hover,
+.tabela-eventos tr .actions-column button:hover { 
     border-radius: 15px;
 }
 
-.tabela-eventos tr #actions-column a img,
-.tabela-eventos tr #actions-column button img { 
+.tabela-eventos tr .actions-column a img,
+.tabela-eventos tr .actions-column button img { 
     height: 25px;
     width: 25px;
 }

@@ -1,46 +1,63 @@
 <?php
 
+require_once dirname(dirname(__FILE__)) . '..\..\database\connection.php';
 require_once 'DAO.php';
 
-final class JogoDAO extends DAO {
+final class EventDAO extends DAO {
 
-    public static function select($conn, $jogo) {
+    private $connection;
+    private $table;
+
+    function __construct() {
+        $conn = new Conexao();
+        $this->connection = $conn->getConnection();
+        $this->table = "evento";
+    }
+
+    public function select($event) {
+        try {
+
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+    }
+
+    public function selectAll() {
+
+        $cst = $this->connection->prepare("SELECT * FROM  $this->table");
+
+        try {
+            $cst->execute();
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+
+        $events = [];
+        while ($event = $cst->fetch(PDO::FETCH_ASSOC)) {
+            // Converter formato de data para dia/mes/ano 
+            $date = date("d-m-Y", strtotime($event['data_evento']));
+            $event['data_evento'] = str_replace('-', '/', $date);
+
+            array_push($events, $event);
+        }
+
+        return $cst->rowCount() ? $events : false;
+    }
+
+    public function insert($event) {
+
+        try {
+
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+    }
+
+    public function update($event) {
         return "Não implementado ainda";
     }
 
-
-    public static function selectGamesByPlayer($conn, $username) {
-
-        try {
-
-        } catch (Exception $e) {
-            throw new Exception($e->getMessage());
-        }
-    }
-
-    public static function selectGamesOrderByScore($conn) {
-
-        try {
-
-        } catch (Exception $e) {
-            throw new Exception($e->getMessage());
-        }
-    }
-
-    public static function insert($conn, $jogo) {
-
-        try {
-
-        } catch (Exception $e) {
-            throw new Exception($e->getMessage());
-        }
-    }
-
-    public static function update($conn, $jogo) {
-        return "Not implemented yet";
-    }
-
-    public static function delete($conn, $jogo) {
-        return "Not implemented yet";
+    public function delete($event) {
+        return "Não implementado ainda";
     }
 }

@@ -8,7 +8,7 @@ if (isset($_GET)) {
 
     $eventDAO = new EventDAO();
 
-    
-    
-    echo json_encode($event);
+    $events = $eventDAO->selectAll();
+
+    echo json_encode($events);
 }
