@@ -99,7 +99,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <form id="contact-form" class="form" action="../Controllers/editar_info_pessoais.php" method="POST">
+                <form id="contact-form" class="form" action="../../Controllers/users/edit.php" method="POST">
                     <h1 class="titulo"><b>Editar informações pessoais:</b></h1>
                     <div class="forms">
                         <div class="form-group">
@@ -247,7 +247,7 @@
     <div class="modal-dialog" >
         <div class="modal-content">
             <div class="modal-body">
-                <form id="contact-form" class="form" action="../Controllers/cadastrar_custos_variaveis.php" method="POST">
+                <form id="contact-form" class="form" action="../../Controllers/costs/register_variable.php" method="POST">
                     <h1 class="titulo text-center"><b>Adicionar custos variáveis</b></h1>
                     <div class="forms">
                         <div class="form-group">
@@ -355,7 +355,7 @@
     <div class="modal-dialog" >
         <div class="modal-content">
             <div class="modal-body">
-                <form id="contact-form" class="form" action="../Controllers/cadastro_receita.php" method="POST" >
+                <form id="contact-form" class="form" action="../../Controllers/incomes/cadastro_receita.php" method="POST" >
                     <h1 class="titulo text-center"><b>Adicionar Receita</b></h1>
                     <div class="forms">
                         <div class="form-group">
