@@ -4,12 +4,11 @@ require_once '..\..\Models\DAO\UserDAO.php';
 
 session_start();
 
-if ($_SESSION['usu_logado']) {
+if (isset($_GET)) {
 
     $userDAO = new UserDAO();
 
     $user = $userDAO->select($_SESSION['usu_id']); 
-} else {
-    $_SESSION['login_incorreto_usu'] = "necessario_realizar_login";
-    header("location: ../../../index.php");
+    
+    echo json_encode($user);
 }
