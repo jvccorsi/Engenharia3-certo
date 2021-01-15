@@ -168,7 +168,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <form id="contact-form" class="form" action="../../Controllers/cadastrar_eventos.php" method="POST">
+                <form id="contact-form" class="form" action="../../Controllers/events/register.php" method="POST">
                     <h1 class="titulo"></h1>
                     <div class="forms">
                         <div class="form-group">
