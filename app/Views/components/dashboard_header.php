@@ -1,5 +1,5 @@
 <?php echo"
-  <header>
+  <header id=\"dashboard-header\">
     <!--SECTION NAV -->
     <nav class=\"navbar navbar-expand-lg justify-content-between\" id=\"edit\">
 
@@ -63,7 +63,7 @@
       };
     })
 
-    function hora() {
+    $('body').ready(() => {
       var date = new Date();
       // Adicionar um zero antes da hora e minuto
       const hora = '0' + String(date.getHours());
@@ -71,7 +71,7 @@
 
       // Pegar somente os dois ultimos elementos de hora e minuto
       document.getElementById('botao-hora').innerHTML =  hora.slice(-2) + ':' + minuto.slice(-2);
-    }
+    });
   </script>
 "
 ?>

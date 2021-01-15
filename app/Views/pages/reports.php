@@ -26,7 +26,7 @@
     <title>Rolê de Rep</title>
 </head>
 
-<body onload="hora()">
+<body>
   <?php 
       include("../components/modals/dashboard_modals.php");
       include("../components/dashboard_header.php"); 

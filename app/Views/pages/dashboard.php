@@ -19,13 +19,14 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="../js/script.js"></script>
+    <script src="../js/handleEventData.js"></script>
     <!--FONT-->
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
 
     <title>Rolê de Rep</title>
 </head>
 
-<body onload="hora()">
+<body>
     <?php 
         include("../components/modals/dashboard_modals.php");
         include("../components/dashboard_header.php"); 
@@ -42,7 +43,7 @@
             <hr class="hr">
         </div>
         <div class="tabela-eventos">
-            <table class="table table-striped table-dark mt-5">
+            <table onload="" id="events-table" class="table table-striped table-dark mt-5">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
