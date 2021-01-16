@@ -1,6 +1,8 @@
 "use strict";
 $('body').ready(() => {
 
+    
+
     // Evento para o modal de edição de eventos
     $('a.edit-link').on('click', () => {
         $('.modal .titulo').html("<b>Editar evento</b>");

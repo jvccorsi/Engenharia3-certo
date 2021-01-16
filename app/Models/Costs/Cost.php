@@ -1,9 +1,18 @@
 <?php
 
 abstract class Cost {
+	private $id_evento;
 	private $price;
 	private $final_expense;
-    private $description;
+	private $description;
+	
+	public function getId_evento(){
+		return $this->$id_evento;
+	}
+
+	public function setId_evento($id_evento){
+		$this->id_evento = $id_evento;
+	}
 
     public function getPrice(){
 		return $this->price;

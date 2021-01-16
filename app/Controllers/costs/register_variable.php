@@ -6,7 +6,8 @@ $objCustos= new custos();
         if($objCustos->queryInsert_CustosVariaveis($_POST)){
 
            $_SESSION['sucesso_cad_variavel'] = true;
-            header("location:../../Views/pages/dashboard.php");
+           echo($_POST['id_evento']);
+            // header("location:../../Views/pages/dashboard.php");
         }
         else{
             $_SESSION['msg'] = "<script> alert('Erro ao realizar o cadastro!'); </script>";

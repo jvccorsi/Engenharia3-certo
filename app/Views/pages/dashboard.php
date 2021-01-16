@@ -21,6 +21,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="../js/script.js"></script>
     <script src="../js/handleEventData.js"></script>
+    <script src="../js/handleCostsData.js"></script>
     <!--FONT-->
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
 
@@ -61,7 +62,7 @@
                             <td><?php echo $event['data_evento']?></td>
                             <td class="actions-column">                        
                                 <div class="btn-group">
-                                    <a href="reports.php" title="Visualizar relatório" >
+                                    <a class="action" href="reports.php" title="Visualizar relatório" data-whatever="<?php echo $event['id_evento']?>">
                                         <img src="../assets/report.svg" class="img-actions">
                                     </a>
                                 </div>
@@ -70,12 +71,12 @@
                                         <img src="../assets/money.svg" alt="adicionar">
                                     </button>
                                     <div class="dropdown-menu" id="dropdownCostsButton" aria-labelledby="dropdownCostsButton">
-                                        <a class="dropdown-item" data-toggle="modal" data-target="#modal-adicionar-custos-variaveis" 
-                                            data-whatever="<?php echo $event['id_evento'];?>" href="#">Variável</a>
+                                        <a class="dropdown-item action" data-toggle="modal" data-target="#modal-adicionar-custos-variaveis" 
+                                        href="#" data-whatever="<?php echo $event['id_evento']?>">Variável</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" data-toggle="modal" data-target="#modal-adicionar-custos-fixos" href="#">Fixo</a>
+                                        <a class="dropdown-item action" data-toggle="modal" data-target="#modal-adicionar-custos-fixos" href="#" data-whatever="<?php echo $event['id_evento']?>">Fixo</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" data-toggle="modal" data-target="#modal-adicionar-receita" href="#">Receita</a>
+                                        <a class="dropdown-item action" data-toggle="modal" data-target="#modal-adicionar-receita" href="#" data-whatever="<?php echo $event['id_evento']?>">Receita</a>
                                     </div>
                                 </div>
                                 <div class="btn-group">
@@ -83,9 +84,9 @@
                                         <img src="../assets/gear.svg" class="img-actions">
                                     </button>
                                     <div class="dropdown-menu" id="dropdownEditButton" aria-labelledby="dropdownEditButton">
-                                        <a class="dropdown-item edit-link" data-toggle="modal" data-target="#modal-manter-evento" href="#">Editar</a>
+                                        <a class="dropdown-item action edit-link" data-toggle="modal" data-target="#modal-manter-evento" href="#" data-whatever="<?php echo $event['id_evento']?>">Editar</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-excluir-evento">Excluir</a>
+                                        <a class="dropdown-item action" href="#" data-whatever="<?php echo $event['id_evento']?>" data-toggle="modal" data-target="#modal-excluir-evento">Excluir</a>
                                     </div>
                                 </div>
                             </td>

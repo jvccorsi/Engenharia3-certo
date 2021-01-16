@@ -1,5 +1,7 @@
 <?php
   include("../../Controllers/users/verify_login.php"); 
+  require_once("../../Controllers/costs/get_all_fixed.php"); 
+  require_once("../../Controllers/costs/get_all_variable.php"); 
 ?>
 
 <!DOCTYPE html>
@@ -93,6 +95,9 @@
                   </tr>
               </thead>
               <tbody>
+                <?php foreach($fixedCosts as $fixedCost) { ?>
+                  <?php echo $fixedCost?>
+                <?php } ?>
                 <tr>
                   <th scope="row"></th>
                   <th scope="col">TOTAL FINAL:</th>

@@ -250,6 +250,7 @@
                 <form id="contact-form" class="form" action="../../Controllers/costs/register_variable.php" method="POST">
                     <h1 class="titulo text-center"><b>Adicionar custos variáveis</b></h1>
                     <div class="forms">
+                        <input name="id_evento" type="hidden" class="id-evento">
                         <div class="form-group">
                             <label class="form-label" for="produto"><b>Produto</b></label>
                             <input type="text" class="form-control" id="produto" name="produto"
@@ -306,6 +307,7 @@
             <div class="modal-body">
                 <form id="contact-form" class="form" action="../../Controllers/costs/register_fixed.php" method="POST" >
                     <h1 class="titulo text-center"><b>Adicionar custos fixos</b></h1>
+                    <input name="id_evento" type="hidden" class="id-evento">
                     <div class="forms">
                         <div class="form-group">
                             <label class="form-label" for="name"><b>Item</b></label>
@@ -357,6 +359,7 @@
             <div class="modal-body">
                 <form id="contact-form" class="form" action="../../Controllers/incomes/cadastro_receita.php" method="POST" >
                     <h1 class="titulo text-center"><b>Adicionar Receita</b></h1>
+                    <input name="id_evento" type="hidden" class="id-evento">
                     <div class="forms">
                         <div class="form-group">
                             <label class="form-label" for="name"><b>Item</b></label>
