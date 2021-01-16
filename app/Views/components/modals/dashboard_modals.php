@@ -168,7 +168,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <form id="contact-form" class="form" action="../../Controllers/events/editar_evento.php" method="POST">
+                <form id="contact-form" class="form" action="../../Controllers/events/register.php" method="POST">
                     <h1 class="titulo"></h1>
                     <div class="forms">
                         <div class="form-group">
@@ -188,7 +188,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="state"><b>Estado</b></label>
-                            <input  type="text" class="form-control" id="statee" name="statee"
+                            <input  type="text" class="form-control" id="state" name="state"
                                 placeholder="Digite o estado do evento aqui" required>
                         </div>
                         <div class="form-group">
@@ -213,7 +213,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="date"><b>Data</b></label>
-                            <input  type="date" class="form-control" id="datee" name="datee"
+                            <input  type="date" class="form-control" id="date" name="date"
                                 placeholder="Não é possível alterar este campo" required>
                         </div>
                         <div class="form-group">
@@ -223,7 +223,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="description"><b>Descrição</b></label>
-                            <textarea  type="text" class="form-control" id="descriptionn" name="descriptionn" maxlength='400'
+                            <textarea  type="text" class="form-control" id="description" name="description" maxlength='400'
                                 ></textarea>
                         </div>
                         <div class="d-flex justify-content-around">
