@@ -90,7 +90,7 @@ function getAllFixedCosts() {
                     observationsColumn.innerHTML = variableCost['obs'];
                 })
 
-                $('#final-variable-cost-column').text(`R$ ${finalFixedCost}`);
+                $('#final-fixed-cost-column').text(`R$ ${finalFixedCost}`);
             }
         } catch (err) {
 

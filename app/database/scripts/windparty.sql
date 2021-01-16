@@ -28,14 +28,16 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `custos_fixos` (
-  `id_custosfixos` int(11) NOT NULL,
+  `id_custos_fixos` int(11) NOT NULL,
   `id_evento` int(11) NOT NULL,
   `item` varchar(30) NOT NULL,
   `tipo_custos` varchar(50) NOT NULL,
   `preco` float NOT NULL,
   `quantidade` int(11) NOT NULL,
   `gasto_final` float NOT NULL,
-  `obs` varchar(50) NOT NULL
+  `obs` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_custos_fixos`),
+  FOREIGN KEY (`id_evento`) REFERENCES `evento`(`id_evento`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -55,7 +57,10 @@ CREATE TABLE `custos_variaveis` (
   `gasto_esperado` float NOT NULL,
   `qtd_total` int(11) NOT NULL,
   `gasto_final` float NOT NULL,
-  `obsvar` char(50) NOT NULL
+  `obsvar` char(50) NOT NULL,
+  PRIMARY KEY (`id_custos_variaveis`),
+  FOREIGN KEY (`id_evento`) REFERENCES `evento`(`id_evento`)
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

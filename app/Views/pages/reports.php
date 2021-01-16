@@ -96,7 +96,7 @@
                 <tr>
                   <th scope="row"></th>
                   <th scope="col">TOTAL FINAL:</th>
-                  <td>R$ 500,00</td>
+                  <td id="final-fixed-cost-column">R$ </td>
                   <td></td>
                   <td></td>
                   <td></td>
