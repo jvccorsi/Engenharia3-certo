@@ -1,7 +1,7 @@
 "use strict";
 $('body').ready(() => {
     const http = new XMLHttpRequest();
-    const url = "/Engenharia3-certo/app/Controllers/events/find.php";
+    const url = "/Engenharia3-certo/app/Controllers/events/get_all.php";
     http.open("GET", url, true);
     http.send();
     
