@@ -65,9 +65,11 @@
               <tbody>
                 <?php 
                 $variableFinalTotal = 0;
-                foreach($variableCosts as $variableCost) { ?>
+                $index = 0;
+                foreach($variableCosts as $variableCost) { 
+                  $index++?>
                   <tr>
-                    <td><?php echo ($variableCost['id_custos_variaveis']);?></td>
+                    <td><?php echo ($index);?></td>
                     <td><?php echo ($variableCost['nome']);?></td>
                     <td><?php echo ($variableCost['tipo_produto']);?></td>
                     <td><?php echo ($variableCost['unidade']);?></td>
@@ -111,8 +113,10 @@
               <tbody>
                 <?php 
                 $fixedFinalTotal = 0;
-                foreach($fixedCosts as $fixedCost) { ?>
-                  <td><?php echo ($fixedCost['preco']);?></td>
+                $index = 0;
+                foreach($fixedCosts as $fixedCost) { 
+                  $index++?>
+                  <td><?php echo ($index);?></td>
                   <td><?php echo ($fixedCost['item']);?></td>
                   <td><?php echo ($fixedCost['tipo_custos']);?></td>
                   <td><?php echo ($fixedCost['preco']);?></td>
