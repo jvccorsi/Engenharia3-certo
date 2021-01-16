@@ -26,6 +26,6 @@ if (isset($_POST['username'])) {
         $_SESSION['msg'] = "<script> alert('Erro ao realizar o cadastro!'); </script>";
     }
 
-    header("location: ../../../index.php");
+    header("location: ../../index.php");
 }
 ?>

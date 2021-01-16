@@ -9,7 +9,7 @@ if($obeventos->queryInsert($_POST)){
 }
 else{
     $_SESSION['msg'] = "<script> alert('Erro ao realizar o cadastro!'); </script>";
-    header("location:../Views/pages/dashboard.php");
+    header("location: ../../Views/pages/dashboard.php");
 }
 
 ?>
