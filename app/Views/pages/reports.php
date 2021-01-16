@@ -66,20 +66,21 @@
                 <?php 
                 $variableFinalTotal = 0;
                 $index = 0;
-                foreach($variableCosts as $variableCost) { 
-                  $index++?>
-                  <tr>
-                    <td><?php echo ($index);?></td>
-                    <td><?php echo ($variableCost['nome']);?></td>
-                    <td><?php echo ($variableCost['tipo_produto']);?></td>
-                    <td><?php echo ($variableCost['unidade']);?></td>
-                    <td><?php echo ($variableCost['preco']);?></td>
-                    <td><?php echo ($variableCost['qtd_esperada']);?></td>
-                    <td><?php echo ($variableCost['gasto_esperado']);?></td>
-                    <td><?php echo ($variableCost['obsvar']);?></td>
-                    <?php $variableFinalTotal += $variableCost['gasto_esperado']; ?>
-                  </tr>
-                <?php } ?>
+                if($variableCosts) {
+                  foreach($variableCosts as $variableCost) { 
+                    $index++?>
+                    <tr>
+                      <td><?php echo ($index);?></td>
+                      <td><?php echo ($variableCost['nome']);?></td>
+                      <td><?php echo ($variableCost['tipo_produto']);?></td>
+                      <td><?php echo ($variableCost['unidade']);?></td>
+                      <td><?php echo ($variableCost['preco']);?></td>
+                      <td><?php echo ($variableCost['qtd_esperada']);?></td>
+                      <td><?php echo ($variableCost['gasto_esperado']);?></td>
+                      <td><?php echo ($variableCost['obsvar']);?></td>
+                      <?php $variableFinalTotal += $variableCost['gasto_esperado']; ?>
+                    </tr>
+                <?php } } ?>
                 <tr>
                   <th scope="row"></th>
                   <th scope="col">TOTAL FINAL: R$<?php echo($variableFinalTotal)?></th>
@@ -114,6 +115,7 @@
                 <?php 
                 $fixedFinalTotal = 0;
                 $index = 0;
+                if($fixedCosts) {
                 foreach($fixedCosts as $fixedCost) { 
                   $index++?>
                   <td><?php echo ($index);?></td>
@@ -123,7 +125,7 @@
                   <td><?php echo ($fixedCost['quantidade']);?></td>
                   <td><?php echo ($fixedCost['obs']);?></td>
                   <?php $fixedFinalTotal += $fixedCost['gasto_final']?>
-                <?php } ?>
+                <?php } } ?>
                 <tr>
                   <th scope="row"></th>
                   <th scope="col">TOTAL FINAL: R$<?php echo ($fixedFinalTotal)?></th>
