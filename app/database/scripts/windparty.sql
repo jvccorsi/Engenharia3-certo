@@ -199,7 +199,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `custos_fixos`
 --
 ALTER TABLE `custos_fixos`
-  MODIFY `id_custosfixos` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_custos_fixos` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `custos_variaveis`
