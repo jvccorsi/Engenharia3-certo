@@ -170,6 +170,7 @@
             <div class="modal-body">
                 <form id="contact-form" class="form" action="../../Controllers/events/register.php" method="POST">
                     <h1 class="titulo"></h1>
+                    <input name="id_evento" type="hidden" class="id-evento">
                     <div class="forms">
                         <div class="form-group">
                             <label class="form-label" for="name"><b>Nome do evento</b></label>
@@ -202,8 +203,8 @@
                                 placeholder="Digite a rua do evento aqui" required>
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="Bairro"><b>Bairro</b></label>
-                            <input  type="text" class="form-control" id="Bairro" name="Bairro"
+                            <label class="form-label" for="bairro"><b>Bairro</b></label>
+                            <input  type="text" class="form-control" id="bairro" name="bairro"
                                 placeholder="Digite o bairro do evento aqui" required>
                         </div>
                         <div class="form-group">
@@ -249,8 +250,8 @@
             <div class="modal-body">
                 <form id="contact-form" class="form" action="../../Controllers/costs/register_variable.php" method="POST">
                     <h1 class="titulo text-center"><b>Adicionar custos variáveis</b></h1>
+                    <input name="id_evento" type="hidden" class="id-evento">
                     <div class="forms">
-                        <input name="id_evento" type="hidden" class="id-evento">
                         <div class="form-group">
                             <label class="form-label" for="produto"><b>Produto</b></label>
                             <input type="text" class="form-control" id="produto" name="produto"

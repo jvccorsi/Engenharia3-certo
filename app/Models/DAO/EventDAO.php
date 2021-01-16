@@ -14,12 +14,18 @@ final class EventDAO extends DAO {
         $this->table = "evento";
     }
 
-    public function select($event) {
+    public function select($id_evento) {
+        $cst = $this->connection->prepare("SELECT * from $this->table WHERE id_evento=:id_evento");
+       
+        $cst->bindParam(":id_evento", $id_evento, PDO::PARAM_STR);
+        
         try {
-
+            $cst->execute();
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
         }
+
+        return $cst->rowCount() ? $cst->fetch() : false; 
     }
 
     public function selectAll() {

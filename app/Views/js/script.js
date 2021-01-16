@@ -41,19 +41,6 @@ $(document).ready(() => {
             }
         });
     }
- 
-    // Evento para o modal de cadastro de eventos
-    $('button#add-event').on('click', () => {
-        $('#modal-manter-evento .titulo').html("<b>Cadastrar evento</b>");
 
-        // Limpa o formulário
-        const modal = $('#modal-manter-evento');
-        modal.find('#name').val('');
-        modal.find('#adress').val('')
-        modal.find('#date').val('')
-        modal.find('#price').val('')
-        modal.find('#qntPeople').val('')
-        modal.find('#description').val('')
-    }); 
 });
 
