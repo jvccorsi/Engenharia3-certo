@@ -1,14 +1,14 @@
 <?php
-require_once '..\..\Models\Event.php';
-require_once '..\..\Models\DAO\EventDAO.php';
+require_once '..\..\Models\Costs\VariableCost.php';
+require_once '..\..\Models\DAO\VariableCostDAO.php';
 
 session_start();
 
 if (isset($_GET)) {
 
-    $eventDAO = new EventDAO();
+    $variableCostDAO = new VariableCostDAO();
 
-    $events = $eventDAO->selectAll();
+    $variableCosts = $variableCostDAO->selectAll();
 
-    echo json_encode($events);
+    echo json_encode($variableCosts);
 }

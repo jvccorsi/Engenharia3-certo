@@ -1,0 +1,59 @@
+<?php
+
+require_once dirname(dirname(__FILE__)) . '..\..\database\connection.php';
+require_once 'DAO.php';
+
+final class VariableCostDAO extends DAO {
+
+    private $connection;
+    private $table;
+
+    function __construct() {
+        $conn = new Conexao();
+        $this->connection = $conn->getConnection();
+        $this->table = "custos_variaveis";
+    }
+
+    public function select($event) {
+        try {
+
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+    }
+
+    public function selectAll() {
+
+        $cst = $this->connection->prepare("SELECT * FROM  $this->table");
+
+        try {
+            $cst->execute();
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+
+        $variableCosts = [];
+        while ($variableCost = $cst->fetch(PDO::FETCH_ASSOC)) {
+            array_push($variableCosts, $variableCost);
+        }
+
+        return $cst->rowCount() ? $variableCosts : false;
+    }
+
+    public function insert($event) {
+
+        try {
+
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+    }
+
+    public function update($event) {
+        return "Não implementado ainda";
+    }
+
+    public function delete($event) {
+        return "Não implementado ainda";
+    }
+}

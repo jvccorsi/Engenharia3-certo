@@ -38,7 +38,7 @@
         <a class="nav-link active" href="#custos-variaveis" data-toggle="tab">Custos variaveis</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#custos-fixos" data-toggle="tab">Custos fixos</a>
+        <a id="fixed-costs-link" class="nav-link" href="#custos-fixos" data-toggle="tab" onclick="getAllFixedCosts()">Custos fixos</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#receita" data-toggle="tab">Receita</a>
@@ -53,36 +53,22 @@
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">PRODUTO</th>
+                  <th scope="col">TIPO</th>
                   <th scope="col">MEDIDA</th>
                   <th scope="col">PREÇO</th>
                   <th scope="col">QUANTIDADE ESPERADA</th>
-                  <th scope="col">GASTO FINAL</th>
+                  <th scope="col">GASTO ESPERADO</th>
                   <th scope="col">OBSERVAÇÕES</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>             
-                  <th scope="row">1</th>
-                  <td>Breja</td>
-                  <td>Litros</td>
-                  <td>R$ 10,00</td>
-                  <td>50</td>
-                  <td>R$ 500,00</td>
-                  <td>Gelada</td>
-                </tr>
-                <tr>             
-                  <th scope="row">2</th>
-                  <td>Energético</td>
-                  <td>Litros</td>
-                  <td>R$ 10,00</td>
-                  <td>30</td>
-                  <td>R$ 300,00</td>
-                  <td>Gelada</td>
-                </tr>
                 <tr>
                   <th scope="row"></th>
                   <th scope="col">TOTAL FINAL:</th>
-                  <td>R$ 800,00</td>
+                  <td id="final-variable-cost-column">R$</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -94,8 +80,8 @@
       </section>
       <section class="tab-pane" id="custos-fixos">
         <h1>Custos fixos</h1>
-        <div class="tabela-custos-fixos">
-          <table class="table table-dark">
+        <div>
+          <table id="fixed-costs-table" class="table table-dark">
               <thead>
                   <tr>
                       <th scope="col">#</th>
@@ -107,22 +93,6 @@
                   </tr>
               </thead>
               <tbody>
-                <tr>             
-                  <th scope="row">1</th>
-                  <td>DJ</td>
-                  <td>Atração</td>
-                  <td>R$ 200,00</td>
-                  <td>R$ 200,00</td>
-                  <td>Bacana</td>
-                </tr>
-                <tr>             
-                  <th scope="row">2</th>
-                  <td>Salão</td>
-                  <td>Local</td>
-                  <td>R$ 300,00</td>
-                  <td>R$ 300,00</td>
-                  <td>Bom</td>
-                </tr>
                 <tr>
                   <th scope="row"></th>
                   <th scope="col">TOTAL FINAL:</th>
