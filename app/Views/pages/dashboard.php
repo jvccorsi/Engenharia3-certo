@@ -1,5 +1,6 @@
 <?php
     include("../../Controllers/users/verify_login.php"); 
+    include("../../Controllers/events/get_all.php");
 ?>
 
 <!DOCTYPE html>
@@ -53,6 +54,43 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach($events as $event){ ?>
+                        <tr>
+                            <td><?php echo $event['id_evento']?></td>
+                            <td><?php echo $event['nome_evento']?></td>
+                            <td><?php echo $event['data_evento']?></td>
+                            <td class="actions-column">                        
+                                <div class="btn-group">
+                                    <a href="reports.php" title="Visualizar relatório" >
+                                        <img src="../assets/report.svg" class="img-actions">
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" id="dropdownCostsButton" title="Adicionar Custos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img src="../assets/money.svg" alt="adicionar">
+                                    </button>
+                                    <div class="dropdown-menu" id="dropdownCostsButton" aria-labelledby="dropdownCostsButton">
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#modal-adicionar-custos-variaveis" 
+                                            data-whatever="<?php echo $event['id_evento'];?>" href="#">Variável</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#modal-adicionar-custos-fixos" href="#">Fixo</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#modal-adicionar-receita" href="#">Receita</a>
+                                    </div>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" id="dropdownEditButton" title="Editar evento" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img src="../assets/gear.svg" class="img-actions">
+                                    </button>
+                                    <div class="dropdown-menu" id="dropdownEditButton" aria-labelledby="dropdownEditButton">
+                                        <a class="dropdown-item edit-link" data-toggle="modal" data-target="#modal-manter-evento" href="#">Editar</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-excluir-evento">Excluir</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>

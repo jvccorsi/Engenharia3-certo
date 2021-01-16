@@ -1,6 +1,7 @@
 <?php
 
 final class Event {
+    private $id;
     private $name;
     private $description;
     private $people_quantity; 
@@ -13,7 +14,8 @@ final class Event {
     private $neighborhood; 
     private $adress_number;
 
-    public function __construct($name, $description, $people_quantity, $country, $cep, $state, $city, $street, $neighborhood, $adress_number) {
+    public function __construct($id, $name, $description, $people_quantity, $country, $cep, $state, $city, $street, $neighborhood, $adress_number) {
+        $this->setId($id);
         $this->setUsernameFromJogador($name);
         $this->setDescription($description);
         $this->setPeople_quantity($people_quantity);
@@ -24,7 +26,15 @@ final class Event {
         $this->setStreet($street);
         $this->setNeighborhood($neighborhood);
         $this->setAdress_number($adress_number);
-    }
+	}
+	
+	public function getId(){
+		return $this->id;
+	}
+
+	public function setId($id){
+		$this->id = $id;
+	}
 
     public function getName(){
 		return $this->name;

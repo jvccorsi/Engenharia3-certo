@@ -32,14 +32,14 @@ function getAllVariableCosts() {
                     let expectedExpenseColumn = row.insertCell(6);
                     let observationsColumn = row.insertCell(7);
 
-                    idColumn.innerHTML = index + 1;
-                    nameColumn.innerHTML = variableCost['nome'];
-                    typeColumn.innerHTML = variableCost['tipo_produto'];
-                    unityColumn.innerHTML = variableCost['unidade'];
-                    priceColumn.innerHTML = variableCost['preco'];
-                    expectedQuantityColumn.innerHTML = variableCost['qtd_esperada'];
-                    expectedExpenseColumn.innerHTML = `R$ ${variableCost['gasto_esperado']}`;
-                    observationsColumn.innerHTML = variableCost['obsvar'];
+                    idColumn.innerText = index + 1;
+                    nameColumn.innerText = variableCost['nome'];
+                    typeColumn.innerText = variableCost['tipo_produto'];
+                    unityColumn.innerText = variableCost['unidade'];
+                    priceColumn.innerText = variableCost['preco'];
+                    expectedQuantityColumn.innerText = variableCost['qtd_esperada'];
+                    expectedExpenseColumn.innerText = `R$ ${variableCost['gasto_esperado']}`;
+                    observationsColumn.innerText = variableCost['obsvar'];
                 })
 
                 $('#final-variable-cost-column').text(`R$ ${finalVariableCost}`);
@@ -82,12 +82,12 @@ function getAllFixedCosts() {
                     let expectedSpendColumn = row.insertCell(4);
                     let observationsColumn = row.insertCell(5);
 
-                    idColumn.innerHTML = index + 1;
-                    itemColumn.innerHTML = variableCost['item'];
-                    typeColumn.innerHTML = variableCost['tipo_custos'];
-                    priceColumn.innerHTML = variableCost['preco'];
-                    expectedSpendColumn.innerHTML = variableCost['gasto_final'];
-                    observationsColumn.innerHTML = variableCost['obs'];
+                    idColumn.innerText = index + 1;
+                    itemColumn.innerText = variableCost['item'];
+                    typeColumn.innerText = variableCost['tipo_custos'];
+                    priceColumn.innerText = variableCost['preco'];
+                    expectedSpendColumn.innerText = variableCost['gasto_final'];
+                    observationsColumn.innerText = variableCost['obs'];
                 })
 
                 $('#final-fixed-cost-column').text(`R$ ${finalFixedCost}`);
