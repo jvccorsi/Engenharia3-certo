@@ -1,7 +1,7 @@
 <?php
   include("../../Controllers/users/verify_login.php"); 
   require_once("../../Controllers/costs/get_all_fixed.php"); 
-  require_once("../../Controllers/costs/get_all_variable.php"); 
+  require_once("../../Controllers/costs/get_all_variable.php");
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="../js/script.js"></script>
-    <script src="../js/handleCostsData.js"></script>
     <!--FONT-->
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
 
@@ -64,10 +63,25 @@
                 </tr>
               </thead>
               <tbody>
+                <?php 
+                $variableFinalTotal = 0;
+                foreach($variableCosts as $variableCost) { ?>
+                  <tr>
+                    <td><?php echo ($variableCost['id_custos_variaveis']);?></td>
+                    <td><?php echo ($variableCost['nome']);?></td>
+                    <td><?php echo ($variableCost['tipo_produto']);?></td>
+                    <td><?php echo ($variableCost['unidade']);?></td>
+                    <td><?php echo ($variableCost['preco']);?></td>
+                    <td><?php echo ($variableCost['qtd_esperada']);?></td>
+                    <td><?php echo ($variableCost['gasto_esperado']);?></td>
+                    <td><?php echo ($variableCost['obsvar']);?></td>
+                    <?php $variableFinalTotal += $variableCost['gasto_esperado']; ?>
+                  </tr>
+                <?php } ?>
                 <tr>
                   <th scope="row"></th>
-                  <th scope="col">TOTAL FINAL:</th>
-                  <td id="final-variable-cost-column">R$</td>
+                  <th scope="col">TOTAL FINAL: R$<?php echo($variableFinalTotal)?></th>
+                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -95,13 +109,21 @@
                   </tr>
               </thead>
               <tbody>
-                <?php foreach($fixedCosts as $fixedCost) { ?>
-                  <?php echo $fixedCost?>
+                <?php 
+                $fixedFinalTotal = 0;
+                foreach($fixedCosts as $fixedCost) { ?>
+                  <td><?php echo ($fixedCost['preco']);?></td>
+                  <td><?php echo ($fixedCost['item']);?></td>
+                  <td><?php echo ($fixedCost['tipo_custos']);?></td>
+                  <td><?php echo ($fixedCost['preco']);?></td>
+                  <td><?php echo ($fixedCost['quantidade']);?></td>
+                  <td><?php echo ($fixedCost['obs']);?></td>
+                  <?php $fixedFinalTotal += $fixedCost['gasto_final']?>
                 <?php } ?>
                 <tr>
                   <th scope="row"></th>
-                  <th scope="col">TOTAL FINAL:</th>
-                  <td id="final-fixed-cost-column">R$ </td>
+                  <th scope="col">TOTAL FINAL: R$<?php echo ($fixedFinalTotal)?></th>
+                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>

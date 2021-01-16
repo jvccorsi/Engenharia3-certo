@@ -22,9 +22,11 @@ final class VariableCostDAO extends DAO {
         }
     }
 
-    public function selectAll() {
+    public function selectAllByEvent($id_evento) {
 
-        $cst = $this->connection->prepare("SELECT * FROM  $this->table");
+        $cst = $this->connection->prepare("SELECT * FROM  $this->table WHERE id_evento = :id_evento");
+       
+        $cst->bindParam(":id_evento", $id_evento, PDO::PARAM_STR);
 
         try {
             $cst->execute();

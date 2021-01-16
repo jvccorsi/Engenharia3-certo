@@ -6,5 +6,5 @@ if (isset($_GET)) {
 
     $variableCostDAO = new VariableCostDAO();
 
-    $variableCosts = $variableCostDAO->selectAll();
+    $variableCosts = $variableCostDAO->selectAllByEvent($_GET['id_evento']);
 }

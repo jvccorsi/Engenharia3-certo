@@ -6,5 +6,5 @@ if (isset($_GET)) {
 
     $fixedCostDAO = new FixedCostDAO();
 
-    $fixedCosts = $fixedCostDAO->selectAll();
+    $fixedCosts = $fixedCostDAO->selectAllbyEvent($_GET['id_evento']);
 }

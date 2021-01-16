@@ -62,7 +62,7 @@
                             <td><?php echo $event['data_evento']?></td>
                             <td class="actions-column">                        
                                 <div class="btn-group">
-                                    <a class="action" href="reports.php" title="Visualizar relatório" data-whatever="<?php echo $event['id_evento']?>">
+                                    <a href="reports.php?id_evento=<?php echo $event['id_evento'];?>" title="Visualizar relatório">
                                         <img src="../assets/report.svg" class="img-actions">
                                     </a>
                                 </div>
