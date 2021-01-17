@@ -42,20 +42,42 @@ final class VariableCostDAO extends DAO {
         return $cst->rowCount() ? $variableCosts : false;
     }
 
-    public function insert($event) {
+    public function insert($variable_cost) {
+        $cst = $this->connection->prepare("INSERT INTO $this->table (id_evento, nome, tipo_produto, unidade, preco, qtd_esperada, gasto_esperado, obs)" .
+        "VALUES (:id_evento, :nome, :tipo_produto, :unidade, :preco, :qtd_esperada, :gasto_esperado, :obs)");
+        
+        $id_evento = $variable_cost->getId_evento();
+        $nome = $variable_cost->getNome();
+        $tipo_produto = $variable_cost->getTipo_produto();
+        $unidade = $variable_cost->getUnidade();
+        $preco = $variable_cost->getPreco();
+        $qtd_esperada = $variable_cost->getQtd_esperada();
+        $gasto_esperado = $variable_cost->getGasto_esperado();
+        $obs = $variable_cost->getObs();
+
+        $cst->bindParam(":id_evento", $id_evento, PDO::PARAM_STR);
+        $cst->bindParam(":nome", $nome, PDO::PARAM_STR);
+        $cst->bindParam(":tipo_produto", $tipo_produto, PDO::PARAM_STR);
+        $cst->bindParam(":unidade", $unidade, PDO::PARAM_STR);
+        $cst->bindParam(":preco", $preco, PDO::PARAM_STR);
+        $cst->bindParam(":qtd_esperada", $qtd_esperada, PDO::PARAM_STR);
+        $cst->bindParam(":gasto_esperado", $gasto_esperado, PDO::PARAM_STR);
+        $cst->bindParam(":obs", $obs, PDO::PARAM_STR);
 
         try {
-
+            $result = $cst->execute();
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
         }
+
+        return $result; 
     }
 
-    public function update($event) {
+    public function update($variable_cost) {
         return "Não implementado ainda";
     }
 
-    public function delete($event) {
+    public function delete($variable_cost) {
         return "Não implementado ainda";
     }
 }

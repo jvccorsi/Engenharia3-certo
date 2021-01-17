@@ -1,7 +1,7 @@
 <?php
 require_once 'Cost.php';
 
-abstract class FixedCost extends Cost {
+final class FixedCost extends Cost {
 	private $item;
 	private $cost_type;
     private $quantity;

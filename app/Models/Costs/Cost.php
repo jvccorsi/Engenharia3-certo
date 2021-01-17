@@ -2,39 +2,30 @@
 
 abstract class Cost {
 	private $id_evento;
-	private $price;
-	private $final_expense;
-	private $description;
+	private $preco;
+	private $obs;
 	
 	public function getId_evento(){
-		return $this->$id_evento;
+		return $this->id_evento;
 	}
 
 	public function setId_evento($id_evento){
 		$this->id_evento = $id_evento;
 	}
 
-    public function getPrice(){
-		return $this->price;
+	public function getPreco(){
+		return $this->preco;
 	}
 
-	public function setPrice($price){
-		$this->price = $price;
+	public function setPreco($preco){
+		$this->preco = $preco;
 	}
 
-	public function getFinal_expense(){
-		return $this->final_expense;
+	public function getObs(){
+		return $this->obs;
 	}
 
-	public function setFinal_expense($final_expense){
-		$this->final_expense = $final_expense;
-	}
-
-	public function getDescription(){
-		return $this->description;
-	}
-
-	public function setDescription($description){
-		$this->description = $description;
+	public function setObs($obs){
+		$this->obs = $obs;
 	}
 }

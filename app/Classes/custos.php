@@ -18,9 +18,9 @@ class Custos {
     public function queryInsert_CustosFixos($dados)
     {
         try {
-            $gasto_final = $dados['preco'] * $dados['qtd'];
-            $cst = $this->conexao->prepare("INSERT INTO  $this->tabela_custos_fixos (id_evento, item, tipo_custos, preco, quantidade, gasto_final, obs)
-            VALUES ('".$dados['id_evento']."', '".$dados['item_name']."', '".$dados['Tipo']."', '".$dados['preco']."', '".$dados['qtd']."', '".$gasto_final."',  '".$dados['obs']."');");
+            $gasto_esperado = $dados['preco'] * $dados['qtd_esperada'];
+            $cst = $this->conexao->prepare("INSERT INTO  $this->tabela_custos_fixos (id_evento, item, tipo_custos, preco, qtd_esperada, gasto_esperado, obs)
+            VALUES ('".$dados['id_evento']."', '".$dados['item_name']."', '".$dados['Tipo']."', '".$dados['preco']."', '".$dados['qtd']."', '".$gasto_esperado."', '".$dados['obs']."');");
            if( $cst->execute()){
             return true;
            }
@@ -36,8 +36,8 @@ class Custos {
     {
         try {
             $gasto_esperado = $dados['preco'] * $dados['qtd_esperada'];
-            $cst = $this->conexao->prepare("INSERT INTO  $this->tabela_custos_variaveis (id_evento, nome, tipo_produto, unidade, preco, obs)
-            VALUES ('".$dados['id_evento']."', '".$dados['produto']."', '".$dados['type_prod']."', '".$dados['unidade']."', '".$dados['preco']."', '".$dados['obs']."');");
+            $cst = $this->conexao->prepare("INSERT INTO  $this->tabela_custos_variaveis (id_evento, nome, tipo_produto, unidade, preco, qtd_esperada obs)
+            VALUES ('".$dados['id_evento']."', '".$dados['produto']."', '".$dados['type_prod']."', '".$dados['unidade']."', '".$dados['preco']."', '".$dados['qtd_esperada']."', '".$gasto_esperado."', '".$dados['obs']."');");
            if( $cst->execute()){
             return true;
            }

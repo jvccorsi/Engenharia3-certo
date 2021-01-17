@@ -1,59 +1,50 @@
 <?php
 require_once 'Cost.php';
 
-abstract class VariableCost extends Cost {
-	private $name;
-	private $product_type;
-    private $unity;
-    private $expected_amount;
-    private $expected_spend;
-    private $total_quantity;
+final class VariableCost extends Cost {
+	private $nome;
+	private $tipo_produto;
+    private $unidade;
+    private $qtd_esperada;
+    private $gasto_esperado;
 
-    public function getName(){
-		return $this->name;
+    public function getNome(){
+		return $this->nome;
 	}
 
-	public function setName($name){
-		$this->name = $name;
+	public function setNome($nome){
+		$this->nome = $nome;
 	}
 
-	public function getProduct_type(){
-		return $this->product_type;
+	public function getTipo_produto(){
+		return $this->tipo_produto;
 	}
 
-	public function setProduct_type($product_type){
-		$this->product_type = $product_type;
+	public function setTipo_produto($tipo_produto){
+		$this->tipo_produto = $tipo_produto;
 	}
 
-	public function getUnity(){
-		return $this->unity;
+	public function getUnidade(){
+		return $this->unidade;
 	}
 
-	public function setUnity($unity){
-		$this->unity = $unity;
+	public function setUnidade($unidade){
+		$this->unidade = $unidade;
 	}
 
-	public function getExpected_amount(){
-		return $this->expected_amount;
+	public function getQtd_esperada(){
+		return $this->qtd_esperada;
 	}
 
-	public function setExpected_amount($expected_amount){
-		$this->expected_amount = $expected_amount;
+	public function setQtd_esperada($qtd_esperada){
+		$this->qtd_esperada = $qtd_esperada;
 	}
 
-	public function getExpected_spend(){
-		return $this->expected_spend;
+	public function getGasto_esperado(){
+		return $this->gasto_esperado;
 	}
 
-	public function setExpected_spend($expected_spend){
-		$this->expected_spend = $expected_spend;
-	}
-
-	public function getTotal_quantity(){
-		return $this->total_quantity;
-	}
-
-	public function setTotal_quantity($total_quantity){
-		$this->total_quantity = $total_quantity;
+	public function setGasto_esperado($gasto_esperado){
+		$this->gasto_esperado = $gasto_esperado;
 	}
 }

@@ -253,13 +253,13 @@
                     <input name="id_evento" type="hidden" class="id-evento">
                     <div class="forms">
                         <div class="form-group">
-                            <label class="form-label" for="produto"><b>Produto</b></label>
-                            <input type="text" class="form-control" id="produto" name="produto"
+                            <label class="form-label" for="nome_produto"><b>Produto</b></label>
+                            <input type="text" class="form-control" id="nome_produto" name="nome_produto"
                                 placeholder="Digite o nome do produto" required>
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="type_prod"><b>Tipo do produto:</b></label>
-                            <input type="text" class="form-control" id="type_prod" name="type_prod"
+                            <label class="form-label" for="tipo_produto"><b>Tipo do produto:</b></label>
+                            <input type="text" class="form-control" id="tipo_produto" name="tipo_produto"
                                 placeholder="Digite o nome tipo do produto" required>
                         </div>
                         <div class="form-group">

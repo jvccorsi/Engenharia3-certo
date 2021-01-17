@@ -77,7 +77,7 @@
                       <td><?php echo ($variableCost['preco']);?></td>
                       <td><?php echo ($variableCost['qtd_esperada']);?></td>
                       <td><?php echo ($variableCost['gasto_esperado']);?></td>
-                      <td><?php echo ($variableCost['obsvar']);?></td>
+                      <td><?php echo ($variableCost['obs']);?></td>
                       <?php $variableFinalTotal += $variableCost['gasto_esperado']; ?>
                     </tr>
                 <?php } } ?>
