@@ -1,73 +1,67 @@
 <?php
 
-require_once dirname(dirname(__FILE__)) . '..\..\database\connection.php';
-require_once 'DAO.php';
+final class Revenue {
+	private $id_evento;
+    private $item;
+    private $preco;
+    private $qtd_esperada;
+    private $qtd_vendida;
+    private $receita_esperada;
+    private $obs;
 
-final class UserDAO extends DAO {
+    public function getId_evento(){
+		return $this->id_evento;
+	}
 
-    private $connection;
-    private $table;
+	public function setId_evento($id_evento){
+		$this->id_evento = $id_evento;
+	}
 
-    function __construct() {
-        $conn = new Conexao();
-        $this->connection = $conn->getConnection();
-        $this->table = "usuarios";
-    }
+	public function getItem(){
+		return $this->item;
+	}
 
-    public function select($id) {
+	public function setItem($item){
+		$this->item = $item;
+	}
 
-        $cst = $this->connection->prepare("SELECT * from $this->table WHERE id_usuario=:user_id");
-       
-        $cst->bindParam(":user_id", $id, PDO::PARAM_STR);
-        
-        try {
-            $cst->execute();
-        } catch (Exception $e) {
-            throw new Exception($e->getMessage());
-        }
+	public function getPreco(){
+		return $this->preco;
+	}
 
-        return $cst->rowCount() ? $cst->fetch() : false; 
-    }
+	public function setPreco($preco){
+		$this->preco = $preco;
+	}
 
-    public function insert($user) {
+	public function getQtd_esperada(){
+		return $this->qtd_esperada;
+	}
 
-        $cst = $this->connection->prepare("INSERT INTO $this->table (email,username,senha, nome, sobrenome, cpf, data_nasc, genero, telefone)" .
-        "VALUES (:email, :username, :senha, :nome, :sobrenome, :cpf, :data_nasc, :genero, :telefone)");
+	public function setQtd_esperada($qtd_esperada){
+		$this->qtd_esperada = $qtd_esperada;
+	}
 
-        $name = $user->getName();
-        $genre = $user->getGenre();
-        $last_name = $user->getLast_name();
-        $birth_date = $user->getBirth_date();
-        $cpf = $user->getCpf();
-        $phone = $user->getPhone();
-        $email = $user->getEmail();
-        $username = $user->getUsername();
-        $password = $user->getPassword();
+	public function getQtd_vendida(){
+		return $this->qtd_vendida;
+	}
 
-        $cst->bindParam(":nome", $name, PDO::PARAM_STR);
-        $cst->bindParam(":genero", $genre, PDO::PARAM_STR);
-        $cst->bindParam(":sobrenome", $last_name, PDO::PARAM_STR);
-        $cst->bindParam(":data_nasc", $birth_date, PDO::PARAM_STR);
-        $cst->bindParam(":cpf", $cpf, PDO::PARAM_STR);
-        $cst->bindParam(":telefone", $phone, PDO::PARAM_STR);
-        $cst->bindParam(":email", $email, PDO::PARAM_STR);
-        $cst->bindParam(":username", $username, PDO::PARAM_STR);
-        $cst->bindParam(":senha", $password, PDO::PARAM_STR);
+	public function setQtd_vendida($qtd_vendida){
+		$this->qtd_vendida = $qtd_vendida;
+	}
 
-        try {
-            $result = $cst->execute();
-        } catch (Exception $e) {
-            throw new Exception($e->getMessage());
-        }
+	public function getReceita_esperada(){
+		return $this->receita_esperada;
+	}
 
-        return $result; 
-    }
+	public function setReceita_esperada($receita_esperada){
+		$this->receita_esperada = $receita_esperada;
+	}
 
-    public function update($user) {
-        return "Não implementado ainda";
-    }
+	public function getObs(){
+		return $this->obs;
+	}
 
-    public function delete($user) {
-        return "Não implementado ainda";
-    }
+	public function setObs($obs){
+		$this->obs = $obs;
+	}
 }
