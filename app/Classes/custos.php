@@ -36,7 +36,7 @@ class Custos {
     {
         try {
             $gasto_esperado = $dados['preco'] * $dados['qtd_esperada'];
-            $cst = $this->conexao->prepare("INSERT INTO  $this->tabela_custos_variaveis (id_evento, nome, tipo_produto, unidade, preco, obsvar)
+            $cst = $this->conexao->prepare("INSERT INTO  $this->tabela_custos_variaveis (id_evento, nome, tipo_produto, unidade, preco, obs)
             VALUES ('".$dados['id_evento']."', '".$dados['produto']."', '".$dados['type_prod']."', '".$dados['unidade']."', '".$dados['preco']."', '".$dados['obs']."');");
            if( $cst->execute()){
             return true;
