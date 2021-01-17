@@ -13,7 +13,7 @@ try {
                 
 } catch(Exception $e) {
 
-        echo($e);
+        echo 'Exceção capturada: ',  $e->getMessage(), "\n";
 }
 
 ?>

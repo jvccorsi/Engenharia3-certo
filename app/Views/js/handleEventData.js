@@ -7,12 +7,18 @@ $('body').ready(() => {
 
         // Limpa o formulário
         const modal = $('#modal-manter-evento');
-        modal.find('#name').val('');
-        modal.find('#adress').val('')
-        modal.find('#date').val('')
-        modal.find('#price').val('')
-        modal.find('#qntPeople').val('')
-        modal.find('#description').val('')
+        modal.find('#name').val("");
+        modal.find('#pais').val("");
+        modal.find('#cep').val("");
+        modal.find('#state').val("");
+        modal.find('#city').val("");
+        modal.find('#street').val("");
+        modal.find('#bairro').val("");
+        modal.find('#n_local').val("");
+        modal.find('#date').val("");
+        modal.find('#qntPeople').val("");
+        modal.find('#description').val("");
+
     });
 
     // Evento para o modal de edição de eventos
