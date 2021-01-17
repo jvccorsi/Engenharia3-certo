@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ('../Classes/usuario.php');
+include ('../../Classes/usuario.php');
 $objUSU = new usuario();
 
         if ($objUSU->editar_dados_pessoais($_POST)) { 

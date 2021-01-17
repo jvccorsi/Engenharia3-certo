@@ -39,7 +39,7 @@
         <a class="nav-link active" href="#custos-variaveis" data-toggle="tab">Custos variaveis</a>
       </li>
       <li class="nav-item">
-        <a id="fixed-costs-link" class="nav-link" href="#custos-fixos" data-toggle="tab" onclick="getAllFixedCosts()">Custos fixos</a>
+        <a id="fixed-costs-link" class="nav-link" href="#custos-fixos" data-toggle="tab">Custos fixos</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#receita" data-toggle="tab">Receita</a>
