@@ -16,7 +16,7 @@ final class RevenueDAO extends DAO {
 
     public function select($id_evento) {
 
-        $cst = $this->connection->prepare("SELECT * from $this->table WHERE id_usuario=:id_evento");
+        $cst = $this->connection->prepare("SELECT * from $this->table WHERE id_evento=:id_evento");
        
         $cst->bindParam(":id_evento", $id_evento, PDO::PARAM_STR);
         
@@ -34,13 +34,13 @@ final class RevenueDAO extends DAO {
         $cst = $this->connection->prepare("INSERT INTO $this->table (id_evento, item, preco, qtd_esperada, qtd_vendida, receita_esperada, obs)" .
         "VALUES (:id_evento, :item, :preco, :qtd_esperada, :qtd_vendida, :receita_esperada, :obs)");
 
-        $id_evento = $user->getId_evento();
-        $item = $user->getItem();
-        $preco = $user->getPreco();
-        $qtd_esperada = $user->getQtd_esperada();
-        $qtd_vendida = $user->getQtd_vendida();
-        $receita_esperada = $user->getReceita_esperada();
-        $obs = $user->getObs();
+        $id_evento = $revenue->getId_evento();
+        $item = $revenue->getItem();
+        $preco = $revenue->getPreco();
+        $qtd_esperada = $revenue->getQtd_esperada();
+        $qtd_vendida = 0;
+        $receita_esperada = $preco * $qtd_esperada;
+        $obs = $revenue->getObs();
 
         $cst->bindParam(":id_evento", $id_evento, PDO::PARAM_STR);
         $cst->bindParam(":item", $item, PDO::PARAM_STR);

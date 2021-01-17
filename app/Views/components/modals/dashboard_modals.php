@@ -358,13 +358,13 @@
     <div class="modal-dialog" >
         <div class="modal-content">
             <div class="modal-body">
-                <form id="contact-form" class="form" action="../../Controllers/revenues/cadastro_receita.php" method="POST" >
+                <form id="contact-form" class="form" action="../../Controllers/revenues/register.php" method="POST" >
                     <h1 class="titulo text-center"><b>Adicionar Receita</b></h1>
                     <input name="id_evento" type="hidden" class="id-evento">
                     <div class="forms">
                         <div class="form-group">
                             <label class="form-label" for="name"><b>Item</b></label>
-                            <input type="text" class="form-control" id="item_name" name="item_name"
+                            <input type="text" class="form-control" id="item" name="item"
                                 placeholder="Digite o nome do item aqui. Ex: Primeiro Lote" required>
                         </div>
                         <div class="form-group">
