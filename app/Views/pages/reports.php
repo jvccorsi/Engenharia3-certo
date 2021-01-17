@@ -83,7 +83,7 @@
                 <?php } } ?>
                 <tr>
                   <th scope="row"></th>
-                  <th scope="col">TOTAL FINAL: <span>R$<?php echo($variableFinalTotal)?></span></th>
+                  <th scope="col">TOTAL FINAL ESPERADO: <span>R$<?php echo($variableFinalTotal)?></span></th>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -107,7 +107,7 @@
                       <th scope="col">ITEM</th>
                       <th scope="col">TIPO</th>
                       <th scope="col">PREÇO</th>
-                      <th scope="col">GASTO FINAL</th>
+                      <th scope="col">QUANTIDADE ESPERADA</th>
                       <th scope="col">OBSERVAÇÕES</th>
                   </tr>
               </thead>
@@ -118,6 +118,7 @@
                 if($fixedCosts) {
                 foreach($fixedCosts as $fixedCost) { 
                   $index++?>
+                  <tr>
                   <td><?php echo ($index);?></td>
                   <td><?php echo ($fixedCost['item']);?></td>
                   <td><?php echo ($fixedCost['tipo_custos']);?></td>
@@ -125,10 +126,11 @@
                   <td><?php echo ($fixedCost['quantidade']);?></td>
                   <td><?php echo ($fixedCost['obs']);?></td>
                   <?php $fixedFinalTotal += $fixedCost['gasto_final']?>
+                  </tr>
                 <?php } } ?>
                 <tr>
                   <th scope="row"></th>
-                  <th scope="col">TOTAL FINAL: <span>R$<?php echo ($fixedFinalTotal)?></span></th>
+                  <th scope="col">TOTAL FINAL ESPERADO: <span>R$<?php echo ($fixedFinalTotal)?></span></th>
                   <td></td>
                   <td></td>
                   <td></td>

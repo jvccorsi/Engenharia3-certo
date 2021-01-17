@@ -10,8 +10,8 @@ CREATE TABLE evento(
  	cep VARCHAR(11) NOT NULL,
  	estado VARCHAR(2) NOT NULL,
  	cidade VARCHAR(30) NOT NULL,
- 	rua VARCHAR(30) NOT NULL,
- 	bairro VARCHAR(30) NOT NULL,
+ 	rua VARCHAR(80) NOT NULL,
+ 	bairro VARCHAR(80) NOT NULL,
  	numero INT NOT NULL,
 	PRIMARY KEY(id_evento)
 );
@@ -21,9 +21,9 @@ CREATE TABLE custos_fixos(
 	id_evento INT NOT NULL,
  	item VARCHAR(30) NOT NULL,
  	tipo_custos VARCHAR(50) NOT NULL,
- 	preco DECIMAL NOT NULL,
+ 	preco DECIMAL(10,2) NOT NULL,
  	quantidade INT NOT NULL,
- 	gasto_final DECIMAL NOT NULL,
+ 	gasto_final DECIMAL(10,2) NOT NULL,
  	obs VARCHAR(50) NOT NULL,
 	PRIMARY KEY(id_custos_fixos),
 	FOREIGN KEY (id_evento) REFERENCES evento(id_evento)
@@ -36,9 +36,9 @@ CREATE TABLE custos_variaveis(
  	nome VARCHAR(30) NOT NULL,
  	tipo_produto VARCHAR(50) NOT NULL,
  	unidade VARCHAR(20) NOT NULL,
- 	preco DECIMAL NOT NULL,
+ 	preco DECIMAL(10,2) NOT NULL,
  	qtd_esperada INT NOT NULL,
- 	gasto_esperado DECIMAL NOT NULL,
+ 	gasto_esperado DECIMAL(10,2) NOT NULL,
  	obs VARCHAR(50) NOT NULL,
 	PRIMARY KEY(id_custos_variaveis),
 	FOREIGN KEY (id_evento) REFERENCES evento(id_evento)
@@ -61,10 +61,10 @@ CREATE TABLE receita(
  	id_receita INT NOT NULL AUTO_INCREMENT,
 	id_evento INT NOT NULL,
  	item VARCHAR(30) NOT NULL,
- 	preco DECIMAL NOT NULL,
+ 	preco DECIMAL(10,2) NOT NULL,
  	qtd_esperada INT NOT NULL,
  	qtd_vendida INT NOT NULL,
- 	receita_esperada DECIMAL NOT NULL,
+ 	receita_esperada DECIMAL(10,2) NOT NULL,
  	obs VARCHAR(50) NOT NULL,
 	PRIMARY KEY(id_receita),
 	FOREIGN KEY (id_evento) REFERENCES evento(id_evento)

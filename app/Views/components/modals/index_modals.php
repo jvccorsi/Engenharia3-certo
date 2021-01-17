@@ -241,7 +241,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="form_recu_senha" class="form" action="../../Controllers/gestao_recu_senha.php" method="POST">
+                    <form id="form_recu_senha" class="form" action="../../Controllers/users/recover_password.php" method="POST">
                         <div class="form-group">
                             <label for="email_recuperar_senha" class="font-weight-bold text-white">Digite seu email:</label>
                             <input type="email" class="form-control " id="email_recuperar_senha" name='email_recuperar_senha' placeholder="name@example.com">
@@ -281,7 +281,7 @@
 
                             <div class="form-group">
                                 <label class="form-label" for="birth-date" style="color:white;"><b>Data de nascimento:</b></label>
-                                <input type="text" class="form-control" id="dtnasc" name="birth-date" placeholder="Digite sua data de nascimento aqui" required>
+                                <input type="date" class="form-control" id="dtnasc" name="birth-date" placeholder="Digite sua data de nascimento aqui" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="name" style="color:white;"><b>CPF:</b></label>
@@ -289,7 +289,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="phone" style="color:white;"><b>Telefone:</b></label>
-                                <input type="text" class="form-control" id="telefone" name="phone" placeholder="(00)0000-0000" required>
+                                <input type="text" class="form-control" id="telefone" name="phone" placeholder="(00)00000-0000" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="email" style="color:white;"><b>Email:</b></label>
@@ -319,7 +319,7 @@
         <div class="modal-dialog ">
             <div class="modal-content" id="fundo-modal">
                 <div class="modal-body">
-                    <form id="contact-form" class="form" action="../../Controllers/gestao_fale_conosco.php" method="POST">
+                    <form id="contact-form" class="form" action="../../Controllers/messages/gestao_fale_conosco.php" method="POST">
                         <h1 class="titulo text-center"><b>Entrar em contato:</b></h1>
                         <div class="forms">
                             <div class="form-group">

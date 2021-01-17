@@ -50,7 +50,7 @@
                 <hr class="hr">
 
                 <div id="texto-section-quemsomos">
-                    <h5 class="textos">O ROLEDEREP representa um grupo de alunos que cursam a diciplina Engenharia de Software III. O ROLEDEREP fornece a você universitário, a possibilidade de tornar a sua "baguncinha" no role de república muito organizada! Nesse sentido, com grande prazer a trabalho desenvolvemos esse sistema a vocês e para vocês!.</h5>
+                    <h5 class="textos">O ROLEDEREP representa um grupo de alunos que cursam a diciplina Engenharia de Software III. O ROLEDEREP fornece a você universitário, a possibilidade de tornar a sua "baguncinha" no role de república muito organizada! Nesse sentido, com grande prazer desenvolvemos esse sistema para vocês!</h5>
                 </div>
             </div>
 

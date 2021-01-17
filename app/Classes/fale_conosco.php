@@ -1,6 +1,6 @@
 <?php
-include("../config.php");
-require_once ROOT_PATH . '/Conexao_BD/conexao.php'; //Não alterar o link da conexão. Lembrando que fica salvo as alterações ;)
+include("../../config.php");
+require_once ROOT_PATH . '/database/connection.php';
 
 class fale_conosco
 {
@@ -10,7 +10,7 @@ class fale_conosco
     function __construct()
     {
         $conn = new Conexao();
-        $this->conexao = $conn->getConexao();
+        $this->conexao = $conn->getConnection();
         $this->tabela = "mensagem";
     }
 

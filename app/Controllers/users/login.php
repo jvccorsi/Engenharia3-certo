@@ -23,7 +23,7 @@ if(isset($_POST['email'])){ // Request login
     } else { 
         $_SESSION['login_incorreto_usu'] = "erro_senha";
 
-        header("location: ../../index.php");
+        header("location: ../../Views/pages/landing.php");
     }
 }
 ?>

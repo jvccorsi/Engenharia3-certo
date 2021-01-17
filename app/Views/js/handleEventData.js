@@ -13,14 +13,17 @@ $('body').ready(() => {
         modal.find('#price').val('')
         modal.find('#qntPeople').val('')
         modal.find('#description').val('')
-    }); 
+    });
 
     // Evento para o modal de edição de eventos
     $('a.edit-link').on('click', () => {
         $('.modal .titulo').html("<b>Editar evento</b>");
+        ClearFields();
         const http = new XMLHttpRequest();
 
-        const idEvento = document.querySelector('#modal-manter-evento .id-evento').value;
+        let idEvento = document.querySelector('#modal-manter-evento .id-evento').value;
+        idEvento = "";
+
         console.log(idEvento);
 
         const url = `/Engenharia3-certo/app/Controllers/events/find.php?id_evento=${idEvento}`;
@@ -28,9 +31,70 @@ $('body').ready(() => {
         http.send();
         http.onload = function () {
             try {
+
                 const user = JSON.parse(http.response);
 
-                if(Object.keys(user).length > 0) {
+                if (Object.keys(user).length > 0) {
+                    LoadDatasEditEvent();
+                    const modal = $('#modal-manter-evento');
+                    // Insere os dados do evento no formulário 
+                    modal.find('#name').val(user['nome_evento']);
+                    modal.find('#pais').val(user['pais']);
+                    modal.find('#cep').val(user['cep']);
+                    modal.find('#state').val(user['estado']);
+                    modal.find('#city').val(user['cidade']);
+                    modal.find('#street').val(user['rua']);
+                    modal.find('#bairro').val(user['bairro']);
+                    modal.find('#n_local').val(user['numero']);
+                    modal.find('#date').val(user['data_evento']);
+                    modal.find('#qntPeople').val(user['qtd_pessoas']);
+                    modal.find('#description').val(user['descricao_evento']);
+                } else {
+                    LoadDatasEditEvent();
+                }
+            } catch (err) {
+                alert(err.message);
+            }
+        }
+    });
+
+
+    function ClearFields() {
+
+        const modal = $('#modal-manter-evento');
+        // Insere os dados do evento no formulário 
+        modal.find('#name').val("");
+        modal.find('#pais').val("");
+        modal.find('#cep').val("");
+        modal.find('#state').val("");
+        modal.find('#city').val("");
+        modal.find('#street').val("");
+        modal.find('#bairro').val("");
+        modal.find('#n_local').val("");
+        modal.find('#date').val("");
+        modal.find('#qntPeople').val("");
+        modal.find('#description').val("");
+
+    }
+
+    function LoadDatasEditEvent() {
+
+        const http = new XMLHttpRequest();
+
+        const idEvento = document.querySelector('#modal-manter-evento .id-evento').value;
+
+        console.log(idEvento);
+
+        const url = `/Engenharia3-certo/app/Controllers/events/find.php?id_evento=${idEvento}`;
+        http.open("GET", url, true);
+        http.send();
+        http.onload = function () {
+
+            try {
+                const user = JSON.parse(http.response);
+                console.log(user);
+
+                if (Object.keys(user).length > 0) {
                     const modal = $('#modal-manter-evento');
                     // Insere os dados do evento no formulário 
                     modal.find('#name').val(user['nome_evento']);
@@ -49,7 +113,7 @@ $('body').ready(() => {
                 alert(err.message);
             }
         }
-    });
+    }
 
     const eventActions = document.querySelectorAll('.actions-column .action');
     // Adicionar o ID do evento para seus respectivos modais

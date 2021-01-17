@@ -104,13 +104,11 @@
                     <div class="forms">
                         <div class="form-group">
                             <label class="form-label" for="name"><b>Nome</b></label>
-                            <input type="text" class="form-control" id="name" name="name"
-                                placeholder="Digite seu nome aqui" required>
+                            <input type="text" class="form-control" id="name" name="name" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="Sobrenome"><b>Sobrenome</b></label>
-                            <input type="text" class="form-control" id="Sobrenome" name="Sobrenome"
-                                placeholder="Digite seu Sobrenome aqui" required>
+                            <input type="text" class="form-control" id="Sobrenome" name="Sobrenome" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="email"><b>Data de nascimento</b></label>
@@ -130,13 +128,11 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="telefone"><b>Telefone</b></label>
-                            <input type="text" class="form-control" id="telefone" name="telefone"
-                                placeholder="(00)0000-0000" required>
+                            <input type="text" class="form-control" id="telefone" name="telefone" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="name"><b>Email</b></label>
-                            <input type="email" class="form-control" id="email" name="email"
-                                placeholder="Digite o seu email aqui" required>
+                            <input type="email" class="form-control" id="email" name="email" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="name"><b>Username</b></label>
