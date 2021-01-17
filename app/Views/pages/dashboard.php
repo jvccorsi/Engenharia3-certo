@@ -54,7 +54,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($events as $event){ ?>
+                    <?php 
+                    if($events) {
+                        foreach($events as $event){ ?>
                         <tr>
                             <td><?php echo $event['id_evento']?></td>
                             <td><?php echo $event['nome_evento']?></td>
@@ -90,7 +92,7 @@
                                 </div>
                             </td>
                         </tr>
-                    <?php } ?>
+                    <?php } } ?>
                 </tbody>
             </table>
         </div>
