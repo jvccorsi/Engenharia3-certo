@@ -1,6 +1,6 @@
 <?php
-include("../../../config.php");
-require_once ROOT_PATH . '/src/database/connection/connection.php';
+include("../../config.php");
+require_once ROOT_PATH . '/database/connection.php';
 
 class Usuario {
     private $conexao;
@@ -9,7 +9,7 @@ class Usuario {
     function __construct()
     {
         $conn = new Conexao();
-        $this->conexao = $conn->getConexao();
+        $this->conexao = $conn->getConnection();
         $this->tabela = "usuarios";
     }
 
@@ -114,7 +114,7 @@ class Usuario {
         $cst->bindParam(":id_usu", $id, PDO::PARAM_INT);
         $cst->execute();
     }
-    
+
     public function editar_dados_pessoais($dados)
     { //Alterar a nova senha do usuário        
      try{   

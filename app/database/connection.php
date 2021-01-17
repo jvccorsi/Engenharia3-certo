@@ -11,7 +11,7 @@ class Conexao {
     public function __construct() {
         $this->servidor = "localhost";
         $this->usuario = "root";
-        $this->senha = "vertrigo";
+        $this->senha = "";
         $this->database = "windparty";
 
         try {
