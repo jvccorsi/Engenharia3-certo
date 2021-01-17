@@ -3,7 +3,7 @@
 require_once dirname(dirname(__FILE__)) . '..\..\database\connection.php';
 require_once 'DAO.php';
 
-final class UserDAO extends DAO {
+final class RevenueDAO extends DAO {
 
     private $connection;
     private $table;
@@ -11,14 +11,14 @@ final class UserDAO extends DAO {
     function __construct() {
         $conn = new Conexao();
         $this->connection = $conn->getConnection();
-        $this->table = "usuarios";
+        $this->table = "receita";
     }
 
-    public function select($id) {
+    public function select($id_evento) {
 
-        $cst = $this->connection->prepare("SELECT * from $this->table WHERE id_usuario=:user_id");
+        $cst = $this->connection->prepare("SELECT * from $this->table WHERE id_evento=:id_evento");
        
-        $cst->bindParam(":user_id", $id, PDO::PARAM_STR);
+        $cst->bindParam(":id_evento", $id_evento, PDO::PARAM_STR);
         
         try {
             $cst->execute();
@@ -29,50 +29,26 @@ final class UserDAO extends DAO {
         return $cst->rowCount() ? $cst->fetch() : false; 
     }
 
-    public function selectByCredentials($user) {
+    public function insert($revenue) {
 
-        $cst = $this->connection->prepare("SELECT id_usuario, email, senha FROM 
-            $this->table WHERE email=:user_email AND senha=:user_password LIMIT 1");
+        $cst = $this->connection->prepare("INSERT INTO $this->table (id_evento, item, preco, qtd_esperada, qtd_vendida, receita_esperada, obs)" .
+        "VALUES (:id_evento, :item, :preco, :qtd_esperada, :qtd_vendida, :receita_esperada, :obs)");
 
-        $email = $user->getEmail();
-        $password = $user->getPassword();
+        $id_evento = $revenue->getId_evento();
+        $item = $revenue->getItem();
+        $preco = $revenue->getPreco();
+        $qtd_esperada = $revenue->getQtd_esperada();
+        $qtd_vendida = 0;
+        $receita_esperada = $preco * $qtd_esperada;
+        $obs = $revenue->getObs();
 
-        $cst->bindParam(":user_email", $email, PDO::PARAM_STR);
-        $cst->bindParam(":user_password", $password, PDO::PARAM_STR);
-        
-        try {
-            $cst->execute();
-        } catch (Exception $e) {
-            throw new Exception($e->getMessage());
-        }
-
-        return $cst->rowCount() ? $cst->fetch() : false; 
-    }
-
-    public function insert($user) {
-
-        $cst = $this->connection->prepare("INSERT INTO $this->table (email,username,senha, nome, sobrenome, cpf, data_nasc, genero, telefone)" .
-        "VALUES (:email, :username, :senha, :nome, :sobrenome, :cpf, :data_nasc, :genero, :telefone)");
-
-        $name = $user->getName();
-        $genre = $user->getGenre();
-        $last_name = $user->getLast_name();
-        $birth_date = $user->getBirth_date();
-        $cpf = $user->getCpf();
-        $phone = $user->getPhone();
-        $email = $user->getEmail();
-        $username = $user->getUsername();
-        $password = $user->getPassword();
-
-        $cst->bindParam(":nome", $name, PDO::PARAM_STR);
-        $cst->bindParam(":genero", $genre, PDO::PARAM_STR);
-        $cst->bindParam(":sobrenome", $last_name, PDO::PARAM_STR);
-        $cst->bindParam(":data_nasc", $birth_date, PDO::PARAM_STR);
-        $cst->bindParam(":cpf", $cpf, PDO::PARAM_STR);
-        $cst->bindParam(":telefone", $phone, PDO::PARAM_STR);
-        $cst->bindParam(":email", $email, PDO::PARAM_STR);
-        $cst->bindParam(":username", $username, PDO::PARAM_STR);
-        $cst->bindParam(":senha", $password, PDO::PARAM_STR);
+        $cst->bindParam(":id_evento", $id_evento, PDO::PARAM_STR);
+        $cst->bindParam(":item", $item, PDO::PARAM_STR);
+        $cst->bindParam(":preco", $preco, PDO::PARAM_STR);
+        $cst->bindParam(":qtd_esperada", $qtd_esperada, PDO::PARAM_STR);
+        $cst->bindParam(":qtd_vendida", $qtd_vendida, PDO::PARAM_STR);
+        $cst->bindParam(":receita_esperada", $receita_esperada, PDO::PARAM_STR);
+        $cst->bindParam(":obs", $obs, PDO::PARAM_STR);
 
         try {
             $result = $cst->execute();
