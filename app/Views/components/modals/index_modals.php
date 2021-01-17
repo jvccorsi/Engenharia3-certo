@@ -241,7 +241,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="form_recu_senha" class="form" action="../../Controllers/gestao_recu_senha.php" method="POST">
+                    <form id="form_recu_senha" class="form" action="../../Controllers/users/recover_password.php" method="POST">
                         <div class="form-group">
                             <label for="email_recuperar_senha" class="font-weight-bold text-white">Digite seu email:</label>
                             <input type="email" class="form-control " id="email_recuperar_senha" name='email_recuperar_senha' placeholder="name@example.com">

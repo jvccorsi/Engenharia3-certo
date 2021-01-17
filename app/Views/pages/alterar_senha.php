@@ -26,7 +26,7 @@ session_start();
 
         <h1 class="text-center mt-5"> Alteração de Senha </h1>
         <div id="login" class="container ">
-            <form action="../Controllers/gestao_mudar_senha.php" method="post" id="alterar_senha" class="container my-4">
+            <form action="../../Controllers/users/change_password.php" method="post" id="alterar_senha" class="container my-4">
                 <input type="hidden" name="chave" id="chave" value="<?php echo $chave; ?>" />
                 <div class="row form-group">
                     <div class="col">

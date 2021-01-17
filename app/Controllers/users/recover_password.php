@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-include ('../Classes/usuario.php');
-require_once '../Views/assets/PHPMailer/src/Enviar_Email.php';
+include ('../../Classes/usuario.php');
+require_once '../../Views/assets/PHPMailer/src/Enviar_Email.php';
 
 $obj_User = new usuario();
 $obj_Email = new Enviar_Email();
@@ -11,7 +11,7 @@ $email = $_POST['email_recuperar_senha'];
 $chave = $obj_User->Recuperar_Senha($email);
 
 if($chave){
-    $chave_acesso = "http://localhost/engenharia3-certo/Views/alterar_senha.php?chave=".$chave;
+    $chave_acesso = "http://localhost/engenharia3-certo/app/Views/pages/alterar_senha.php?chave=".$chave;
     $corpo_email ="
     <!doctype html>
 <html>
@@ -420,7 +420,7 @@ if($chave){
 
     $controler =  $obj_Email->email($email, "equipe.rolederep@gmail.com", "Equipe Role de Rep", "Recuperação de Senha", $corpo_email);
     $_SESSION['enviar_emaiil_recu_senha'] = "sucesso_senha";
-    header("location:../index.php");
+    header("location:../../index.php");
 }
 else{
     echo 'ERROR: EMAIL NAO ENCONTRADO!!';
