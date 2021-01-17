@@ -317,7 +317,7 @@
                         </div>
                         <div class="form-group">
                             <label for="tipo"><b>Tipo</b></label>
-                            <select class="form-control" id="Tipo" name="Tipo" required>>
+                            <select class="form-control" id="Tipo" name="tipo" required>>
                                 <option value ='Atraçoes'>Atrações</option>
                                 <option value ='Estrutura'>Local/estrutura</option>
                                 <option value ='Seguranças'>Seguranças</option>

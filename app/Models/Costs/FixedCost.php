@@ -3,8 +3,9 @@ require_once 'Cost.php';
 
 final class FixedCost extends Cost {
 	private $item;
-	private $cost_type;
-    private $quantity;
+	private $tipo_custos;
+    private $quantidade;
+    private $gasto_final;
 
 	public function getItem(){
 		return $this->item;
@@ -14,16 +15,27 @@ final class FixedCost extends Cost {
 		$this->item = $item;
 	}
 
-	public function getCost_type(){
-		return $this->cost_type;
+	public function getTipo_custos(){
+		return $this->tipo_custos;
 	}
 
-	public function setCost_type($cost_type){
-		$this->cost_type = $cost_type;
+	public function setTipo_custos($tipo_custos){
+		$this->tipo_custos = $tipo_custos;
 	}
 
-	public function getQuantity(){
-		return $this->quantity;
+	public function getQuantidade(){
+		return $this->quantidade;
 	}
 
+	public function setQuantidade($quantidade){
+		$this->quantidade = $quantidade;
+	}
+
+	public function getGasto_final(){
+		return $this->gasto_final;
+	}
+
+	public function setGasto_final($gasto_final){
+		$this->gasto_final = $gasto_final;
+	}
 }
