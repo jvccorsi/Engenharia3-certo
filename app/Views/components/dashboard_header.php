@@ -47,11 +47,7 @@
             let modal = $('#edit-profile-modal');
             modal.find('#name').val(user['nome']);
             modal.find('#Sobrenome').val(user['sobrenome']);
-<<<<<<< HEAD
             modal.find('#dtnasc').val(user['data_nasc']);
-=======
-            modal.find('#dtnasc').val(user['data_nasc'].substr(0, 10).split('-').reverse().join('/'));
->>>>>>> af7785b0152c093aae20f30c035fd00fae80b163
             modal.find('#cpf').val(user['cpf']);
             modal.find('#genero').val(user['genero']);
             modal.find('#telefone').val(user['telefone']);
