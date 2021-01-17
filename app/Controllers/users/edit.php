@@ -1,21 +1,19 @@
 <?php
 session_start();
 include ('../../Classes/usuario.php');
-try{
-
+try {
         $objUSU = new usuario();
-        
+
         $idUser =  $_SESSION['usu_id'];
         $edit = $objUSU->editar_dados_pessoais($_POST,$idUser);
 
         $_SESSION['editar_dados_sucesso'] = "sucesso";
 
-        header("location:../Views/dashboard.php");
+        header("location:../../Views/pages/dashboard.php");
                 
-        }catch(Exception $e){
+} catch(Exception $e) {
 
-        header("location:../Views/dashboard.php");
-
+        echo($e);
 }
 
 ?>
