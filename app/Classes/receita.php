@@ -1,6 +1,6 @@
 <?php
-include("../config.php");
-require_once ROOT_PATH.'/Conexao_BD/conexao.php'; 
+include("../../config.php");
+require_once ROOT_PATH.'/database/connection.php'; 
 
 class Receita
 {
@@ -10,7 +10,7 @@ class Receita
     function __construct()
     {
         $conn = new Conexao();
-        $this->conexao = $conn->getConexao();
+        $this->conexao = $conn->getConnection();
         $this->tabela = 'receita';
 
     }
