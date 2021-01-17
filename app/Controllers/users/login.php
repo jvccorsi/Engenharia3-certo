@@ -1,11 +1,11 @@
 <?php
 require_once '..\..\Models\User.php';
 require_once '..\..\Models\DAO\UserDAO.php';
-    
+session_start();
 
 if(isset($_POST['email'])){ // Request login
 
-    session_start();
+
 
     $user = new User();
     $user->setEmail($_POST['email']);
