@@ -14,10 +14,8 @@ $datee = filter_input(INPUT_POST,'datee',FILTER_SANITIZE_STRING);
 $qntPeople = filter_input(INPUT_POST,'qntPeople',FILTER_SANITIZE_STRING);
 $descriptionn = filter_input(INPUT_POST,'descriptionn',FILTER_SANITIZE_STRING);
 
-
 $result = "UPDATE evento SET nome=:nome,pais=:pais,cep=:cep,statee=:statee,city=:city,street=:street,Bairro=:Bairro,n_local=:n_local,datee=:datee,qntPeople=:qntPeople,descriptionn=:descriptionn WHERE id_usuario = '".$_SESSION['id_usuario']."'";//PEGAR O ID DO EVENTO
-
-    
+   
 $update = $conn->prepare($result);
 $update->bindParam(':nome', $nome);//bind param recebe um valor como referencia
 $update->bindParam(':pais', $pais);
