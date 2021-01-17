@@ -318,9 +318,9 @@
                         <div class="form-group">
                             <label for="tipo"><b>Tipo</b></label>
                             <select class="form-control" id="Tipo" name="Tipo" required>>
-                                <option value ='Atracoes'>Atrações</option>
+                                <option value ='Atraçoes'>Atrações</option>
                                 <option value ='Estrutura'>Local/estrutura</option>
-                                <option value ='Sergurancas'>Seguranças</option>
+                                <option value ='Seguranças'>Seguranças</option>
                                 <option value ='Outros'>Outros</option>
                             </select>
                         </div>
@@ -332,7 +332,7 @@
                         <div class="form-group">
                             <label class="form-label" for="qtd"><b>Quantidade</b></label>
                             <input type="text" class="form-control" id="qtd" name="qtd"
-                                placeholder="R$" required>
+                                placeholder="Exemplo: 12" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="obs"><b>Observações</b></label>
@@ -370,7 +370,7 @@
                         <div class="form-group">
                             <label class="form-label" for="preco"><b>Preco</b></label>
                             <input type="text" class="form-control" id="preco" name="preco"
-                                placeholder="Digite o preco do item" required>
+                                placeholder="Digite o preço do item" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="qtd_esperada"><b>Quantidade esperada</b></label>
@@ -380,7 +380,7 @@
                         <div class="form-group">
                             <label class="form-label" for="obs"><b>Observacoes</b></label>
                             <input type="text" class="form-control" id="obs" name="obs"
-                                placeholder="Caso haja observacoes." required>
+                                placeholder="Caso haja observações." required>
                         </div>
                         <div class="d-flex justify-content-around">
                             <button type="submit" class="btn-lg btn-primary"  value="send">

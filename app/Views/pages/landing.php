@@ -87,7 +87,7 @@
                 <div class="col col-xl-6 col-lg-12 col-md-12">
                     <div id="container-info-login">
                         <h1 class="titulos-info-login text-center"><b>Faça login e obtenha as vantagens do serviço que
-                                fornecemos!<br><br>NÃO POSUÍ CADASTRO?</b></h1><br>
+                                fornecemos!<br><br>NÃO POSSUI CADASTRO?</b></h1><br>
                         <div class="text-center">
                             <button type="submit" class="btn btn-start-order" id="btn-form" value="send"  href="#modal-cadastro" data-toggle="modal" data-target="#modal-cadastro" style="width: 250px;"><b>CADASTRAR-SE </b>
                                 <div class="spinner-grow text-dark" role="status" style="margin-bottom:5px;margin-left:5px;width: 16px; height: 16px;">
