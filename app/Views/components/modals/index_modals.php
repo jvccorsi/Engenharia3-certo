@@ -319,7 +319,7 @@
         <div class="modal-dialog ">
             <div class="modal-content" id="fundo-modal">
                 <div class="modal-body">
-                    <form id="contact-form" class="form" action="../../Controllers/gestao_fale_conosco.php" method="POST">
+                    <form id="contact-form" class="form" action="../../Controllers/messages/gestao_fale_conosco.php" method="POST">
                         <h1 class="titulo text-center"><b>Entrar em contato:</b></h1>
                         <div class="forms">
                             <div class="form-group">
