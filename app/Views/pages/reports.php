@@ -13,6 +13,7 @@
     <!--CSS-->
     <link rel="stylesheet" href="../styles/dashboard.css">
     <link rel="stylesheet" href="../styles/reports.css">
+    <link rel="stylesheet" href="../styles/Chart.min.css">
     <link rel="stylesheet" href="../styles/components/modals/dashboard_modals.css">
     <link rel="stylesheet" href="../styles/components/dashboard-header.css">
     <!--BS-->
@@ -22,6 +23,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="../js/script.js"></script>
+    <script src="../js/Chart.min.js"></script>
     <!--FONT-->
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
 
@@ -187,8 +189,41 @@
               </div>
             <div class="col-md-7">
               <div class="card d-flex align-items-center">
-                <h5>Perpectiva gráfica</h5>  
-                <img src="../assets/graphic_example.png">
+                <h5>Perspectiva gráfica</h5> 
+                <canvas id="costs-chart"></canvas> 
+                <script>
+                  var ctx = $('#costs-chart');
+                  var myChart = new Chart(ctx, {
+                      type: 'pie',
+                      data: {
+                          labels: ['Custos Variáveis', 'Custos Fixos',],
+                          datasets: [{
+                              label: '# of Votes',
+                              data: [20, 3],
+                              backgroundColor: [
+                                  'rgba(255, 99, 132, 0.2)',
+                                  'rgba(54, 162, 235, 0.2)',
+                                  // 'rgba(255, 206, 86, 0.2)',
+                                  // 'rgba(75, 192, 192, 0.2)',
+                                  // 'rgba(153, 102, 255, 0.2)',
+                                  // 'rgba(255, 159, 64, 0.2)'
+                              ],
+                              borderColor: [
+                                  'rgba(255, 99, 132, 1)',
+                                  'rgba(54, 162, 235, 1)',
+                                  // 'rgba(255, 206, 86, 1)',
+                                  // 'rgba(75, 192, 192, 1)',
+                                  // 'rgba(153, 102, 255, 1)',
+                                  // 'rgba(255, 159, 64, 1)'
+                              ],
+                              borderWidth: 2
+                          }]
+                      },
+                      options: {
+
+                      }
+                  });
+                </script>
               </div>
             </div>
           </div>
