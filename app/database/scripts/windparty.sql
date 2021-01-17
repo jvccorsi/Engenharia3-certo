@@ -16,7 +16,6 @@ CREATE TABLE evento(
 	PRIMARY KEY(id_evento)
 );
 
-
 CREATE TABLE custos_fixos(
  	id_custos_fixos INT NOT NULL AUTO_INCREMENT,
 	id_evento INT NOT NULL,
@@ -26,7 +25,7 @@ CREATE TABLE custos_fixos(
  	quantidade INT NOT NULL,
  	gasto_final DECIMAL NOT NULL,
  	obs VARCHAR(50) NOT NULL,
-	PRIMARY KEY(id_custosfixos),
+	PRIMARY KEY(id_custos_fixos),
 	FOREIGN KEY (id_evento) REFERENCES evento(id_evento)
 );
 
