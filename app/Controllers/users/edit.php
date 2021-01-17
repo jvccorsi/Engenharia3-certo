@@ -11,7 +11,4 @@ $objUSU = new usuario();
 
              header("location:../../Views/pages/dashboard.php");
         }
-
-
-
 ?>

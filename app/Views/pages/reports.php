@@ -83,7 +83,7 @@
                 <?php } } ?>
                 <tr>
                   <th scope="row"></th>
-                  <th scope="col">TOTAL FINAL: R$<?php echo($variableFinalTotal)?></th>
+                  <th scope="col">TOTAL FINAL: <span>R$<?php echo($variableFinalTotal)?></span></th>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -128,7 +128,7 @@
                 <?php } } ?>
                 <tr>
                   <th scope="row"></th>
-                  <th scope="col">TOTAL FINAL: R$<?php echo ($fixedFinalTotal)?></th>
+                  <th scope="col">TOTAL FINAL: <span>R$<?php echo ($fixedFinalTotal)?></span></th>
                   <td></td>
                   <td></td>
                   <td></td>
