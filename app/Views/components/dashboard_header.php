@@ -45,10 +45,9 @@
 
           if(Object.keys(user).length > 0) {
             let modal = $('#edit-profile-modal');
-
             modal.find('#name').val(user['nome']);
             modal.find('#Sobrenome').val(user['sobrenome']);
-            modal.find('#dtnasc').val(user['dtnasc']);
+            modal.find('#dtnasc').val(user['data_nasc'].substr(0, 10).split('-').reverse().join('/'));
             modal.find('#cpf').val(user['cpf']);
             modal.find('#genero').val(user['genero']);
             modal.find('#telefone').val(user['telefone']);
