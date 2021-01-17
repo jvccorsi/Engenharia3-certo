@@ -18,11 +18,11 @@ if ($_SESSION['usu_logado']) {
         if ($duracao > $timeout) {
             session_destroy();
             session_start();
-            header("location: ../index.php");
+            header("location: ../../index.php");
         }
     }
     $_SESSION['timeout'] = time();
 } else {
     $_SESSION['login_incorreto_usu'] = "necessario_realizar_login";
-    header("location: ../../../index.php");
+    header("location: ../../index.php");
 }
