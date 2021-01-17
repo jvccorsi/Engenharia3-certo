@@ -196,10 +196,9 @@
                   var myChart = new Chart(ctx, {
                       type: 'pie',
                       data: {
-                          labels: ['Custos Variáveis', 'Custos Fixos',],
+                          labels: ['Custos Variáveis', 'Custos Fixos'],
                           datasets: [{
-                              label: '# of Votes',
-                              data: [20, 3],
+                              data: [1200, 600],
                               backgroundColor: [
                                   'rgba(255, 99, 132, 0.2)',
                                   'rgba(54, 162, 235, 0.2)',
@@ -220,7 +219,14 @@
                           }]
                       },
                       options: {
-
+                        layout: {
+                          padding: {
+                            top: 20,
+                            right: 20,
+                            bottom: 20,
+                            left: 20,
+                          }
+                        }
                       }
                   });
                 </script>
