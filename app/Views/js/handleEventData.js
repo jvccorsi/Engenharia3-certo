@@ -29,7 +29,6 @@ $('body').ready(() => {
         http.onload = function () {
             try {
                 const user = JSON.parse(http.response);
-                console.log(user);
 
                 if(Object.keys(user).length > 0) {
                     const modal = $('#modal-manter-evento');

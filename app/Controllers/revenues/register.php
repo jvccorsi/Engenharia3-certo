@@ -17,5 +17,6 @@ if (isset($_POST['qtd_esperada'])) {
         echo('Revenue created');
     } else { 
     }
+    header("location: ../../Views/pages/dashboard.php");
 }
 ?>

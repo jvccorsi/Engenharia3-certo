@@ -26,7 +26,12 @@ final class UserDAO extends DAO {
             throw new Exception($e->getMessage());
         }
 
-        return $cst->rowCount() ? $cst->fetch() : false; 
+        $user = $cst->fetch(); 
+        // Converter formato de data para dia/mes/ano 
+        $date = date("d-m-Y", strtotime($user['data_nasc']));
+        $user['data_nasc'] = str_replace('-', '/', $date);
+
+        return $cst->rowCount() ? $user : false; 
     }
 
     public function selectByCredentials($user) {
