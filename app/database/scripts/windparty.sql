@@ -39,9 +39,7 @@ CREATE TABLE custos_variaveis(
  	preco DECIMAL NOT NULL,
  	qtd_esperada INT NOT NULL,
  	gasto_esperado DECIMAL NOT NULL,
- 	qtd_total INT NOT NULL,
- 	gasto_final DECIMAL NOT NULL,
- 	obsvar VARCHAR(50) NOT NULL,
+ 	obs VARCHAR(50) NOT NULL,
 	PRIMARY KEY(id_custos_variaveis),
 	FOREIGN KEY (id_evento) REFERENCES evento(id_evento)
 
