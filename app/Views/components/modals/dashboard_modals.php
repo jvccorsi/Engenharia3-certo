@@ -358,7 +358,7 @@
     <div class="modal-dialog" >
         <div class="modal-content">
             <div class="modal-body">
-                <form id="contact-form" class="form" action="../../Controllers/incomes/cadastro_receita.php" method="POST" >
+                <form id="contact-form" class="form" action="../../Controllers/revenues/cadastro_receita.php" method="POST" >
                     <h1 class="titulo text-center"><b>Adicionar Receita</b></h1>
                     <input name="id_evento" type="hidden" class="id-evento">
                     <div class="forms">
