@@ -131,7 +131,7 @@
                         <div class="form-group">
                             <label class="form-label" for="telefone"><b>Telefone</b></label>
                             <input type="text" class="form-control" id="telefone" name="telefone"
-                                placeholder="(00)0000-0000" required>
+                                placeholder="(00)00000-0000" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="name"><b>Email</b></label>

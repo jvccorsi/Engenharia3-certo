@@ -10,8 +10,8 @@ CREATE TABLE evento(
  	cep VARCHAR(11) NOT NULL,
  	estado VARCHAR(2) NOT NULL,
  	cidade VARCHAR(30) NOT NULL,
- 	rua VARCHAR(30) NOT NULL,
- 	bairro VARCHAR(30) NOT NULL,
+ 	rua VARCHAR(80) NOT NULL,
+ 	bairro VARCHAR(80) NOT NULL,
  	numero INT NOT NULL,
 	PRIMARY KEY(id_evento)
 );

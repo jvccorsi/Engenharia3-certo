@@ -17,7 +17,7 @@ class Eventos {
 public function queryInsert($dados){
    
     $cst = $this->conexao->prepare("INSERT INTO evento (id_evento, nome_evento, descricao_evento, qtd_pessoas, data_evento, pais, cep, estado, cidade, rua, bairro, numero)
-    VALUES (NULL, '".$dados['name']."', '".$dados['description']."', '".$dados['qntPeople']."', '".$dados['date']."', '".$dados['pais']."',  '".$dados['cep']."',  '".$dados['state']."',  '".$dados['city']."',  '".$dados['street']."',  '".$dados['Bairro']."',  '".$dados['n_local']."');");
+    VALUES (NULL, '".$dados['name']."', '".$dados['description']."', '".$dados['qntPeople']."', '".$dados['date']."', '".$dados['pais']."',  '".$dados['cep']."',  '".$dados['state']."',  '".$dados['city']."',  '".$dados['street']."',  '".$dados['bairro']."',  '".$dados['n_local']."');");
 
    if($cst->execute()){
        return true;

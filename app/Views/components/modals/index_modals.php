@@ -281,7 +281,7 @@
 
                             <div class="form-group">
                                 <label class="form-label" for="birth-date" style="color:white;"><b>Data de nascimento:</b></label>
-                                <input type="text" class="form-control" id="dtnasc" name="birth-date" placeholder="Digite sua data de nascimento aqui" required>
+                                <input type="date" class="form-control" id="dtnasc" name="birth-date" placeholder="Digite sua data de nascimento aqui" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="name" style="color:white;"><b>CPF:</b></label>
@@ -289,7 +289,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="phone" style="color:white;"><b>Telefone:</b></label>
-                                <input type="text" class="form-control" id="telefone" name="phone" placeholder="(00)0000-0000" required>
+                                <input type="text" class="form-control" id="telefone" name="phone" placeholder="(00)00000-0000" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="email" style="color:white;"><b>Email:</b></label>
