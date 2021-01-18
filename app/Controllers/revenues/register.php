@@ -16,6 +16,7 @@ if (isset($_POST['qtd_esperada'])) {
     if($revenueDAO->insert($revenue)) {
         echo('Revenue created');
     } else { 
+        echo('Error to create revenue');
     }
     header("location: ../../Views/pages/dashboard.php");
 }
