@@ -14,32 +14,21 @@ class UserTest extends TestCase {
         $this->userDAO = new UserDAO();
 
         $this->user->setId(1);
-        $this->user->setEmail('user@email.com');
-        $this->user->setPassword('password');
+        $this->user->setEmail('roque@email.com');
+        $this->user->setPassword('123');
     }
 
     public function testIfUserCanLogin() {
                 
-        $expectedResult['id_usuario'] = 1;
-        $expectedResult['email'] = 'user@email.com';
-        $expectedResult['senha'] = 'password';
+        $expectedResult['id_usuario'] = '1';
+        $expectedResult['email'] = 'roque@email.com';
+        $expectedResult['senha'] = '123';
 
         $this->assertEquals($expectedResult, $this->userDAO->selectByCredentials($this->user));
     }
 
     public function testIfFindOneUser() {
-                
-        $expectedResult['id_usuario'] = '1';
-        $expectedResult['email'] = 'roque@email.com';
-        $expectedResult['senha'] = '123';
-        $expectedResult['username'] = 'roquemgc';
-        $expectedResult['nome'] = 'Roque';
-        $expectedResult['sobrenome'] = 'Gomes Costa';
-        $expectedResult['cpf'] = '388.111.222-23';
-        $expectedResult['data_nasc'] = '30/11//0001';
-        $expectedResult['genero'] = 'masculino';
-        $expectedResult['telefone'] = '(19)99542-6742';
 
-        $this->assertEquals($expectedResult, $this->userDAO->select($this->user->getId()));
+        $this->assertContains($this->user->getEmail(), $this->userDAO->select($this->user->getId()));
     }
 }
