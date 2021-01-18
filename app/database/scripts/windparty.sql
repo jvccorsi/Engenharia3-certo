@@ -8,7 +8,7 @@ CREATE TABLE evento(
  	data_evento DATE NOT NULL,
  	pais VARCHAR(30) NOT NULL,
  	cep VARCHAR(11) NOT NULL,
- 	estado VARCHAR(2) NOT NULL,
+ 	estado VARCHAR(30) NOT NULL,
  	cidade VARCHAR(30) NOT NULL,
  	rua VARCHAR(80) NOT NULL,
  	bairro VARCHAR(80) NOT NULL,
@@ -27,6 +27,8 @@ CREATE TABLE custos_fixos(
  	obs VARCHAR(50) NOT NULL,
 	PRIMARY KEY(id_custos_fixos),
 	FOREIGN KEY (id_evento) REFERENCES evento(id_evento)
+	ON DELETE CASCADE
+
 );
 
 
@@ -42,6 +44,8 @@ CREATE TABLE custos_variaveis(
  	obs VARCHAR(50) NOT NULL,
 	PRIMARY KEY(id_custos_variaveis),
 	FOREIGN KEY (id_evento) REFERENCES evento(id_evento)
+	ON DELETE CASCADE
+
 
 );
 
@@ -68,6 +72,8 @@ CREATE TABLE receita(
  	obs VARCHAR(50) NOT NULL,
 	PRIMARY KEY(id_receita),
 	FOREIGN KEY (id_evento) REFERENCES evento(id_evento)
+	ON DELETE CASCADE
+
 );
 
 
