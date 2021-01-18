@@ -164,7 +164,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <form id="contact-form" class="form" action="../../Controllers/events/register.php" method="POST">
+                <form id="teste" class="form" name="contact-form" action="../../Controllers/events/register.php" method="POST">
                     <h1 class="titulo"></h1>
                     <input name="id_evento" type="hidden" class="id-evento">
                     <div class="forms">

@@ -4,7 +4,7 @@ $('body').ready(() => {
     // Evento para o modal de cadastro de eventos
     $('button#add-event').on('click', () => {
         $('#modal-manter-evento .titulo').html("<b>Cadastrar evento</b>");
-
+        
         // Limpa o formulário
         const modal = $('#modal-manter-evento');
         modal.find('#name').val("");
@@ -21,9 +21,17 @@ $('body').ready(() => {
 
     });
 
+    // $('a.edit-link').on('click', () => {
+
+    // document.getElementById("contact-form").action = "../../Controllers/events/editar_evento.php";
+
+    // });
     // Evento para o modal de edição de eventos
     $('a.edit-link').on('click', () => {
         $('.modal .titulo').html("<b>Editar evento</b>");
+
+        document.getElementById("teste").action = "../../Controllers/events/editar_evento.php";
+
         ClearFields();
         const http = new XMLHttpRequest();
 

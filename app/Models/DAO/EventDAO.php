@@ -55,25 +55,29 @@ final class EventDAO extends DAO {
         $cst = $this->connection->prepare("INSERT INTO $this->table (nome_evento, descricao_evento, qtd_pessoas, data_evento, pais, cep, estado, cidade, rua, bairro, numero)" .
         "VALUES (:nome_evento, :descricao_evento, :qtd_pessoas, :data_evento, :pais, :cep, :estado, :cidade, :rua, :bairro, :numero)");
 
-        $name = $user->getName();
-        $genre = $user->getGenre();
-        $last_name = $user->getLast_name();
-        $birth_date = $user->getBirth_date();
-        $cpf = $user->getCpf();
-        $phone = $user->getPhone();
-        $email = $user->getEmail();
-        $username = $user->getUsername();
-        $password = $user->getPassword();
+        $nome_evento = $event->getName();
+        $descricao_evento = $event->getDescription();
+        $qtd_pessoas = $event->getPeople_quantity();
+        $data_evento = $event->getDate();
+        $pais = $event->getCountry();
+        $cep = $event->getCep();
+        $estado = $event->getState();
+        $cidade = $event->getCity();
+        $rua = $event->getStreet();
+        $bairro = $event->getNeighborhood();
+        $numero = $event->getAdress_number();
 
-        $cst->bindParam(":nome", $name, PDO::PARAM_STR);
-        $cst->bindParam(":genero", $genre, PDO::PARAM_STR);
-        $cst->bindParam(":sobrenome", $last_name, PDO::PARAM_STR);
-        $cst->bindParam(":data_nasc", $birth_date, PDO::PARAM_STR);
-        $cst->bindParam(":cpf", $cpf, PDO::PARAM_STR);
-        $cst->bindParam(":telefone", $phone, PDO::PARAM_STR);
-        $cst->bindParam(":email", $email, PDO::PARAM_STR);
-        $cst->bindParam(":username", $username, PDO::PARAM_STR);
-        $cst->bindParam(":senha", $password, PDO::PARAM_STR);
+        $cst->bindParam(":nome_evento", $nome_evento, PDO::PARAM_STR);
+        $cst->bindParam(":descricao_evento", $descricao_evento, PDO::PARAM_STR);
+        $cst->bindParam(":qtd_pessoas", $qtd_pessoas, PDO::PARAM_STR);
+        $cst->bindParam(":data_evento", $data_evento, PDO::PARAM_STR);
+        $cst->bindParam(":pais", $pais, PDO::PARAM_STR);
+        $cst->bindParam(":cep", $cep, PDO::PARAM_STR);
+        $cst->bindParam(":estado", $estado, PDO::PARAM_STR);
+        $cst->bindParam(":cidade", $cidade, PDO::PARAM_STR);
+        $cst->bindParam(":rua", $rua, PDO::PARAM_STR);
+        $cst->bindParam(":bairro", $bairro, PDO::PARAM_STR);
+        $cst->bindParam(":numero", $numero, PDO::PARAM_STR);
 
         try {
             $result = $cst->execute();
@@ -89,7 +93,7 @@ final class EventDAO extends DAO {
     }
 
     public function delete($id_evento) {
-        $cst = $this->connection->prepare("DELETE * FROM  $this->table WHERE ");
+        $cst = $this->connection->prepare("DELETE FROM $this->table WHERE id_evento = :id_evento");
 
         try {
             $cst->execute();
@@ -97,6 +101,6 @@ final class EventDAO extends DAO {
             throw new Exception($e->getMessage());
         }
 
-        return $cst->rowCount() ? $events : false;
+        return $cst->rowCount() ? $cst->fetch() : false;
     }
 }
