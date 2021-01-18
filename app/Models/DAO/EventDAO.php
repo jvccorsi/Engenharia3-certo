@@ -95,6 +95,8 @@ final class EventDAO extends DAO {
     public function delete($id_evento) {
         $cst = $this->connection->prepare("DELETE FROM $this->table WHERE id_evento = :id_evento");
 
+        $cst->bindParam(":id_evento", $id_evento, PDO::PARAM_STR);
+
         try {
             $cst->execute();
         } catch (Exception $e) {
