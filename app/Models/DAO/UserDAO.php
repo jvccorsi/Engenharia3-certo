@@ -3,7 +3,7 @@
 require_once dirname(dirname(__FILE__)) . '..\..\database\connection.php';
 require_once 'DAO.php';
 
-final class UserDAO extends DAO {
+class UserDAO extends DAO {
 
     private $connection;
     private $table;

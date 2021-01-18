@@ -10,19 +10,32 @@ class UserTest extends TestCase {
         $user = new User();
         $userDAO = new UserDAO();
 
-        $user->setId(8);
-        $user->setEmail('roque@email.com');
-        $user->setPassword('123');
+        $user = $this->getMockBuilder(UserDAO::class)
+                    ->setMethods(['selectByCredentials'])
+                    ->getMock();
 
-        $result = $userDAO->selectByCredentials($user);
+        $user->expects($this->once())
+                ->method('selectByCredentials')
+                ->with($this->equalTo('somethig'));
 
-        $expectedArrayResult['id_usuario'] = 8;
-        $expectedArrayResult[0] = 8;
-        $expectedArrayResult['email'] = 'roque@email.com';
-        $expectedArrayResult[1] = 'roque@email.com';
-        $expectedArrayResult['senha'] = '123';
-        $expectedArrayResult[2] = '123';
+        $subject = new Subject('My subject');
+        $subject->attach($user);
 
-        $this->assertEquals($expectedArrayResult, $result);
+        $subject->doSomething();
+
+        // $user->setId(8);
+        // $user->setEmail('roque@email.com');
+        // $user->setPassword('123');
+
+        // $result = $userDAO->selectByCredentials($user);
+
+        // $expectedArrayResult['id_usuario'] = 8;
+        // $expectedArrayResult[0] = 8;
+        // $expectedArrayResult['email'] = 'roque@email.com';
+        // $expectedArrayResult[1] = 'roque@email.com';
+        // $expectedArrayResult['senha'] = '123';
+        // $expectedArrayResult[2] = '123';
+
+        // $this->assertEquals($expectedArrayResult, $result);
     }
 }
