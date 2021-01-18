@@ -216,7 +216,7 @@
                         <div class="form-group">
                             <label class="form-label" for="qnt_people"><b>Quantidade de Pessoas</b></label>
                             <input type="text" class="form-control" id="qnt_people" name="qnt_people"
-                                placeholder="Digite o seu email aqui" required>
+                                placeholder="Digite a quantidade de pessoas" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="description"><b>Descrição</b></label>
