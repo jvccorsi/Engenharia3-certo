@@ -402,8 +402,11 @@
             <h5 class="modal-title" id="exampleModalLongTitle">Deseja realmente apagar o evento?</h5>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-danger" >Confirmar</button>
-            <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+            <form id="contact-form" class="form" action="../../Controllers/events/delete.php" method="GET">
+                <input name="id_evento" type="hidden" class="id-evento">
+                <button type="submit" class="btn btn-danger" >Confirmar</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+            </form>
         </div>
         </div>
     </div>

@@ -98,11 +98,11 @@ final class EventDAO extends DAO {
         $cst->bindParam(":id_evento", $id_evento, PDO::PARAM_STR);
 
         try {
-            $cst->execute();
+            $result = $cst->execute();
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
         }
 
-        return $cst->rowCount() ? $cst->fetch() : false;
+        return $result;
     }
 }
