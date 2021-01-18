@@ -115,7 +115,7 @@ $('body').ready(() => {
                     modal.find('#bairro').val(user['bairro']);
                     modal.find('#n_local').val(user['numero']);
                     modal.find('#date').val(user['data_evento']);
-                    modal.find('#qntPeople').val(user['qtd_pessoas']);
+                    modal.find('#qnt_people').val(user['qtd_pessoas']);
                     modal.find('#description').val(user['descricao_evento']);
                 }
             } catch (err) {
