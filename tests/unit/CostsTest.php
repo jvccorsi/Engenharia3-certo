@@ -23,16 +23,28 @@ class CostTest extends TestCase {
         $this->fixedCost->setItem('Salão máximo');
         $this->fixedCost->setPreco(500);
         $this->fixedCost->setObs('Doidera');
-        $this->variableCost->setId_evento('');
+        $this->variableCost->setId_evento(1);
         $this->variableCost->setNome('Cerva');
         $this->variableCost->setPreco(3);
         $this->variableCost->setQtd_esperada(500);
         $this->variableCost->setObs('Gelada');
     }
 
-    public function test() {
+    public function testIfFindAllFixedCostsByEvent() {
                 
-        $this->assertTrue(true);
+        $result = $this->fixedCostDAO->selectAllByEvent($this->fixedCost->getId_evento());
+
+        $result = $this->fixedCostDAO->selectAllByEvent($this->fixedCost->getId_evento());
+        
+        $this->assertGreaterThanOrEqual(1, count($result));
     }
 
+    public function testIfFindAllVariableCostsByEvent() {
+                
+        $expectedResult = $this->variableCost->getNome();
+
+        $result = $this->variableCostDAO->selectAllByEvent($this->variableCost->getId_evento());
+
+        $this->assertGreaterThanOrEqual(1, count($result));
+    }
 }

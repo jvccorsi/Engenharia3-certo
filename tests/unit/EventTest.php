@@ -23,7 +23,7 @@ class EventTest extends TestCase {
 
         $result = $this->eventDAO->selectAll();
 
-        $this->assertGreaterThanOrEqual(count($result), 2);
+        $this->assertGreaterThanOrEqual(2, count($result));
         $this->assertContains($expectedKeyResult, $result[0]);
     }
 
