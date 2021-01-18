@@ -1,7 +1,6 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use PHPUnit\DbUnit\TestCaseTrait;
 require_once dirname(dirname(__FILE__)) . '..\..\app\Models\User.php';
 require_once dirname(dirname(__FILE__)) . '..\..\app\Models\DAO\UserDAO.php';
 
@@ -12,53 +11,35 @@ class UserTest extends TestCase {
 
     protected function setUp(): void {
         $this->user = new User();
-        $this->userDAO = new User();
+        $this->userDAO = new UserDAO();
 
         $this->user->setId(1);
         $this->user->setEmail('user@email.com');
         $this->user->setPassword('password');
     }
 
-    public function getConnection() {
-        $pdo = new PDO('sqlite::memory:');
-        return $this->createDefaultDBConnection($pdo, ':memory:');
-    }
-
-    public function getDataSet() {
-        return $this->createFlatXMLDataSet(dirname(__FILE__).'/_files/guestbook-seed.xml');
-    }
-
     public function testIfUserCanLogin() {
-        $this->userDAO = $this->createMock(UserDAO::class);
                 
         $expectedResult['id_usuario'] = 1;
         $expectedResult['email'] = 'user@email.com';
         $expectedResult['senha'] = 'password';
 
-        // Cria um mapa de argumentos para valores retornados.
-        $map = [
-            ['a', 'b', 'c', 'd'],
-            ['e', 'f', 'g', 'h']
-        ];
-        // Configura o esboço.
-        $this->userDAO->method('selectByCredentials')
-                        ->will($this->returnValueMap($map));
-
-        $this->assertEquals('d', $this->userDAO->selectByCredentials('a', 'b', 'c'));
+        $this->assertEquals($expectedResult, $this->userDAO->selectByCredentials($this->user));
     }
 
-    // public function testIfFindOneUser() {
-    //     $userDAO = new UserDAO();
-    //     $userDAO = $this->createMock(UserDAO::class);
+    public function testIfFindOneUser() {
                 
-    //     $expectedResult['id_usuario'] = 1;
-    //     $expectedResult['email'] = 'user@email.com';
-    //     $expectedResult['senha'] = 'password';
+        $expectedResult['id_usuario'] = '1';
+        $expectedResult['email'] = 'roque@email.com';
+        $expectedResult['senha'] = '123';
+        $expectedResult['username'] = 'roquemgc';
+        $expectedResult['nome'] = 'Roque';
+        $expectedResult['sobrenome'] = 'Gomes Costa';
+        $expectedResult['cpf'] = '388.111.222-23';
+        $expectedResult['data_nasc'] = '30/11//0001';
+        $expectedResult['genero'] = 'masculino';
+        $expectedResult['telefone'] = '(19)99542-6742';
 
-    //     // Configura o esboço.
-    //     $userDAO->method('selectByCredentials')
-    //                     ->willReturn($this->user);
-
-    //     $this->assertEquals($expectedResult, $userDAO->selectByCredentials($this->user));
-    // }
+        $this->assertEquals($expectedResult, $this->userDAO->select($this->user->getId()));
+    }
 }

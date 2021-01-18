@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "635e510743f1dd7b48bfb71f5243ad3c",
+    "content-hash": "d3503724cc8b86ab02156f0313184e26",
     "packages": [],
     "packages-dev": [
         {
@@ -2066,6 +2066,99 @@
             "time": "2020-07-12T23:59:07+00:00"
         },
         {
+            "name": "tiny/dbunit",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mike-shmatov/tiny-dbunit.git",
+                "reference": "439ff858ed126bd9622d92e37fa6ef36eb104cd9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mike-shmatov/tiny-dbunit/zipball/439ff858ed126bd9622d92e37fa6ef36eb104cd9",
+                "reference": "439ff858ed126bd9622d92e37fa6ef36eb104cd9",
+                "shasum": ""
+            },
+            "require": {
+                "tiny/sql": "dev-master"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tiny\\DbUnit\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Shmatov",
+                    "email": "shmatov@inbox.ru"
+                }
+            ],
+            "description": "Enhances database testing with SQLite in-memory engine.",
+            "keywords": [
+                "databases",
+                "in-memory",
+                "phpunit",
+                "sqlite",
+                "unit testing"
+            ],
+            "support": {
+                "issues": "https://github.com/mike-shmatov/tiny-dbunit/issues",
+                "source": "https://github.com/mike-shmatov/tiny-dbunit/tree/master"
+            },
+            "time": "2017-11-11T20:32:16+00:00"
+        },
+        {
+            "name": "tiny/sql",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mike-shmatov/tiny-sql.git",
+                "reference": "30a89fd3ad206efba491741b08f6c155a4599b64"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mike-shmatov/tiny-sql/zipball/30a89fd3ad206efba491741b08f6c155a4599b64",
+                "reference": "30a89fd3ad206efba491741b08f6c155a4599b64",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tiny\\Sql\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Shmatov",
+                    "email": "shmatov@inbox.ru"
+                }
+            ],
+            "description": "SQL parsing library",
+            "keywords": [
+                "parsing",
+                "php",
+                "sql"
+            ],
+            "support": {
+                "issues": "https://github.com/mike-shmatov/tiny-sql/issues",
+                "source": "https://github.com/mike-shmatov/tiny-sql/tree/master"
+            },
+            "time": "2017-10-29T20:24:02+00:00"
+        },
+        {
             "name": "webmozart/assert",
             "version": "1.9.1",
             "source": {
@@ -2121,7 +2214,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "tiny/dbunit": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
