@@ -13,20 +13,6 @@ final class Event {
     private $street; 
     private $neighborhood; 
     private $adress_number;
-
-    public function __construct($id, $name, $description, $people_quantity, $country, $cep, $state, $city, $street, $neighborhood, $adress_number) {
-        $this->setId($id);
-        $this->setUsernameFromJogador($name);
-        $this->setDescription($description);
-        $this->setPeople_quantity($people_quantity);
-        $this->setDate($date);
-        $this->setCep($cep);
-        $this->setState($state);
-        $this->setCity($city);
-        $this->setStreet($street);
-        $this->setNeighborhood($neighborhood);
-        $this->setAdress_number($adress_number);
-	}
 	
 	public function getId(){
 		return $this->id;
