@@ -1,6 +1,6 @@
 <?php
-require_once '..\..\models\Revenue.php';
-require_once '..\..\models\DAO\RevenueDAO.php';
+require_once '..\..\Models\Revenue.php';
+require_once '..\..\Models\DAO\RevenueDAO.php';
 
 if (isset($_POST['qtd_esperada'])) { 
 

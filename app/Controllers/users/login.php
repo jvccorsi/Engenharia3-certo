@@ -18,7 +18,9 @@ if(isset($_POST['email'])){ // Request login
         $_SESSION['usu_id'] = $result[0];
 
         header("location: ../../Views/pages/dashboard.php");
+
     } else { 
+        
         $_SESSION['login_incorreto_usu'] = "erro_senha";
 
         header("location: ../../Views/pages/landing.php");
