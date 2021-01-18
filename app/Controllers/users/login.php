@@ -5,8 +5,6 @@ session_start();
 
 if(isset($_POST['email'])){ // Request login
 
-
-
     $user = new User();
     $user->setEmail($_POST['email']);
     $user->setPassword($_POST['password']);
