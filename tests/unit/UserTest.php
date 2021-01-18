@@ -25,8 +25,6 @@ class UserTest extends TestCase {
 
         $expectedResult = 'roque@email.com';
 
-        fwrite(STDERR, print_r($this->userDAO->selectByCredentials($this->user), TRUE));
-
         $this->assertContains($expectedResult, $this->userDAO->selectByCredentials($this->user));
     }
 

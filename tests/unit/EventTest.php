@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 require_once dirname(dirname(__FILE__)) . '..\..\app\Models\Event.php';
-require_once dirname(dirname(__FILE__)) . '..\..\app\Classes\EventDAO.php';
+require_once dirname(dirname(__FILE__)) . '..\..\app\Models\DAO\EventDAO.php';
 
 class EventTest extends TestCase {
 
@@ -13,19 +13,34 @@ class EventTest extends TestCase {
         $this->event = new Event();
         $this->eventDAO = new EventDAO();
 
-        $this->event->setId(1);
+        $this->event->setId(10);
         $this->event->setName('Festona');
-        $this->event->setDescription('Vai ser doidera');
-        $this->event->setPeople_quantity(100);
     }
 
     public function testIfFindAllEvents() {
 
-        $expectedResult = 'roque@email.com';
-        $expectedResult = 'roque@email.com';
+        $expectedKeyResult = $this->event->getName();
 
-        fwrite(STDERR, print_r($this->eventDAO->selectByCredentials($this->event), TRUE));
+        $result = $this->eventDAO->selectAll();
 
-        $this->assertContains($expectedResult, $this->eventDAO->selectByCredentials($this->event));
+        $this->assertGreaterThanOrEqual(count($result), 2);
+        $this->assertContains($expectedKeyResult, $result[0]);
+    }
+
+    public function testIfCanFindOneEvent() {
+
+        $idEvento = 1;
+        $expectedResult = $this->event->getName();
+
+        $result = $this->eventDAO->select($idEvento);
+
+        $this->assertEquals($expectedResult, $result['nome_evento']);
+    }
+
+    public function testIfUserCanDeleteOneEvent() {
+
+        $idEVento = $this->event->getId();
+
+        $this->assertTrue($this->eventDAO->delete(10));
     }
 }
