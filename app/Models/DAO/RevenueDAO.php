@@ -16,7 +16,7 @@ final class RevenueDAO extends DAO {
 
     public function select($id_evento) {
 
-        $cst = $this->connection->prepare("SELECT * from $this->table WHERE id_evento=:id_evento");
+        $cst = $this->connection->prepare("SELECT * FROM $this->table WHERE id_evento=:id_evento");
        
         $cst->bindParam(":id_evento", $id_evento, PDO::PARAM_STR);
         
@@ -26,7 +26,16 @@ final class RevenueDAO extends DAO {
             throw new Exception($e->getMessage());
         }
 
-        return $cst->rowCount() ? $cst->fetch() : false; 
+        $datasRevenue = [];
+
+        while ($dataRevenue = $cst->fetch(PDO::FETCH_ASSOC)) {
+
+            array_push($datasRevenue, $dataRevenue);
+            
+        }
+
+        return $cst->rowCount() ? $datasRevenue : false;
+
     }
 
     public function insert($revenue) {

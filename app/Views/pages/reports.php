@@ -2,6 +2,8 @@
   include("../../Controllers/users/verify_login.php"); 
   require_once("../../Controllers/costs/get_all_fixed.php"); 
   require_once("../../Controllers/costs/get_all_variable.php");
+  require_once("../../Controllers/revenues/get_datas_revenue.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -150,14 +152,31 @@
               <div id="revenue-row" class="row">
                 <div class="col-md-6">
                   <div class="card d-flex align-items-center">
-                    <h5>Entrada esperada</h5>  
-                    <h4 class="green-title">$1410,00</h4>  
+                    <h5>Total esperado</h5>  
+                    <?php 
+
+                        $revenueFinalTotal = 0;
+
+                        if($revenue) {
+
+                          foreach($revenue as $revenueData) {
+
+                            $revenueFinalTotal += $revenueData['receita_esperada'];
+
+                          }
+
+                        }
+                      
+                    ?>
+
+                    <h4 class="green-title"><?php echo ($revenueFinalTotal);?></h4>  
+
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="card d-flex align-items-center">
-                    <h5>Saída esperada</h5>  
-                    <h4 class="red-title">$1300,00</h4>  
+                    <h5>Total saída esperada</h5>  
+                    <h4 class="red-title"><?php $saidaFinalTotal = $variableFinalTotal+$fixedFinalTotal; echo ($saidaFinalTotal);?></h4>  
                   </div>
                 </div>
               </div>
@@ -166,20 +185,66 @@
                   <div class="card">
                     <div class="row">
                       <div class="col-sm-6 d-flex align-items-center flex-column">
-                        <h5>Ingressos disponíveis</h5>  
-                        <h4>40</h4>  
+                        <h5>Total ingressos</h5>  
+
+                        <?php 
+
+                          $revenueFinalQtdEsperadaTotal = 0;
+
+                          if($revenue) {
+
+                            foreach($revenue as $revenueData) {
+
+                              $revenueFinalQtdEsperadaTotal += $revenueData['qtd_esperada'];
+
+                            }
+
+                          }
+                      
+                        ?>
+                        <h4><?php echo ($revenueFinalQtdEsperadaTotal);?></h4>  
+
                       </div>
                       <div class="col-sm-6 d-flex align-items-center flex-column">
-                        <h5>Ingressos vendidos</h5>  
-                        <h4>47</h4>  
+                        <h5>Total ingressos vendidos</h5>  
+                         <?php 
+
+                          $revenueFinalQtdVendidaTotal = 0;
+
+                          if($revenue) {
+
+                            foreach($revenue as $revenueData) {
+
+                              $revenueFinalQtdVendidaTotal += $revenueData['qtd_vendida'];
+
+                            }
+
+                          }
+                      
+                        ?>
+                        <h4><?php echo ($revenueFinalQtdVendidaTotal);?></h4>  
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-sm-12">
+                   
                         <ul class="list-group">
-                          <li class="list-group-item">1º lote (R$ 30,00) = esgotado</li>
-                          <li class="list-group-item">2º lote (R$ 40,00) = 40</li>
-                          <li class="list-group-item">3º lote (R$ 60,00) = fechado</li>
+                        
+                          <?php 
+                            if($revenue) {
+
+                          ?>
+
+                          <h4 style=" color: #a7654d; font-weight: bold; text-align: center;">Receitas</h4>    
+                             
+                          <?php 
+                          
+                            foreach($revenue as $revenueData) { 
+                          ?>
+                            <li class="list-group-item"><?php echo ($revenueData['item']);?> (<?php echo ($revenueData['preco']);?>)</li>
+                          
+                          <?php } } ?>
+
                         </ul>
                       </div>
                     </div>
@@ -189,33 +254,35 @@
               </div>
             <div class="col-md-7">
               <div class="card d-flex align-items-center">
-                <h5>Perspectiva gráfica</h5> 
-                <canvas id="costs-chart"></canvas> 
+                <h5 style=" font-weight: bold;">Perspectiva gráfica</h5> 
+                <canvas id="costs-chart" style="display: block; width: 737px;height: 340px;"></canvas> 
                 <script>
+                  var totalEsperado = <?php echo ($revenueFinalTotal);?>;
+                  var totalSaidaEsperada = <?php echo ($saidaFinalTotal);?>;
                   var ctx = $('#costs-chart');
                   var myChart = new Chart(ctx, {
                       type: 'pie',
                       data: {
-                          labels: ['Custos Variáveis', 'Custos Fixos'],
+                          labels: ['Total esperado', 'Total saída esperada'],
                           datasets: [{
-                              data: [1200, 600],
+                              data: [totalEsperado, totalSaidaEsperada],
                               backgroundColor: [
-                                  'rgba(255, 99, 132, 0.2)',
-                                  'rgba(54, 162, 235, 0.2)',
+                                  'rgba(10, 207, 151, 0.2)',
+                                  'rgba(250, 92, 124, 0.2)',
                                   // 'rgba(255, 206, 86, 0.2)',
                                   // 'rgba(75, 192, 192, 0.2)',
                                   // 'rgba(153, 102, 255, 0.2)',
                                   // 'rgba(255, 159, 64, 0.2)'
                               ],
                               borderColor: [
-                                  'rgba(255, 99, 132, 1)',
-                                  'rgba(54, 162, 235, 1)',
+                                  'rgba(10, 207, 151, 1)',
+                                  'rgba(250, 92, 124, 1)',
                                   // 'rgba(255, 206, 86, 1)',
                                   // 'rgba(75, 192, 192, 1)',
                                   // 'rgba(153, 102, 255, 1)',
                                   // 'rgba(255, 159, 64, 1)'
                               ],
-                              borderWidth: 2
+                              borderWidth: 4
                           }]
                       },
                       options: {
