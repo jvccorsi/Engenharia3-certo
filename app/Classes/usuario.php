@@ -112,6 +112,7 @@ class Usuario {
         $cst = $this->conexao->prepare("UPDATE $this->tabela SET senha=:NOVA_SENHA WHERE id_usuario=:id_usu");
         $cst->bindParam(":NOVA_SENHA", $nova_senha, PDO::PARAM_STR);
         $cst->bindParam(":id_usu", $id, PDO::PARAM_INT);
+        
         return $cst->execute();
     }
 
