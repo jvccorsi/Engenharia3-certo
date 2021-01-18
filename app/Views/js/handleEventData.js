@@ -38,8 +38,6 @@ $('body').ready(() => {
         let idEvento = document.querySelector('#modal-manter-evento .id-evento').value;
         idEvento = "";
 
-        console.log(idEvento);
-
         const url = `/Engenharia3-certo/app/Controllers/events/find.php?id_evento=${idEvento}`;
         http.open("GET", url, true);
         http.send();
@@ -97,8 +95,6 @@ $('body').ready(() => {
 
         const idEvento = document.querySelector('#modal-manter-evento .id-evento').value;
 
-        console.log(idEvento);
-
         const url = `/Engenharia3-certo/app/Controllers/events/find.php?id_evento=${idEvento}`;
         http.open("GET", url, true);
         http.send();
@@ -106,7 +102,6 @@ $('body').ready(() => {
 
             try {
                 const user = JSON.parse(http.response);
-                console.log(user);
 
                 if (Object.keys(user).length > 0) {
                     const modal = $('#modal-manter-evento');
