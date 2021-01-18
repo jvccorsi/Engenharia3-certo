@@ -1,5 +1,5 @@
 <?php
-include("../../config.php");
+include(dirname(dirname(__FILE__)) . "\config.php");
 require_once ROOT_PATH . '/database/connection.php';
 
 class Usuario {

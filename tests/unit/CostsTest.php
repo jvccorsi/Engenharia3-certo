@@ -26,21 +26,13 @@ class CostTest extends TestCase {
         $this->variableCost->setId_evento('');
         $this->variableCost->setNome('Cerva');
         $this->variableCost->setPreco(3);
-        $this->variableCost->setEmail(500);
+        $this->variableCost->setQtd_esperada(500);
         $this->variableCost->setObs('Gelada');
     }
 
-    public function testIfFindAllVariableCosts() {
+    public function test() {
                 
-        $expectedResult['id_usuario'] = '1';
-        $expectedResult['email'] = 'roque@email.com';
-        $expectedResult['senha'] = '123';
-
-        $this->assertEquals($expectedResult, $this->userDAO->selectByCredentials($this->user));
+        $this->assertTrue(true);
     }
 
-    public function testIfFindOneUser() {
-
-        $this->assertContains($this->user->getEmail(), $this->userDAO->select($this->user->getId()));
-    }
 }
