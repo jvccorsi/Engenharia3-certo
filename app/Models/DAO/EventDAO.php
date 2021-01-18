@@ -89,7 +89,45 @@ final class EventDAO extends DAO {
     }
 
     public function update($event) {
-        return "Não implementado ainda";
+
+        $cst = $this->connection->prepare("UPDATE $this->table 
+            SET nome_evento = :nome_evento, descricao_evento = :descricao_evento, qtd_pessoas = :qtd_pessoas, 
+                data_evento = :data_evento, pais = :pais, cep = :cep, estado = :estado, cidade = :cidade, 
+                    rua = :rua, bairro = :bairro, numero = :numero WHERE id_evento = :id_evento");
+
+        $id_evento = $event->getId();
+        $nome_evento = $event->getName();
+        $descricao_evento = $event->getDescription();
+        $qtd_pessoas = $event->getPeople_quantity();
+        $data_evento = $event->getDate();
+        $pais = $event->getCountry();
+        $cep = $event->getCep();
+        $estado = $event->getState();
+        $cidade = $event->getCity();
+        $rua = $event->getStreet();
+        $bairro = $event->getNeighborhood();
+        $numero = $event->getAdress_number();
+
+        $cst->bindParam(":nome_evento", $nome_evento, PDO::PARAM_STR);
+        $cst->bindParam(":descricao_evento", $descricao_evento, PDO::PARAM_STR);
+        $cst->bindParam(":qtd_pessoas", $qtd_pessoas, PDO::PARAM_STR);
+        $cst->bindParam(":data_evento", $data_evento, PDO::PARAM_STR);
+        $cst->bindParam(":pais", $pais, PDO::PARAM_STR);
+        $cst->bindParam(":cep", $cep, PDO::PARAM_STR);
+        $cst->bindParam(":estado", $estado, PDO::PARAM_STR);
+        $cst->bindParam(":cidade", $cidade, PDO::PARAM_STR);
+        $cst->bindParam(":rua", $rua, PDO::PARAM_STR);
+        $cst->bindParam(":bairro", $bairro, PDO::PARAM_STR);
+        $cst->bindParam(":numero", $numero, PDO::PARAM_STR);
+        $cst->bindParam(":id_evento", $id_evento, PDO::PARAM_STR);
+
+        try {
+            $result = $cst->execute();
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+
+        return $result; 
     }
 
     public function delete($id_evento) {

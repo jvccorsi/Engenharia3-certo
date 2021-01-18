@@ -15,6 +15,7 @@ if (isset($_POST['name']) && isset($_POST['pais']) && isset($_POST['cep'])) {
     $event->setNeighborhood($_POST['bairro']);
     $event->setAdress_number($_POST['n_local']);
     $event->setDate($_POST['date']);
+    echo($_POST['qnt_people']);
     $event->setPeople_quantity($_POST['qnt_people']);
     $event->setDescription($_POST['description']);
     
